@@ -42,19 +42,19 @@ nodo_inicial = Nodo(3, matriz,0, posicion_M,posicion_J,posiciones_No_Accesibles)
 #posiblesmovimientos verifica que movimientos puede realizar el jugador
 #retorna una lista de los mismos
 
-def Posibles_Movimientos(posicion,contrincante,Cerrados):
+def Posibles_Movimientos(nodo):
   OchoPosibles =[(-2,1),(-1,2),(1,2),(2,1),(1,-2),(2,-1),(-1,-2),(-2,-1)]
   Movimientos = []  
   for posible in OchoPosibles:
 
-    posible_x = posicion[0][0] + posible[0]
-    posible_y = posicion[0][1] + posible[1]
+    posible_x = nodo.posicion[0][0] + posible[0]
+    posible_y = nodo.posicion[0][1] + posible[1]
 
     if (posible_x <= 7 and posible_x >= 0 and
     posible_y <= 7 and posible_y >= 0 and 
-    (posible_x,posible_y) != (contrincante[0][0],contrincante[0][1])):
+    (posible_x,posible_y) != (nodo.posicion_Contrincante[0][0],nodo.posicion_Contrincante[0][1])):
 
-        if (posible_x,posible_y) not in Cerrados:
+        if (posible_x,posible_y) not in nodo.Cerrados:
             Movimientos.append((posible_x,posible_y))
 
   return Movimientos
@@ -83,13 +83,15 @@ def cambiar_turno(jugador):
 #generarArbol, crea el arbol con profundidad maxima que será el que observa la maquina
 def generarArbol(nodo, profundidadMax, profundidad = 0):
     if profundidad == profundidadMax:
+        nodo.valor = random.randint(1, 9)
         return nodo
     
-    posiciones_hijos = Posibles_Movimientos(nodo.posicion, nodo.posicion_Contrincante,nodo.Cerrados)
+    posiciones_hijos = Posibles_Movimientos(nodo)
 
     for nueva_posicion in posiciones_hijos:
         nuevo_tablero, nuevo_cerrado = realizar_movimiento(nodo.tablero, nueva_posicion,nodo.posicion, nodo.jugador,nodo.Cerrados)
-        nuevo_nodo = Nodo(cambiar_turno(nodo.jugador),nuevo_tablero,random.randint(1, 9),Encontrar_Posicion(cambiar_turno(nodo.jugador),nuevo_tablero),Encontrar_Posicion(nodo.jugador,nuevo_tablero),nuevo_cerrado)
+        nuevo_nodo = Nodo(cambiar_turno(nodo.jugador),nuevo_tablero,None,Encontrar_Posicion(cambiar_turno(nodo.jugador),
+                nuevo_tablero),Encontrar_Posicion(nodo.jugador,nuevo_tablero),nuevo_cerrado)
         nodo.hijos.append(nuevo_nodo)
         generarArbol(nuevo_nodo,profundidadMax,profundidad + 1)
 
@@ -108,6 +110,8 @@ def MiniMax(nodo,Maximiza, alfa,beta):
 
             if beta <= alfa:
                 break #podar
+        nodo.valor = valor
+
         return valor
 
     else: #algoritmo si esta minimizando
@@ -118,11 +122,27 @@ def MiniMax(nodo,Maximiza, alfa,beta):
 
             if beta <= alfa:
                 break #podar
+
+        nodo.valor = valor
+        
         return valor
 
 def Mejor_movimiento(nodo):
     #falta usar el minimax para que retorne el mejor movimiento
-    return 0
+    mejor_valor = float("-inf")
+    mejor_movimiento = None
+    alfa = float("-inf")
+    beta = float("inf")
+
+    for hijo in nodo.hijos:
+        valor = MiniMax(hijo, False, alfa, beta)
+        if valor > mejor_valor:
+            mejor_valor = valor
+            mejor_movimiento = hijo
+        alfa = max(alfa, mejor_valor)
+
+    return mejor_movimiento
+
     
 def imprimir_arbol(nodo, nivel=0, desplazamiento=2):
     if nodo is not None:
@@ -145,5 +165,10 @@ def imprimir_arbol(nodo, nivel=0, desplazamiento=2):
             imprimir_arbol(hijo, nivel + 1, desplazamiento)
 
 arbol = generarArbol(nodo_inicial,2)
-#imprimir_arbol(arbol)
+imprimir_arbol(arbol)
+
 print(MiniMax(arbol,True,float("-inf"),float("inf")))
+print("mejor movimiento")
+print(Mejor_movimiento(arbol).valor)
+print(Mejor_movimiento(arbol).tablero)
+
