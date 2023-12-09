@@ -2,14 +2,15 @@ import numpy as np
 from classes import Nodo
 import copy
 import random
+import sys
 
 #creacion del tablero principal
 matriz = np.array([[1,1,0,0,0,0,1,1],
                   [1,0,0,0,0,0,0,1],
-                  [0,0,0,0,0,0,0,0],
-                  [0,0,0,2,2,0,4,0],
+                  [0,0,3,0,0,4,0,0],
                   [0,0,0,2,2,0,0,0],
-                  [0,0,0,0,0,3,0,0],
+                  [0,0,0,2,2,0,0,0],
+                  [0,0,0,2,0,0,0,0],
                   [1,0,0,0,0,0,0,1],
                   [1,1,0,0,0,0,1,1]])
 
@@ -37,7 +38,7 @@ posiciones_No_Accesibles = []
     #valor = 0 = heuristica
     #posicion = posicionMaquina
     #contrincante = posicionjugador
-nodo_inicial = Nodo(3, matriz,0, posicion_M,posicion_J,posiciones_No_Accesibles)
+nodo_inicial = Nodo(3, matriz,0,0, posicion_M,posicion_J,posiciones_No_Accesibles)
 
 #posiblesmovimientos verifica que movimientos puede realizar el jugador
 #retorna una lista de los mismos
@@ -63,15 +64,22 @@ def Posibles_Movimientos(nodo):
 def realizar_movimiento(tablero,nueva_posicion,posicion, jugador, Cerrados):
     nuevo_tablero = copy.deepcopy(tablero)
     nuevo_cerrado  = copy.deepcopy(Cerrados)
+    nuevo_valor = 0
      #aqui se controla todo lo que pasa cuando el jugador/Maquina mueve una posicion en el tablero
 
     nuevo_tablero[nueva_posicion[0]][nueva_posicion[1]] = jugador
     nuevo_tablero[posicion[0][0]][posicion[0][1]] = 0
     
-    if nueva_posicion in posicion_Monedas or nueva_posicion in posicion_Especiales:
+    if nueva_posicion in posicion_Monedas :
         nuevo_cerrado.append(nueva_posicion)
+        if jugador == 3:
+            nuevo_valor += 1
+    elif nueva_posicion in posicion_Especiales:
+        nuevo_cerrado.append(nueva_posicion)
+        if jugador == 3:
+            nuevo_valor += 3
 
-    return nuevo_tablero,nuevo_cerrado
+    return nuevo_tablero,nuevo_cerrado,nuevo_valor
    
 
 #cambiar turno controla quien debera jugar ahora
@@ -83,16 +91,21 @@ def cambiar_turno(jugador):
 #generarArbol, crea el arbol con profundidad maxima que será el que observa la maquina
 def generarArbol(nodo, profundidadMax, profundidad = 0):
     if profundidad == profundidadMax:
-        nodo.valor = random.randint(1, 9)
+        #nodo.valor = random.randint(1, 9)
         return nodo
     
     posiciones_hijos = Posibles_Movimientos(nodo)
 
     for nueva_posicion in posiciones_hijos:
-        nuevo_tablero, nuevo_cerrado = realizar_movimiento(nodo.tablero, nueva_posicion,nodo.posicion, nodo.jugador,nodo.Cerrados)
-        nuevo_nodo = Nodo(cambiar_turno(nodo.jugador),nuevo_tablero,None,Encontrar_Posicion(cambiar_turno(nodo.jugador),
+        
+        nuevo_tablero, nuevo_cerrado,nuevo_valor = realizar_movimiento(nodo.tablero, nueva_posicion,nodo.posicion, nodo.jugador,nodo.Cerrados)
+        valor = nuevo_valor + (profundidad + 1)
+
+        nuevo_nodo = Nodo(cambiar_turno(nodo.jugador),nuevo_tablero,valor,profundidad,Encontrar_Posicion(cambiar_turno(nodo.jugador),
                 nuevo_tablero),Encontrar_Posicion(nodo.jugador,nuevo_tablero),nuevo_cerrado)
+        nuevo_nodo.profundidad = profundidad + 1
         nodo.hijos.append(nuevo_nodo)
+        print("profundidad",profundidad)
         generarArbol(nuevo_nodo,profundidadMax,profundidad + 1)
 
     return nodo
@@ -144,31 +157,44 @@ def Mejor_movimiento(nodo):
     return mejor_movimiento
 
     
-def imprimir_arbol(nodo, nivel=0, desplazamiento=2):
+def imprimir_arbol(nodo, nivel=0, desplazamiento=2, archivo=None):
+    if archivo is None:
+        # Si no se proporciona un archivo, imprimir en la consola
+        archivo = sys.stdout
+
     if nodo is not None:
         # Agregar desplazamiento a la información de cada nodo
         desplazamiento_actual = desplazamiento * nivel
 
-        print(" " * 2*desplazamiento_actual + f"Jugador: {nodo.jugador}")
+        print(" " * 2 * desplazamiento_actual + f"Jugador: {nodo.jugador}", file=archivo)
         if nodo.valor is not None:
-            print(" " *2* desplazamiento_actual + f"Costo: {nodo.valor}")
+            print(" " * 2 * desplazamiento_actual + f"Costo: {nodo.valor}", file=archivo)
+        if nodo.profundidad is not None:
+            print(" " * 2 * desplazamiento_actual + f"Profundidad: {nodo.profundidad}", file=archivo)
         if nodo.Cerrados is not None:
-            print(" " * 2*desplazamiento_actual + f"No_Accesibles: {nodo.Cerrados}")
+            print(" " * 2 * desplazamiento_actual + f"No_Accesibles: {nodo.Cerrados}", file=archivo)
         if nodo.posicion is not None:
-            print(" " *2* desplazamiento_actual + f"Posición: {nodo.posicion}")
+            print(" " * 2 * desplazamiento_actual + f"Posición: {nodo.posicion}", file=archivo)
         if nodo.tablero is not None:
-            print(" " * 2*desplazamiento_actual + "Tablero:")
+            print(" " * 2 * desplazamiento_actual + "Tablero:", file=archivo)
             for fila in nodo.tablero:
-                print(" " *2* desplazamiento_actual + str(fila))
-        print("-" * 40)
+                print(" " * 2 * desplazamiento_actual + str(fila), file=archivo)
+        print("-" * 40, file=archivo)
         for hijo in nodo.hijos:
-            imprimir_arbol(hijo, nivel + 1, desplazamiento)
+            imprimir_arbol(hijo, nivel + 1, desplazamiento, archivo)
+
+
+
 
 arbol = generarArbol(nodo_inicial,2)
-imprimir_arbol(arbol)
-
-print(MiniMax(arbol,True,float("-inf"),float("inf")))
-print("mejor movimiento")
-print(Mejor_movimiento(arbol).valor)
-print(Mejor_movimiento(arbol).tablero)
+print("soijfoshofhsouehfohseofshefohseofhseofhs")
+#imprimir_arbol(Mejor_movimiento(arbol))
+print("oiahoghaoehgoahgaoiehgoaihegoahegoahega")
+#imprimir_arbol(arbol)
+with open('arbol.txt', 'w') as archivo:
+    imprimir_arbol(arbol, archivo=archivo)
+#print(MiniMax(arbol,True,float("-inf"),float("inf")))
+#print("mejor movimiento")
+#print(Mejor_movimiento(arbol).valor)
+#print(Mejor_movimiento(arbol).tablero)
 
