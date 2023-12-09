@@ -69,7 +69,7 @@ def realizar_movimiento(tablero, nueva_posicion, posicion, jugador, Cerrados):
     nuevo_tablero[nueva_posicion[0]][nueva_posicion[1]] = jugador
     nuevo_tablero[posicion[0][0]][posicion[0][1]] = 0
 
-    if nueva_posicion in posicion_Monedas :
+    if nueva_posicion in posicion_Monedas:
         nuevo_cerrado.append(nueva_posicion)
         if jugador == 3:
             nuevo_valor += 1
@@ -78,8 +78,8 @@ def realizar_movimiento(tablero, nueva_posicion, posicion, jugador, Cerrados):
         if jugador == 3:
             nuevo_valor += 3
 
-    # Acumula el valor del movimiento actual y el valor acumulado de movimientos anteriores
-    nuevo_valor += Cerrados.count(nueva_posicion)
+    # Actualiza el valor acumulado del movimiento actual
+    nuevo_valor += nuevo_valor
 
     return nuevo_tablero, nuevo_cerrado, nuevo_valor
 
@@ -90,54 +90,52 @@ def cambiar_turno(jugador):
     else:return 3
 
 #generarArbol, crea el arbol con profundidad maxima que será el que observa la maquina
-def generarArbol(nodo, profundidadMax, profundidad = 0):
-    if profundidad == profundidadMax + 1:
+def generarArbol(nodo, profundidadMax, profundidad=0):
+    if profundidad == profundidadMax:
         return nodo
 
     posiciones_hijos = Posibles_Movimientos(nodo)
 
     for nueva_posicion in posiciones_hijos:
-        nuevo_tablero, nuevo_cerrado, nuevo_valor = realizar_movimiento(nodo.tablero, nueva_posicion,nodo.posicion, nodo.jugador,nodo.Cerrados)
-        nodo.valor = profundidad + nuevo_valor
-        print("HPPPPPPPPPPPPPPPPPPPPPP", nodo.valor)
-        nuevo_nodo = Nodo(cambiar_turno(nodo.jugador),nuevo_tablero,nodo.valor,Encontrar_Posicion(cambiar_turno(nodo.jugador),
-                nuevo_tablero),Encontrar_Posicion(nodo.jugador,nuevo_tablero),nuevo_cerrado)
+        nuevo_tablero, nuevo_cerrado, nuevo_valor = realizar_movimiento(
+            nodo.tablero, nueva_posicion, nodo.posicion, nodo.jugador, nodo.Cerrados)
+        nuevo_valor += profundidad
+        nuevo_nodo = Nodo(cambiar_turno(nodo.jugador), nuevo_tablero, nuevo_valor,
+                         Encontrar_Posicion(cambiar_turno(nodo.jugador), nuevo_tablero),
+                         Encontrar_Posicion(nodo.jugador, nuevo_tablero), nuevo_cerrado)
         nodo.hijos.append(nuevo_nodo)
-        print("PROFUNDIADA", profundidad)
-        generarArbol(nuevo_nodo,profundidadMax,profundidad + 1)
-
+        generarArbol(nuevo_nodo, profundidadMax, profundidad=profundidad + 1)
 
     return nodo
 
 
-def MiniMax(nodo,Maximiza, alfa,beta):
+def MiniMax(nodo, Maximiza, alfa, beta):
     if not nodo.hijos:
-        return nodo.valor #si se llega a un nodo terminal, se retorna el valor de la heuristica
+        return nodo.valor
 
-    if Maximiza: #algoritmo si se esta maximizando
+    if Maximiza:
         valor = float("-inf")
-        for hijo in nodo.hijos: #se ve el valor de max para cada hijo del nodo, siempre y cuando beta>=alfa
-            valor = max(valor,MiniMax(hijo,False,alfa,beta))
-            alfa = max(alfa,valor)
+        for hijo in nodo.hijos:
+            valor = max(valor, MiniMax(hijo, False, alfa, beta))
+            alfa = max(alfa, valor)
 
             if beta <= alfa:
-                break #podar
+                break
+
         nodo.valor = valor
+        return valor + nodo.profundidad  # Agrega la profundidad al valor
 
-        return valor
-
-    else: #algoritmo si esta minimizando
+    else:
         valor = float("inf")
-        for hijo in nodo.hijos: #se ve el valor de min para cada hijo del nodo, siempre y cuando beta>=alfa
-            valor = min(valor,MiniMax(hijo,True,alfa,beta))
-            beta = min(beta,valor)
+        for hijo in nodo.hijos:
+            valor = min(valor, MiniMax(hijo, True, alfa, beta))
+            beta = min(beta, valor)
 
             if beta <= alfa:
-                break #podar
+                break
 
         nodo.valor = valor
-        
-        return valor
+        return valor + nodo.profundidad  # Agrega la profundidad al valor
 
 # def Mejor_movimiento(nodo):
 #     #falta usar el minimax para que retorne el mejor movimiento
