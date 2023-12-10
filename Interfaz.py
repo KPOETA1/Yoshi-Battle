@@ -1,4 +1,6 @@
 import pygame as pyg, sys, os
+
+import chichenol
 from button import Button
 from dropdown import DropDown
 from utils import *
@@ -131,6 +133,14 @@ class GameState:
                 credits_button.is_hovered(mouse_pos, pyg.image.load(credits_button_path))
             if event.type == pyg.MOUSEBUTTONDOWN:
                 if play_button.collider(mouse_pos):
+                    self.PLAYER1_POS, self.PLAYER2_POS, self.COIN_POS, self.SPECIAL_COINS_POS = init_game()
+                    self.PLAYER1_SCORE = 0
+                    self.PLAYER2_SCORE = 0
+                    self.blocked_cells = []
+                    self.clicked = False
+                    self.turn = 1
+                    self.playing = False
+                    self.depth = 0
                     pyg.mixer.music.fadeout(2000)
                     self.state = 'play game'
                     play_music(gameplay_theme, -1, 0.5)
@@ -403,6 +413,27 @@ class GameState:
 
                                 break
 
+        if self.turn == 2 and self.playing:
+            self.PLAYER2_POS = chichenol.minimax(self.PLAYER2_POS, self.PLAYER1_POS, self.PLAYER2_SCORE,
+                                                 self.PLAYER1_SCORE, self.COIN_POS, self.SPECIAL_COINS_POS,
+                                                 self.blocked_cells, self.depth)
+            # print(PLAYER1_POS)
+            # print(PLAYER2_POS)
+            # print(BOARD)
+            index = self.check_moves(self.PLAYER2_POS, self.COIN_POS, self.SPECIAL_COINS_POS)
+            # print(self.PLAYER2_POS)
+            if index != None:
+                if not self.is_special:
+                    self.PLAYER2_SCORE += 1
+                    self.blocked_cells.append(self.COIN_POS[index])
+                    self.COIN_POS[index] = 0
+                elif self.is_special:
+                    self.PLAYER2_SCORE += 3
+                    self.blocked_cells.append(self.SPECIAL_COINS_POS[index])
+                    self.SPECIAL_COINS_POS[index] = 0
+
+            self.turn = 1
+
         for i in range(BOARD_SIZE):
             for j in range(BOARD_SIZE):
                 POS_I = i * CELL_WIDTH
@@ -432,34 +463,45 @@ class GameState:
 
                 pyg.draw.rect(screen, (0, 0, 0), rect, 1)  # Dibuja el borde negro
 
-                # Tarjeta del jugador 1
-                rect1 = pyg.Rect(20, 60, 300, 200)
-                pyg.draw.rect(screen, (65, 60, 55), rect1, 0, 25, 25)
-                # Imagen
-                screen.blit(yoship, (40, 80))
-                draw_text(200, 115, "Player 1", "White", screen)  # Texto
 
-                # Tarjeta del jugador 2
-                rect2 = pyg.Rect(960, 60, 300, 200)
-                pyg.draw.rect(screen, (65, 60, 55), rect2, 0, 25, 25)
-                # Imagen
-                screen.blit(yoshiIA, (980, 80))
-                draw_text(1140, 115, "Player 2", "White", screen)  # Texto
+        # Tarjeta del jugador 1
+        rect1 = pyg.Rect(20, 60, 300, 200)
+        pyg.draw.rect(screen, (65, 60, 55), rect1, 0, 25, 25)
+        # Imagen
+        screen.blit(yoship, (40, 80))
+        draw_text(200, 115, "Player 1", "White", screen)  # Texto
 
-                # Textos
-                draw_text(115, 200, "Points:", "White", screen)
-                draw_text(80, 320, "Level:", "White", screen)
-                draw_text(1065, 200, "Points:", "White", screen)
+        # Tarjeta del jugador 2
+        rect2 = pyg.Rect(960, 60, 300, 200)
+        pyg.draw.rect(screen, (65, 60, 55), rect2, 0, 25, 25)
+        # Imagen
+        screen.blit(yoshiIA, (980, 80))
+        draw_text(1140, 115, "Player 2", "White", screen)  # Texto
 
-                # Puntajes
-                draw_text(215, 200, str(self.PLAYER1_SCORE), "White", screen)
-                draw_text(1165, 200, str(self.PLAYER2_SCORE), "White", screen)
+        # Textos
+        draw_text(115, 200, "Points:", "White", screen)
+        draw_text(80, 320, "Level:", "White", screen)
+        draw_text(1065, 200, "Points:", "White", screen)
+
+        # Puntajes
+        draw_text(215, 200, str(self.PLAYER1_SCORE), "White", screen)
+        draw_text(1165, 200, str(self.PLAYER2_SCORE), "White", screen)
 
         self.play_button.draw()
         self.restart_button.draw()
         self.menu_button.draw()
 
         self.dropdown.draw(screen)
+
+        if self.COIN_POS == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] and self.SPECIAL_COINS_POS == [0, 0, 0, 0]\
+                and self.turn != 1 and self.turn != 2:
+            self.turn = 5
+            if self.PLAYER1_SCORE > self.PLAYER2_SCORE:
+                BOARD_TEXT = "Player 1 wins!"
+            elif self.PLAYER1_SCORE < self.PLAYER2_SCORE:
+                BOARD_TEXT = "Player 2 wins!"
+            else:
+                BOARD_TEXT = "It's a tie!"
 
         pyg.display.flip()
 
