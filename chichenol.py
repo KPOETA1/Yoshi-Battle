@@ -135,7 +135,7 @@ def actualizarArbol(arbol):
 
     for hijo in hijos:
         hijo.valor = hijo.puntos_J1 - hijo.puntos_J2 + heuristica(hijo, hijo.monedas, hijo.monedasEspeciales)
-            
+
     while profundidadArbol > 0:
         for hijo in hijos:
             if hijo.profundidad == profundidadArbol:
@@ -168,69 +168,74 @@ def minimax(posicion_J1, posicion_J2, puntos_J1, puntos_J2, monedas, monedasEspe
     for hijo in nodo.hijos:
         if hijo.valor == nodo.valor and hijo.profundidad == 1:
             return hijo.posicion_J1
-          
-def movValido(x,y):
-    #Funcion auxiliar para verificar si una posicion (x,y) esta dentro del tablero de 8x8
+
+
+def movValido(x, y):
+    # Funcion auxiliar para verificar si una posicion (x,y) esta dentro del tablero de 8x8
     return 0 <= x < 8 and 0 <= y < 8
+
 
 def nroMovimientos(posicionInicial, posicionObjetivo):
     '''
     Calcula la cantidad minima de movimientos que un caballo necesita para llegar de posInicial a posObjetivo en un tablero de 8x8
     '''
-    #Definir posiciones relativas de los movimientos del caballo
-    movimientosCaballo = [(-2,-1),(-2,1),(-1,-2),(-1,2),(1,-2),(1,2),(2,-1),(2,1)]    
+    # Definir posiciones relativas de los movimientos del caballo
+    movimientosCaballo = [(-2, -1), (-2, 1), (-1, -2), (-1, 2), (1, -2), (1, 2), (2, -1), (2, 1)]
 
-    #Desempaquetar posiciones iniciales y objetivos
+    # Desempaquetar posiciones iniciales y objetivos
     xInicial, yInicial = posicionInicial
+    print(posicionObjetivo)
     xObjetivo, yObjetivo = posicionObjetivo
 
-    #Verificar si las posiciones iniciales y objetivos son validas
-    if not movValido(xInicial,yInicial) or not movValido(xObjetivo,yObjetivo):
+    # Verificar si las posiciones iniciales y objetivos son validas
+    if not movValido(xInicial, yInicial) or not movValido(xObjetivo, yObjetivo):
         print("Posiciones fuera del Tablero.")
 
-    #Inicializar un diccionario para almacenar la distancia minima desde la posicion inicial hasta cada posicion en el tablero
-    distancia = {(i,j): float('inf') for i in range(8) for j in range(8)}
+    # Inicializar un diccionario para almacenar la distancia minima desde la posicion inicial hasta cada posicion en el tablero
+    distancia = {(i, j): float('inf') for i in range(8) for j in range(8)}
 
-    #La distancia desde la posicion inicial hasta si misma es 0
+    # La distancia desde la posicion inicial hasta si misma es 0
     distancia[posicionInicial] = 0
 
-    #Implementar BFS (Breadth-First Search) para calcular la distancia minima
+    # Implementar BFS (Breadth-First Search) para calcular la distancia minima
     cola = [posicionInicial]
 
     while cola:
         xActual, yActual = cola.pop(0)
 
-        for dx,dy in movimientosCaballo:
+        for dx, dy in movimientosCaballo:
             xNuevo, yNuevo = xActual + dx, yActual + dy
 
-            if movValido(xNuevo,yNuevo) and distancia[(xNuevo,yNuevo)] == float('inf'):
-                distancia[(xNuevo,yNuevo)] = distancia[(xActual,yActual)] + 1
-                cola.append((xNuevo,yNuevo))
+            if movValido(xNuevo, yNuevo) and distancia[(xNuevo, yNuevo)] == float('inf'):
+                distancia[(xNuevo, yNuevo)] = distancia[(xActual, yActual)] + 1
+                cola.append((xNuevo, yNuevo))
 
-    #Devolver la distancia minima hasta la posicion objetivo
-    return distancia[posicionObjetivo]   
+    # Devolver la distancia minima hasta la posicion objetivo
+    return distancia[posicionObjetivo]
+
 
 def heuristica(nodo, monedas, monedasEspeciales):
-    #Funcion heuristica para calcular el valor de un nodo
+    # Funcion heuristica para calcular el valor de un nodo
     valorUtilidad = 0
 
-    #Calcular la distancia minima desde la posicion del jugador 1 hasta cada moneda
+    # Calcular la distancia minima desde la posicion del jugador 1 hasta cada moneda
     for moneda in monedas:
-        valorUtilidad += 1 / nroMovimientos(nodo.posicion_J1,moneda)
+        valorUtilidad += 1 / nroMovimientos(nodo.posicion_J1, moneda)
 
-    #Calcular la distancia minima desde la posicion del jugador 1 hasta cada moneda especial
+    # Calcular la distancia minima desde la posicion del jugador 1 hasta cada moneda especial
     for monedaEspecial in monedasEspeciales:
-        valorUtilidad += 3 / nroMovimientos(nodo.posicion_J1,monedaEspecial)
+        valorUtilidad += 3 / nroMovimientos(nodo.posicion_J1, monedaEspecial)
 
-    #Calcular la distancia minima desde la posicion del jugador 2 hasta cada moneda
+    # Calcular la distancia minima desde la posicion del jugador 2 hasta cada moneda
     for moneda in monedas:
-        valorUtilidad -= 1 / nroMovimientos(nodo.posicion_J2,moneda)
+        valorUtilidad -= 1 / nroMovimientos(nodo.posicion_J2, moneda)
 
-    #Calcular la distancia minima desde la posicion del jugador 2 hasta cada moneda especial
+    # Calcular la distancia minima desde la posicion del jugador 2 hasta cada moneda especial
     for monedaEspecial in monedasEspeciales:
-        valorUtilidad -= 3 / nroMovimientos(nodo.posicion_J2,monedaEspecial)
+        valorUtilidad -= 3 / nroMovimientos(nodo.posicion_J2, monedaEspecial)
 
-    return valorUtilidad  
+    return valorUtilidad
+
 
 if __name__ == "__main__":
     monedasPrueba = [(0, 0), (0, 1), (0, 6), (0, 7), (1, 0), (1, 7), (6, 0), (6, 7), (7, 0), (7, 1), (7, 6), (7, 7)]
@@ -249,8 +254,9 @@ if __name__ == "__main__":
         padre=None
     )
 
-    print(heuristica(nodo,nodo.monedas,nodo.monedasEspeciales))
+    print(heuristica(nodo, nodo.monedas, nodo.monedasEspeciales))
 
-    posicion = minimax(nodo.posicion_J1,nodo.posicion_J2,nodo.puntos_J1,nodo.puntos_J2,nodo.monedas,nodo.monedasEspeciales,nodo.posicionesBloqueadas,2)
+    posicion = minimax(nodo.posicion_J1, nodo.posicion_J2, nodo.puntos_J1, nodo.puntos_J2, nodo.monedas,
+                       nodo.monedasEspeciales, nodo.posicionesBloqueadas, 2)
 
     # print(posicion)
