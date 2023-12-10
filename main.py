@@ -105,57 +105,48 @@ def generarArbol(nodo, profundidadMax, profundidad = 0):
                 nuevo_tablero),Encontrar_Posicion(nodo.jugador,nuevo_tablero),nuevo_cerrado)
         nuevo_nodo.profundidad = profundidad + 1
         nodo.hijos.append(nuevo_nodo)
-        print("profundidad",profundidad)
         generarArbol(nuevo_nodo,profundidadMax,profundidad + 1)
 
     return nodo
 
 
-def MiniMax(nodo,Maximiza, alfa,beta):
-    if not nodo.hijos:
-        return nodo.valor #si se llega a un nodo terminal, se retorna el valor de la heuristica
+def MiniMax(nodo, profundidad, es_maximizando,alfa,beta):
+    if profundidad == 0 or not nodo.hijos:
+        return nodo.valor
 
-    if Maximiza: #algoritmo si se esta maximizando
-        valor = float("-inf")
-        for hijo in nodo.hijos: #se ve el valor de max para cada hijo del nodo, siempre y cuando beta>=alfa
-            valor = max(valor,MiniMax(hijo,False,alfa,beta))
-            alfa = max(alfa,valor)
-
+    if es_maximizando:
+        mejor_valor = float("-inf")
+        for hijo in nodo.hijos:
+            valor = MiniMax(hijo, profundidad - 1,False, alfa, beta)
+            mejor_valor = max(mejor_valor, valor)
+            alfa = max(alfa, mejor_valor)
             if beta <= alfa:
-                break #podar
-        nodo.valor = valor
-
-        return valor
-
-    else: #algoritmo si esta minimizando
-        valor = float("inf")
-        for hijo in nodo.hijos: #se ve el valor de min para cada hijo del nodo, siempre y cuando beta>=alfa
-            valor = min(valor,MiniMax(hijo,True,alfa,beta))
-            beta = min(beta,valor)
-
+                break
+        return mejor_valor
+    else:
+        peor_valor = float("inf")
+        for hijo in nodo.hijos:
+            valor = MiniMax(hijo, profundidad - 1, True,alfa, beta)
+            peor_valor = min(peor_valor, valor)
+            beta = min(beta, peor_valor)
             if beta <= alfa:
-                break #podar
+                break
+        return peor_valor
 
-        nodo.valor = valor
-        
-        return valor
-
-def Mejor_movimiento(nodo):
-    #falta usar el minimax para que retorne el mejor movimiento
+def Mejor_movimiento(nodo,profundidad):
     mejor_valor = float("-inf")
     mejor_movimiento = None
     alfa = float("-inf")
     beta = float("inf")
 
     for hijo in nodo.hijos:
-        valor = MiniMax(hijo, False, alfa, beta)
+        valor = MiniMax(hijo, profundidad,False,alfa=alfa, beta=beta)  # Ajusta la profundidad según tus necesidades
         if valor > mejor_valor:
             mejor_valor = valor
             mejor_movimiento = hijo
         alfa = max(alfa, mejor_valor)
 
     return mejor_movimiento
-
     
 def imprimir_arbol(nodo, nivel=0, desplazamiento=2, archivo=None):
     if archivo is None:
@@ -185,10 +176,16 @@ def imprimir_arbol(nodo, nivel=0, desplazamiento=2, archivo=None):
 
 
 
-
-arbol = generarArbol(nodo_inicial,2)
+profundidad = 3
+arbol = generarArbol(nodo_inicial,profundidad)
 print("soijfoshofhsouehfohseofshefohseofhseofhs")
-#imprimir_arbol(Mejor_movimiento(arbol))
+print(MiniMax(arbol,2,True,float("-inf"),float("inf")))
+print("tablero: ")
+print(Mejor_movimiento(arbol,profundidad).tablero)
+print("profundidad: ",Mejor_movimiento(arbol,profundidad).profundidad)
+print("Cerrados: ",Mejor_movimiento(arbol,profundidad).Cerrados)
+print("costo: ",Mejor_movimiento(arbol,profundidad).valor)
+
 print("oiahoghaoehgoahgaoiehgoaihegoahegoahega")
 #imprimir_arbol(arbol)
 with open('arbol.txt', 'w') as archivo:
