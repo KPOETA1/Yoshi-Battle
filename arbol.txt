@@ -2,22 +2,22 @@ Jugador: 3
 Costo: 0
 Profundidad: 0
 No_Accesibles: []
-Posición: [(2, 2)]
+Posiciï¿½n: [(6, 3)]
 Tablero:
 [1 1 0 0 0 0 1 1]
 [1 0 0 0 0 0 0 1]
-[0 0 3 0 0 4 0 0]
+[0 0 0 0 0 4 0 0]
 [0 0 0 2 2 0 0 0]
 [0 0 0 2 2 0 0 0]
 [0 0 0 2 0 0 0 0]
-[1 0 0 0 0 0 0 1]
+[1 0 0 3 0 0 0 1]
 [1 1 0 0 0 0 1 1]
 ----------------------------------------
     Jugador: 4
     Costo: 1
     Profundidad: 1
     No_Accesibles: []
-    Posición: [(2, 5)]
+    Posiciï¿½n: [(2, 5)]
     Tablero:
     [1 1 0 3 0 0 1 1]
     [1 0 0 0 0 0 0 1]
@@ -32,7 +32,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(0, 6)]
-        Posición: [(0, 3)]
+        Posiciï¿½n: [(0, 3)]
         Tablero:
         [1 1 0 3 0 0 4 1]
         [1 0 0 0 0 0 0 1]
@@ -47,7 +47,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(0, 6)]
-            Posición: [(0, 6)]
+            Posiciï¿½n: [(0, 6)]
             Tablero:
             [1 1 0 0 0 0 4 1]
             [1 0 0 0 0 3 0 1]
@@ -62,7 +62,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(0, 6)]
-            Posición: [(0, 6)]
+            Posiciï¿½n: [(0, 6)]
             Tablero:
             [1 1 0 0 0 0 4 1]
             [1 0 0 0 0 0 0 1]
@@ -77,7 +77,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(0, 6)]
-            Posición: [(0, 6)]
+            Posiciï¿½n: [(0, 6)]
             Tablero:
             [1 1 0 0 0 0 4 1]
             [1 3 0 0 0 0 0 1]
@@ -92,7 +92,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(0, 6)]
-            Posición: [(0, 6)]
+            Posiciï¿½n: [(0, 6)]
             Tablero:
             [1 1 0 0 0 0 4 1]
             [1 0 0 0 0 0 0 1]
@@ -107,7 +107,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(1, 7)]
-        Posición: [(0, 3)]
+        Posiciï¿½n: [(0, 3)]
         Tablero:
         [1 1 0 3 0 0 1 1]
         [1 0 0 0 0 0 0 4]
@@ -122,7 +122,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(1, 7)]
-            Posición: [(1, 7)]
+            Posiciï¿½n: [(1, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 3 0 4]
@@ -137,7 +137,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(1, 7)]
-            Posición: [(1, 7)]
+            Posiciï¿½n: [(1, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 4]
@@ -152,7 +152,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(1, 7)]
-            Posición: [(1, 7)]
+            Posiciï¿½n: [(1, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 3 0 0 0 0 0 4]
@@ -167,7 +167,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(1, 7)]
-            Posición: [(1, 7)]
+            Posiciï¿½n: [(1, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 4]
@@ -182,7 +182,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: []
-        Posición: [(0, 3)]
+        Posiciï¿½n: [(0, 3)]
         Tablero:
         [1 1 0 3 0 0 1 1]
         [1 0 0 0 0 0 0 1]
@@ -197,7 +197,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(3, 7)]
+            Posiciï¿½n: [(3, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 3 0 1]
@@ -212,7 +212,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(3, 7)]
+            Posiciï¿½n: [(3, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -227,7 +227,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(3, 7)]
+            Posiciï¿½n: [(3, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 3 0 0 0 0 0 1]
@@ -242,7 +242,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(3, 7)]
+            Posiciï¿½n: [(3, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -257,7 +257,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: []
-        Posición: [(0, 3)]
+        Posiciï¿½n: [(0, 3)]
         Tablero:
         [1 1 0 3 0 0 1 1]
         [1 0 0 0 0 0 0 1]
@@ -272,7 +272,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(4, 6)]
+            Posiciï¿½n: [(4, 6)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 3 0 1]
@@ -287,7 +287,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(4, 6)]
+            Posiciï¿½n: [(4, 6)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -302,7 +302,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(4, 6)]
+            Posiciï¿½n: [(4, 6)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 3 0 0 0 0 0 1]
@@ -317,7 +317,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(4, 6)]
+            Posiciï¿½n: [(4, 6)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -332,7 +332,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(3, 3)]
-        Posición: [(0, 3)]
+        Posiciï¿½n: [(0, 3)]
         Tablero:
         [1 1 0 3 0 0 1 1]
         [1 0 0 0 0 0 0 1]
@@ -347,7 +347,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 3)]
-            Posición: [(3, 3)]
+            Posiciï¿½n: [(3, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 3 0 1]
@@ -362,7 +362,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 3)]
-            Posición: [(3, 3)]
+            Posiciï¿½n: [(3, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -377,7 +377,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 3)]
-            Posición: [(3, 3)]
+            Posiciï¿½n: [(3, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 3 0 0 0 0 0 1]
@@ -392,7 +392,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 3)]
-            Posición: [(3, 3)]
+            Posiciï¿½n: [(3, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -407,7 +407,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(4, 4)]
-        Posición: [(0, 3)]
+        Posiciï¿½n: [(0, 3)]
         Tablero:
         [1 1 0 3 0 0 1 1]
         [1 0 0 0 0 0 0 1]
@@ -422,7 +422,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 4)]
-            Posición: [(4, 4)]
+            Posiciï¿½n: [(4, 4)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 3 0 1]
@@ -437,7 +437,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 4)]
-            Posición: [(4, 4)]
+            Posiciï¿½n: [(4, 4)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -452,7 +452,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 4)]
-            Posición: [(4, 4)]
+            Posiciï¿½n: [(4, 4)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 3 0 0 0 0 0 1]
@@ -467,7 +467,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 4)]
-            Posición: [(4, 4)]
+            Posiciï¿½n: [(4, 4)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -482,7 +482,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: []
-        Posición: [(0, 3)]
+        Posiciï¿½n: [(0, 3)]
         Tablero:
         [1 1 0 3 0 0 1 1]
         [1 0 0 4 0 0 0 1]
@@ -497,7 +497,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(1, 3)]
+            Posiciï¿½n: [(1, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 4 0 3 0 1]
@@ -512,7 +512,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(1, 3)]
+            Posiciï¿½n: [(1, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 4 0 0 0 1]
@@ -527,7 +527,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(1, 3)]
+            Posiciï¿½n: [(1, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 3 0 4 0 0 0 1]
@@ -542,7 +542,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(1, 3)]
+            Posiciï¿½n: [(1, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 4 0 0 0 1]
@@ -557,7 +557,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: []
-        Posición: [(0, 3)]
+        Posiciï¿½n: [(0, 3)]
         Tablero:
         [1 1 0 3 4 0 1 1]
         [1 0 0 0 0 0 0 1]
@@ -572,7 +572,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(0, 4)]
+            Posiciï¿½n: [(0, 4)]
             Tablero:
             [1 1 0 0 4 0 1 1]
             [1 0 0 0 0 3 0 1]
@@ -587,7 +587,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(0, 4)]
+            Posiciï¿½n: [(0, 4)]
             Tablero:
             [1 1 0 0 4 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -602,7 +602,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(0, 4)]
+            Posiciï¿½n: [(0, 4)]
             Tablero:
             [1 1 0 0 4 0 1 1]
             [1 3 0 0 0 0 0 1]
@@ -617,7 +617,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(0, 4)]
+            Posiciï¿½n: [(0, 4)]
             Tablero:
             [1 1 0 0 4 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -632,7 +632,7 @@ Tablero:
     Costo: 1
     Profundidad: 1
     No_Accesibles: []
-    Posición: [(2, 5)]
+    Posiciï¿½n: [(2, 5)]
     Tablero:
     [1 1 0 0 0 0 1 1]
     [1 0 0 0 3 0 0 1]
@@ -647,7 +647,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(0, 6)]
-        Posición: [(1, 4)]
+        Posiciï¿½n: [(1, 4)]
         Tablero:
         [1 1 0 0 0 0 4 1]
         [1 0 0 0 3 0 0 1]
@@ -662,7 +662,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(0, 6)]
-            Posición: [(0, 6)]
+            Posiciï¿½n: [(0, 6)]
             Tablero:
             [1 1 0 0 0 0 4 1]
             [1 0 0 0 0 0 0 1]
@@ -677,7 +677,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(0, 6)]
-            Posición: [(0, 6)]
+            Posiciï¿½n: [(0, 6)]
             Tablero:
             [1 1 0 0 0 0 4 1]
             [1 0 0 0 0 0 0 1]
@@ -692,7 +692,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(0, 6)]
-            Posición: [(0, 6)]
+            Posiciï¿½n: [(0, 6)]
             Tablero:
             [1 1 0 0 0 0 4 1]
             [1 0 0 0 0 0 0 1]
@@ -707,7 +707,7 @@ Tablero:
             Costo: 6
             Profundidad: 3
             No_Accesibles: [(0, 6), (3, 3)]
-            Posición: [(0, 6)]
+            Posiciï¿½n: [(0, 6)]
             Tablero:
             [1 1 0 0 0 0 4 1]
             [1 0 0 0 0 0 0 1]
@@ -722,7 +722,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(0, 6)]
-            Posición: [(0, 6)]
+            Posiciï¿½n: [(0, 6)]
             Tablero:
             [1 1 3 0 0 0 4 1]
             [1 0 0 0 0 0 0 1]
@@ -737,7 +737,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(1, 7)]
-        Posición: [(1, 4)]
+        Posiciï¿½n: [(1, 4)]
         Tablero:
         [1 1 0 0 0 0 1 1]
         [1 0 0 0 3 0 0 4]
@@ -752,7 +752,7 @@ Tablero:
             Costo: 4
             Profundidad: 3
             No_Accesibles: [(1, 7), (0, 6)]
-            Posición: [(1, 7)]
+            Posiciï¿½n: [(1, 7)]
             Tablero:
             [1 1 0 0 0 0 3 1]
             [1 0 0 0 0 0 0 4]
@@ -767,7 +767,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(1, 7)]
-            Posición: [(1, 7)]
+            Posiciï¿½n: [(1, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 4]
@@ -782,7 +782,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(1, 7)]
-            Posición: [(1, 7)]
+            Posiciï¿½n: [(1, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 4]
@@ -797,7 +797,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(1, 7)]
-            Posición: [(1, 7)]
+            Posiciï¿½n: [(1, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 4]
@@ -812,7 +812,7 @@ Tablero:
             Costo: 6
             Profundidad: 3
             No_Accesibles: [(1, 7), (3, 3)]
-            Posición: [(1, 7)]
+            Posiciï¿½n: [(1, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 4]
@@ -827,7 +827,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(1, 7)]
-            Posición: [(1, 7)]
+            Posiciï¿½n: [(1, 7)]
             Tablero:
             [1 1 3 0 0 0 1 1]
             [1 0 0 0 0 0 0 4]
@@ -842,7 +842,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: []
-        Posición: [(1, 4)]
+        Posiciï¿½n: [(1, 4)]
         Tablero:
         [1 1 0 0 0 0 1 1]
         [1 0 0 0 3 0 0 1]
@@ -857,7 +857,7 @@ Tablero:
             Costo: 4
             Profundidad: 3
             No_Accesibles: [(0, 6)]
-            Posición: [(3, 7)]
+            Posiciï¿½n: [(3, 7)]
             Tablero:
             [1 1 0 0 0 0 3 1]
             [1 0 0 0 0 0 0 1]
@@ -872,7 +872,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(3, 7)]
+            Posiciï¿½n: [(3, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -887,7 +887,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(3, 7)]
+            Posiciï¿½n: [(3, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -902,7 +902,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(3, 7)]
+            Posiciï¿½n: [(3, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -917,7 +917,7 @@ Tablero:
             Costo: 6
             Profundidad: 3
             No_Accesibles: [(3, 3)]
-            Posición: [(3, 7)]
+            Posiciï¿½n: [(3, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -932,7 +932,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(3, 7)]
+            Posiciï¿½n: [(3, 7)]
             Tablero:
             [1 1 3 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -947,7 +947,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: []
-        Posición: [(1, 4)]
+        Posiciï¿½n: [(1, 4)]
         Tablero:
         [1 1 0 0 0 0 1 1]
         [1 0 0 0 3 0 0 1]
@@ -962,7 +962,7 @@ Tablero:
             Costo: 4
             Profundidad: 3
             No_Accesibles: [(0, 6)]
-            Posición: [(4, 6)]
+            Posiciï¿½n: [(4, 6)]
             Tablero:
             [1 1 0 0 0 0 3 1]
             [1 0 0 0 0 0 0 1]
@@ -977,7 +977,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(4, 6)]
+            Posiciï¿½n: [(4, 6)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -992,7 +992,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(4, 6)]
+            Posiciï¿½n: [(4, 6)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -1007,7 +1007,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(4, 6)]
+            Posiciï¿½n: [(4, 6)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -1022,7 +1022,7 @@ Tablero:
             Costo: 6
             Profundidad: 3
             No_Accesibles: [(3, 3)]
-            Posición: [(4, 6)]
+            Posiciï¿½n: [(4, 6)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -1037,7 +1037,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(4, 6)]
+            Posiciï¿½n: [(4, 6)]
             Tablero:
             [1 1 3 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -1052,7 +1052,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(3, 3)]
-        Posición: [(1, 4)]
+        Posiciï¿½n: [(1, 4)]
         Tablero:
         [1 1 0 0 0 0 1 1]
         [1 0 0 0 3 0 0 1]
@@ -1067,7 +1067,7 @@ Tablero:
             Costo: 4
             Profundidad: 3
             No_Accesibles: [(3, 3), (0, 6)]
-            Posición: [(3, 3)]
+            Posiciï¿½n: [(3, 3)]
             Tablero:
             [1 1 0 0 0 0 3 1]
             [1 0 0 0 0 0 0 1]
@@ -1082,7 +1082,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 3)]
-            Posición: [(3, 3)]
+            Posiciï¿½n: [(3, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -1097,7 +1097,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 3)]
-            Posición: [(3, 3)]
+            Posiciï¿½n: [(3, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -1112,7 +1112,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 3)]
-            Posición: [(3, 3)]
+            Posiciï¿½n: [(3, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -1127,7 +1127,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 3)]
-            Posición: [(3, 3)]
+            Posiciï¿½n: [(3, 3)]
             Tablero:
             [1 1 3 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -1142,7 +1142,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(4, 4)]
-        Posición: [(1, 4)]
+        Posiciï¿½n: [(1, 4)]
         Tablero:
         [1 1 0 0 0 0 1 1]
         [1 0 0 0 3 0 0 1]
@@ -1157,7 +1157,7 @@ Tablero:
             Costo: 4
             Profundidad: 3
             No_Accesibles: [(4, 4), (0, 6)]
-            Posición: [(4, 4)]
+            Posiciï¿½n: [(4, 4)]
             Tablero:
             [1 1 0 0 0 0 3 1]
             [1 0 0 0 0 0 0 1]
@@ -1172,7 +1172,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 4)]
-            Posición: [(4, 4)]
+            Posiciï¿½n: [(4, 4)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -1187,7 +1187,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 4)]
-            Posición: [(4, 4)]
+            Posiciï¿½n: [(4, 4)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -1202,7 +1202,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 4)]
-            Posición: [(4, 4)]
+            Posiciï¿½n: [(4, 4)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -1217,7 +1217,7 @@ Tablero:
             Costo: 6
             Profundidad: 3
             No_Accesibles: [(4, 4), (3, 3)]
-            Posición: [(4, 4)]
+            Posiciï¿½n: [(4, 4)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -1232,7 +1232,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 4)]
-            Posición: [(4, 4)]
+            Posiciï¿½n: [(4, 4)]
             Tablero:
             [1 1 3 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -1247,7 +1247,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: []
-        Posición: [(1, 4)]
+        Posiciï¿½n: [(1, 4)]
         Tablero:
         [1 1 0 0 0 0 1 1]
         [1 0 0 4 3 0 0 1]
@@ -1262,7 +1262,7 @@ Tablero:
             Costo: 4
             Profundidad: 3
             No_Accesibles: [(0, 6)]
-            Posición: [(1, 3)]
+            Posiciï¿½n: [(1, 3)]
             Tablero:
             [1 1 0 0 0 0 3 1]
             [1 0 0 4 0 0 0 1]
@@ -1277,7 +1277,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(1, 3)]
+            Posiciï¿½n: [(1, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 4 0 0 0 1]
@@ -1292,7 +1292,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(1, 3)]
+            Posiciï¿½n: [(1, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 4 0 0 0 1]
@@ -1307,7 +1307,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(1, 3)]
+            Posiciï¿½n: [(1, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 4 0 0 0 1]
@@ -1322,7 +1322,7 @@ Tablero:
             Costo: 6
             Profundidad: 3
             No_Accesibles: [(3, 3)]
-            Posición: [(1, 3)]
+            Posiciï¿½n: [(1, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 4 0 0 0 1]
@@ -1337,7 +1337,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(1, 3)]
+            Posiciï¿½n: [(1, 3)]
             Tablero:
             [1 1 3 0 0 0 1 1]
             [1 0 0 4 0 0 0 1]
@@ -1352,7 +1352,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: []
-        Posición: [(1, 4)]
+        Posiciï¿½n: [(1, 4)]
         Tablero:
         [1 1 0 0 4 0 1 1]
         [1 0 0 0 3 0 0 1]
@@ -1367,7 +1367,7 @@ Tablero:
             Costo: 4
             Profundidad: 3
             No_Accesibles: [(0, 6)]
-            Posición: [(0, 4)]
+            Posiciï¿½n: [(0, 4)]
             Tablero:
             [1 1 0 0 4 0 3 1]
             [1 0 0 0 0 0 0 1]
@@ -1382,7 +1382,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(0, 4)]
+            Posiciï¿½n: [(0, 4)]
             Tablero:
             [1 1 0 0 4 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -1397,7 +1397,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(0, 4)]
+            Posiciï¿½n: [(0, 4)]
             Tablero:
             [1 1 0 0 4 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -1412,7 +1412,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(0, 4)]
+            Posiciï¿½n: [(0, 4)]
             Tablero:
             [1 1 0 0 4 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -1427,7 +1427,7 @@ Tablero:
             Costo: 6
             Profundidad: 3
             No_Accesibles: [(3, 3)]
-            Posición: [(0, 4)]
+            Posiciï¿½n: [(0, 4)]
             Tablero:
             [1 1 0 0 4 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -1442,7 +1442,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(0, 4)]
+            Posiciï¿½n: [(0, 4)]
             Tablero:
             [1 1 3 0 4 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -1456,14 +1456,14 @@ Tablero:
     Jugador: 4
     Costo: 4
     Profundidad: 1
-    No_Accesibles: [(3, 4)]
-    Posición: [(2, 5)]
+    No_Accesibles: [(4, 4)]
+    Posiciï¿½n: [(2, 5)]
     Tablero:
     [1 1 0 0 0 0 1 1]
     [1 0 0 0 0 0 0 1]
     [0 0 0 0 0 4 0 0]
-    [0 0 0 2 3 0 0 0]
     [0 0 0 2 2 0 0 0]
+    [0 0 0 2 3 0 0 0]
     [0 0 0 2 0 0 0 0]
     [1 0 0 0 0 0 0 1]
     [1 1 0 0 0 0 1 1]
@@ -1472,7 +1472,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(3, 4), (0, 6)]
-        Posición: [(3, 4)]
+        Posiciï¿½n: [(3, 4)]
         Tablero:
         [1 1 0 0 0 0 4 1]
         [1 0 0 0 0 0 0 1]
@@ -1487,7 +1487,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4), (0, 6)]
-            Posición: [(0, 6)]
+            Posiciï¿½n: [(0, 6)]
             Tablero:
             [1 1 0 0 0 0 4 1]
             [1 0 0 0 0 3 0 1]
@@ -1502,7 +1502,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4), (0, 6)]
-            Posición: [(0, 6)]
+            Posiciï¿½n: [(0, 6)]
             Tablero:
             [1 1 0 0 0 0 4 1]
             [1 0 0 0 0 0 0 1]
@@ -1517,7 +1517,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4), (0, 6)]
-            Posición: [(0, 6)]
+            Posiciï¿½n: [(0, 6)]
             Tablero:
             [1 1 0 0 0 0 4 1]
             [1 0 0 0 0 0 0 1]
@@ -1532,7 +1532,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4), (0, 6)]
-            Posición: [(0, 6)]
+            Posiciï¿½n: [(0, 6)]
             Tablero:
             [1 1 0 0 0 0 4 1]
             [1 0 0 0 0 0 0 1]
@@ -1547,7 +1547,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4), (0, 6)]
-            Posición: [(0, 6)]
+            Posiciï¿½n: [(0, 6)]
             Tablero:
             [1 1 0 0 0 0 4 1]
             [1 0 0 0 0 0 0 1]
@@ -1562,7 +1562,7 @@ Tablero:
             Costo: 6
             Profundidad: 3
             No_Accesibles: [(3, 4), (0, 6), (5, 3)]
-            Posición: [(0, 6)]
+            Posiciï¿½n: [(0, 6)]
             Tablero:
             [1 1 0 0 0 0 4 1]
             [1 0 0 0 0 0 0 1]
@@ -1577,7 +1577,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4), (0, 6)]
-            Posición: [(0, 6)]
+            Posiciï¿½n: [(0, 6)]
             Tablero:
             [1 1 0 0 0 0 4 1]
             [1 0 0 0 0 0 0 1]
@@ -1592,7 +1592,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4), (0, 6)]
-            Posición: [(0, 6)]
+            Posiciï¿½n: [(0, 6)]
             Tablero:
             [1 1 0 0 0 0 4 1]
             [1 0 0 3 0 0 0 1]
@@ -1607,7 +1607,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(3, 4), (1, 7)]
-        Posición: [(3, 4)]
+        Posiciï¿½n: [(3, 4)]
         Tablero:
         [1 1 0 0 0 0 1 1]
         [1 0 0 0 0 0 0 4]
@@ -1622,7 +1622,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4), (1, 7)]
-            Posición: [(1, 7)]
+            Posiciï¿½n: [(1, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 3 0 4]
@@ -1637,7 +1637,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4), (1, 7)]
-            Posición: [(1, 7)]
+            Posiciï¿½n: [(1, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 4]
@@ -1652,7 +1652,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4), (1, 7)]
-            Posición: [(1, 7)]
+            Posiciï¿½n: [(1, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 4]
@@ -1667,7 +1667,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4), (1, 7)]
-            Posición: [(1, 7)]
+            Posiciï¿½n: [(1, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 4]
@@ -1682,7 +1682,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4), (1, 7)]
-            Posición: [(1, 7)]
+            Posiciï¿½n: [(1, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 4]
@@ -1697,7 +1697,7 @@ Tablero:
             Costo: 6
             Profundidad: 3
             No_Accesibles: [(3, 4), (1, 7), (5, 3)]
-            Posición: [(1, 7)]
+            Posiciï¿½n: [(1, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 4]
@@ -1712,7 +1712,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4), (1, 7)]
-            Posición: [(1, 7)]
+            Posiciï¿½n: [(1, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 4]
@@ -1727,7 +1727,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4), (1, 7)]
-            Posición: [(1, 7)]
+            Posiciï¿½n: [(1, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 3 0 0 0 4]
@@ -1742,7 +1742,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(3, 4)]
-        Posición: [(3, 4)]
+        Posiciï¿½n: [(3, 4)]
         Tablero:
         [1 1 0 0 0 0 1 1]
         [1 0 0 0 0 0 0 1]
@@ -1757,7 +1757,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4)]
-            Posición: [(3, 7)]
+            Posiciï¿½n: [(3, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 3 0 1]
@@ -1772,7 +1772,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4)]
-            Posición: [(3, 7)]
+            Posiciï¿½n: [(3, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -1787,7 +1787,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4)]
-            Posición: [(3, 7)]
+            Posiciï¿½n: [(3, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -1802,7 +1802,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4)]
-            Posición: [(3, 7)]
+            Posiciï¿½n: [(3, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -1817,7 +1817,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4)]
-            Posición: [(3, 7)]
+            Posiciï¿½n: [(3, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -1832,7 +1832,7 @@ Tablero:
             Costo: 6
             Profundidad: 3
             No_Accesibles: [(3, 4), (5, 3)]
-            Posición: [(3, 7)]
+            Posiciï¿½n: [(3, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -1847,7 +1847,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4)]
-            Posición: [(3, 7)]
+            Posiciï¿½n: [(3, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -1862,7 +1862,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4)]
-            Posición: [(3, 7)]
+            Posiciï¿½n: [(3, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 3 0 0 0 1]
@@ -1877,7 +1877,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(3, 4)]
-        Posición: [(3, 4)]
+        Posiciï¿½n: [(3, 4)]
         Tablero:
         [1 1 0 0 0 0 1 1]
         [1 0 0 0 0 0 0 1]
@@ -1892,7 +1892,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4)]
-            Posición: [(4, 6)]
+            Posiciï¿½n: [(4, 6)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 3 0 1]
@@ -1907,7 +1907,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4)]
-            Posición: [(4, 6)]
+            Posiciï¿½n: [(4, 6)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -1922,7 +1922,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4)]
-            Posición: [(4, 6)]
+            Posiciï¿½n: [(4, 6)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -1937,7 +1937,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4)]
-            Posición: [(4, 6)]
+            Posiciï¿½n: [(4, 6)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -1952,7 +1952,7 @@ Tablero:
             Costo: 6
             Profundidad: 3
             No_Accesibles: [(3, 4), (5, 3)]
-            Posición: [(4, 6)]
+            Posiciï¿½n: [(4, 6)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -1967,7 +1967,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4)]
-            Posición: [(4, 6)]
+            Posiciï¿½n: [(4, 6)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -1982,7 +1982,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4)]
-            Posición: [(4, 6)]
+            Posiciï¿½n: [(4, 6)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 3 0 0 0 1]
@@ -1997,7 +1997,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(3, 4), (3, 3)]
-        Posición: [(3, 4)]
+        Posiciï¿½n: [(3, 4)]
         Tablero:
         [1 1 0 0 0 0 1 1]
         [1 0 0 0 0 0 0 1]
@@ -2012,7 +2012,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4), (3, 3)]
-            Posición: [(3, 3)]
+            Posiciï¿½n: [(3, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 3 0 1]
@@ -2027,7 +2027,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4), (3, 3)]
-            Posición: [(3, 3)]
+            Posiciï¿½n: [(3, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -2042,7 +2042,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4), (3, 3)]
-            Posición: [(3, 3)]
+            Posiciï¿½n: [(3, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -2057,7 +2057,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4), (3, 3)]
-            Posición: [(3, 3)]
+            Posiciï¿½n: [(3, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -2072,7 +2072,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4), (3, 3)]
-            Posición: [(3, 3)]
+            Posiciï¿½n: [(3, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -2087,7 +2087,7 @@ Tablero:
             Costo: 6
             Profundidad: 3
             No_Accesibles: [(3, 4), (3, 3), (5, 3)]
-            Posición: [(3, 3)]
+            Posiciï¿½n: [(3, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -2102,7 +2102,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4), (3, 3)]
-            Posición: [(3, 3)]
+            Posiciï¿½n: [(3, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -2117,7 +2117,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4), (3, 3)]
-            Posición: [(3, 3)]
+            Posiciï¿½n: [(3, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 3 0 0 0 1]
@@ -2132,7 +2132,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(3, 4), (4, 4)]
-        Posición: [(3, 4)]
+        Posiciï¿½n: [(3, 4)]
         Tablero:
         [1 1 0 0 0 0 1 1]
         [1 0 0 0 0 0 0 1]
@@ -2147,7 +2147,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4), (4, 4)]
-            Posición: [(4, 4)]
+            Posiciï¿½n: [(4, 4)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 3 0 1]
@@ -2162,7 +2162,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4), (4, 4)]
-            Posición: [(4, 4)]
+            Posiciï¿½n: [(4, 4)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -2177,7 +2177,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4), (4, 4)]
-            Posición: [(4, 4)]
+            Posiciï¿½n: [(4, 4)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -2192,7 +2192,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4), (4, 4)]
-            Posición: [(4, 4)]
+            Posiciï¿½n: [(4, 4)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -2207,7 +2207,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4), (4, 4)]
-            Posición: [(4, 4)]
+            Posiciï¿½n: [(4, 4)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -2222,7 +2222,7 @@ Tablero:
             Costo: 6
             Profundidad: 3
             No_Accesibles: [(3, 4), (4, 4), (5, 3)]
-            Posición: [(4, 4)]
+            Posiciï¿½n: [(4, 4)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -2237,7 +2237,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4), (4, 4)]
-            Posición: [(4, 4)]
+            Posiciï¿½n: [(4, 4)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -2252,7 +2252,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4), (4, 4)]
-            Posición: [(4, 4)]
+            Posiciï¿½n: [(4, 4)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 3 0 0 0 1]
@@ -2267,7 +2267,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(3, 4)]
-        Posición: [(3, 4)]
+        Posiciï¿½n: [(3, 4)]
         Tablero:
         [1 1 0 0 0 0 1 1]
         [1 0 0 4 0 0 0 1]
@@ -2282,7 +2282,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4)]
-            Posición: [(1, 3)]
+            Posiciï¿½n: [(1, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 4 0 3 0 1]
@@ -2297,7 +2297,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4)]
-            Posición: [(1, 3)]
+            Posiciï¿½n: [(1, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 4 0 0 0 1]
@@ -2312,7 +2312,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4)]
-            Posición: [(1, 3)]
+            Posiciï¿½n: [(1, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 4 0 0 0 1]
@@ -2327,7 +2327,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4)]
-            Posición: [(1, 3)]
+            Posiciï¿½n: [(1, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 4 0 0 0 1]
@@ -2342,7 +2342,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4)]
-            Posición: [(1, 3)]
+            Posiciï¿½n: [(1, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 4 0 0 0 1]
@@ -2357,7 +2357,7 @@ Tablero:
             Costo: 6
             Profundidad: 3
             No_Accesibles: [(3, 4), (5, 3)]
-            Posición: [(1, 3)]
+            Posiciï¿½n: [(1, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 4 0 0 0 1]
@@ -2372,7 +2372,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4)]
-            Posición: [(1, 3)]
+            Posiciï¿½n: [(1, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 4 0 0 0 1]
@@ -2387,7 +2387,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(3, 4)]
-        Posición: [(3, 4)]
+        Posiciï¿½n: [(3, 4)]
         Tablero:
         [1 1 0 0 4 0 1 1]
         [1 0 0 0 0 0 0 1]
@@ -2402,7 +2402,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4)]
-            Posición: [(0, 4)]
+            Posiciï¿½n: [(0, 4)]
             Tablero:
             [1 1 0 0 4 0 1 1]
             [1 0 0 0 0 3 0 1]
@@ -2417,7 +2417,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4)]
-            Posición: [(0, 4)]
+            Posiciï¿½n: [(0, 4)]
             Tablero:
             [1 1 0 0 4 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -2432,7 +2432,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4)]
-            Posición: [(0, 4)]
+            Posiciï¿½n: [(0, 4)]
             Tablero:
             [1 1 0 0 4 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -2447,7 +2447,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4)]
-            Posición: [(0, 4)]
+            Posiciï¿½n: [(0, 4)]
             Tablero:
             [1 1 0 0 4 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -2462,7 +2462,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4)]
-            Posición: [(0, 4)]
+            Posiciï¿½n: [(0, 4)]
             Tablero:
             [1 1 0 0 4 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -2477,7 +2477,7 @@ Tablero:
             Costo: 6
             Profundidad: 3
             No_Accesibles: [(3, 4), (5, 3)]
-            Posición: [(0, 4)]
+            Posiciï¿½n: [(0, 4)]
             Tablero:
             [1 1 0 0 4 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -2492,7 +2492,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4)]
-            Posición: [(0, 4)]
+            Posiciï¿½n: [(0, 4)]
             Tablero:
             [1 1 0 0 4 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -2507,7 +2507,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 4)]
-            Posición: [(0, 4)]
+            Posiciï¿½n: [(0, 4)]
             Tablero:
             [1 1 0 0 4 0 1 1]
             [1 0 0 3 0 0 0 1]
@@ -2522,7 +2522,7 @@ Tablero:
     Costo: 4
     Profundidad: 1
     No_Accesibles: [(4, 3)]
-    Posición: [(2, 5)]
+    Posiciï¿½n: [(2, 5)]
     Tablero:
     [1 1 0 0 0 0 1 1]
     [1 0 0 0 0 0 0 1]
@@ -2537,7 +2537,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(4, 3), (0, 6)]
-        Posición: [(4, 3)]
+        Posiciï¿½n: [(4, 3)]
         Tablero:
         [1 1 0 0 0 0 4 1]
         [1 0 0 0 0 0 0 1]
@@ -2552,7 +2552,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3), (0, 6)]
-            Posición: [(0, 6)]
+            Posiciï¿½n: [(0, 6)]
             Tablero:
             [1 1 0 0 0 0 4 1]
             [1 0 0 0 0 0 0 1]
@@ -2567,7 +2567,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3), (0, 6)]
-            Posición: [(0, 6)]
+            Posiciï¿½n: [(0, 6)]
             Tablero:
             [1 1 0 0 0 0 4 1]
             [1 0 0 0 0 0 0 1]
@@ -2582,7 +2582,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3), (0, 6)]
-            Posición: [(0, 6)]
+            Posiciï¿½n: [(0, 6)]
             Tablero:
             [1 1 0 0 0 0 4 1]
             [1 0 0 0 0 0 0 1]
@@ -2597,7 +2597,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3), (0, 6)]
-            Posición: [(0, 6)]
+            Posiciï¿½n: [(0, 6)]
             Tablero:
             [1 1 0 0 0 0 4 1]
             [1 0 0 0 0 0 0 1]
@@ -2612,7 +2612,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3), (0, 6)]
-            Posición: [(0, 6)]
+            Posiciï¿½n: [(0, 6)]
             Tablero:
             [1 1 0 0 0 0 4 1]
             [1 0 0 0 0 0 0 1]
@@ -2627,7 +2627,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3), (0, 6)]
-            Posición: [(0, 6)]
+            Posiciï¿½n: [(0, 6)]
             Tablero:
             [1 1 0 0 0 0 4 1]
             [1 0 0 0 0 0 0 1]
@@ -2642,7 +2642,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3), (0, 6)]
-            Posición: [(0, 6)]
+            Posiciï¿½n: [(0, 6)]
             Tablero:
             [1 1 0 0 0 0 4 1]
             [1 0 0 0 0 0 0 1]
@@ -2657,7 +2657,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3), (0, 6)]
-            Posición: [(0, 6)]
+            Posiciï¿½n: [(0, 6)]
             Tablero:
             [1 1 0 0 0 0 4 1]
             [1 0 0 0 0 0 0 1]
@@ -2672,7 +2672,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(4, 3), (1, 7)]
-        Posición: [(4, 3)]
+        Posiciï¿½n: [(4, 3)]
         Tablero:
         [1 1 0 0 0 0 1 1]
         [1 0 0 0 0 0 0 4]
@@ -2687,7 +2687,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3), (1, 7)]
-            Posición: [(1, 7)]
+            Posiciï¿½n: [(1, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 4]
@@ -2702,7 +2702,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3), (1, 7)]
-            Posición: [(1, 7)]
+            Posiciï¿½n: [(1, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 4]
@@ -2717,7 +2717,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3), (1, 7)]
-            Posición: [(1, 7)]
+            Posiciï¿½n: [(1, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 4]
@@ -2732,7 +2732,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3), (1, 7)]
-            Posición: [(1, 7)]
+            Posiciï¿½n: [(1, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 4]
@@ -2747,7 +2747,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3), (1, 7)]
-            Posición: [(1, 7)]
+            Posiciï¿½n: [(1, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 4]
@@ -2762,7 +2762,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3), (1, 7)]
-            Posición: [(1, 7)]
+            Posiciï¿½n: [(1, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 4]
@@ -2777,7 +2777,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3), (1, 7)]
-            Posición: [(1, 7)]
+            Posiciï¿½n: [(1, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 4]
@@ -2792,7 +2792,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3), (1, 7)]
-            Posición: [(1, 7)]
+            Posiciï¿½n: [(1, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 4]
@@ -2807,7 +2807,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(4, 3)]
-        Posición: [(4, 3)]
+        Posiciï¿½n: [(4, 3)]
         Tablero:
         [1 1 0 0 0 0 1 1]
         [1 0 0 0 0 0 0 1]
@@ -2822,7 +2822,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3)]
-            Posición: [(3, 7)]
+            Posiciï¿½n: [(3, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -2837,7 +2837,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3)]
-            Posición: [(3, 7)]
+            Posiciï¿½n: [(3, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -2852,7 +2852,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3)]
-            Posición: [(3, 7)]
+            Posiciï¿½n: [(3, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -2867,7 +2867,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3)]
-            Posición: [(3, 7)]
+            Posiciï¿½n: [(3, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -2882,7 +2882,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3)]
-            Posición: [(3, 7)]
+            Posiciï¿½n: [(3, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -2897,7 +2897,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3)]
-            Posición: [(3, 7)]
+            Posiciï¿½n: [(3, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -2912,7 +2912,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3)]
-            Posición: [(3, 7)]
+            Posiciï¿½n: [(3, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -2927,7 +2927,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3)]
-            Posición: [(3, 7)]
+            Posiciï¿½n: [(3, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -2942,7 +2942,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(4, 3)]
-        Posición: [(4, 3)]
+        Posiciï¿½n: [(4, 3)]
         Tablero:
         [1 1 0 0 0 0 1 1]
         [1 0 0 0 0 0 0 1]
@@ -2957,7 +2957,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3)]
-            Posición: [(4, 6)]
+            Posiciï¿½n: [(4, 6)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -2972,7 +2972,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3)]
-            Posición: [(4, 6)]
+            Posiciï¿½n: [(4, 6)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -2987,7 +2987,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3)]
-            Posición: [(4, 6)]
+            Posiciï¿½n: [(4, 6)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -3002,7 +3002,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3)]
-            Posición: [(4, 6)]
+            Posiciï¿½n: [(4, 6)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -3017,7 +3017,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3)]
-            Posición: [(4, 6)]
+            Posiciï¿½n: [(4, 6)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -3032,7 +3032,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3)]
-            Posición: [(4, 6)]
+            Posiciï¿½n: [(4, 6)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -3047,7 +3047,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3)]
-            Posición: [(4, 6)]
+            Posiciï¿½n: [(4, 6)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -3062,7 +3062,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3)]
-            Posición: [(4, 6)]
+            Posiciï¿½n: [(4, 6)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -3077,7 +3077,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(4, 3), (3, 3)]
-        Posición: [(4, 3)]
+        Posiciï¿½n: [(4, 3)]
         Tablero:
         [1 1 0 0 0 0 1 1]
         [1 0 0 0 0 0 0 1]
@@ -3092,7 +3092,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3), (3, 3)]
-            Posición: [(3, 3)]
+            Posiciï¿½n: [(3, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -3107,7 +3107,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3), (3, 3)]
-            Posición: [(3, 3)]
+            Posiciï¿½n: [(3, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -3122,7 +3122,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3), (3, 3)]
-            Posición: [(3, 3)]
+            Posiciï¿½n: [(3, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -3137,7 +3137,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3), (3, 3)]
-            Posición: [(3, 3)]
+            Posiciï¿½n: [(3, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -3152,7 +3152,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3), (3, 3)]
-            Posición: [(3, 3)]
+            Posiciï¿½n: [(3, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -3167,7 +3167,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3), (3, 3)]
-            Posición: [(3, 3)]
+            Posiciï¿½n: [(3, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -3182,7 +3182,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3), (3, 3)]
-            Posición: [(3, 3)]
+            Posiciï¿½n: [(3, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -3197,7 +3197,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3), (3, 3)]
-            Posición: [(3, 3)]
+            Posiciï¿½n: [(3, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -3212,7 +3212,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(4, 3), (4, 4)]
-        Posición: [(4, 3)]
+        Posiciï¿½n: [(4, 3)]
         Tablero:
         [1 1 0 0 0 0 1 1]
         [1 0 0 0 0 0 0 1]
@@ -3227,7 +3227,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3), (4, 4)]
-            Posición: [(4, 4)]
+            Posiciï¿½n: [(4, 4)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -3242,7 +3242,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3), (4, 4)]
-            Posición: [(4, 4)]
+            Posiciï¿½n: [(4, 4)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -3257,7 +3257,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3), (4, 4)]
-            Posición: [(4, 4)]
+            Posiciï¿½n: [(4, 4)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -3272,7 +3272,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3), (4, 4)]
-            Posición: [(4, 4)]
+            Posiciï¿½n: [(4, 4)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -3287,7 +3287,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3), (4, 4)]
-            Posición: [(4, 4)]
+            Posiciï¿½n: [(4, 4)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -3302,7 +3302,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3), (4, 4)]
-            Posición: [(4, 4)]
+            Posiciï¿½n: [(4, 4)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -3317,7 +3317,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3), (4, 4)]
-            Posición: [(4, 4)]
+            Posiciï¿½n: [(4, 4)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -3332,7 +3332,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3), (4, 4)]
-            Posición: [(4, 4)]
+            Posiciï¿½n: [(4, 4)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -3347,7 +3347,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(4, 3)]
-        Posición: [(4, 3)]
+        Posiciï¿½n: [(4, 3)]
         Tablero:
         [1 1 0 0 0 0 1 1]
         [1 0 0 4 0 0 0 1]
@@ -3362,7 +3362,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3)]
-            Posición: [(1, 3)]
+            Posiciï¿½n: [(1, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 4 0 0 0 1]
@@ -3377,7 +3377,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3)]
-            Posición: [(1, 3)]
+            Posiciï¿½n: [(1, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 4 0 0 0 1]
@@ -3392,7 +3392,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3)]
-            Posición: [(1, 3)]
+            Posiciï¿½n: [(1, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 4 0 0 0 1]
@@ -3407,7 +3407,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3)]
-            Posición: [(1, 3)]
+            Posiciï¿½n: [(1, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 4 0 0 0 1]
@@ -3422,7 +3422,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3)]
-            Posición: [(1, 3)]
+            Posiciï¿½n: [(1, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 4 0 0 0 1]
@@ -3437,7 +3437,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3)]
-            Posición: [(1, 3)]
+            Posiciï¿½n: [(1, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 4 0 0 0 1]
@@ -3452,7 +3452,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3)]
-            Posición: [(1, 3)]
+            Posiciï¿½n: [(1, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 4 0 0 0 1]
@@ -3467,7 +3467,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3)]
-            Posición: [(1, 3)]
+            Posiciï¿½n: [(1, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 4 0 0 0 1]
@@ -3482,7 +3482,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(4, 3)]
-        Posición: [(4, 3)]
+        Posiciï¿½n: [(4, 3)]
         Tablero:
         [1 1 0 0 4 0 1 1]
         [1 0 0 0 0 0 0 1]
@@ -3497,7 +3497,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3)]
-            Posición: [(0, 4)]
+            Posiciï¿½n: [(0, 4)]
             Tablero:
             [1 1 0 0 4 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -3512,7 +3512,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3)]
-            Posición: [(0, 4)]
+            Posiciï¿½n: [(0, 4)]
             Tablero:
             [1 1 0 0 4 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -3527,7 +3527,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3)]
-            Posición: [(0, 4)]
+            Posiciï¿½n: [(0, 4)]
             Tablero:
             [1 1 0 0 4 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -3542,7 +3542,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3)]
-            Posición: [(0, 4)]
+            Posiciï¿½n: [(0, 4)]
             Tablero:
             [1 1 0 0 4 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -3557,7 +3557,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3)]
-            Posición: [(0, 4)]
+            Posiciï¿½n: [(0, 4)]
             Tablero:
             [1 1 0 0 4 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -3572,7 +3572,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3)]
-            Posición: [(0, 4)]
+            Posiciï¿½n: [(0, 4)]
             Tablero:
             [1 1 0 0 4 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -3587,7 +3587,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3)]
-            Posición: [(0, 4)]
+            Posiciï¿½n: [(0, 4)]
             Tablero:
             [1 1 0 0 4 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -3602,7 +3602,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 3)]
-            Posición: [(0, 4)]
+            Posiciï¿½n: [(0, 4)]
             Tablero:
             [1 1 0 0 4 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -3617,7 +3617,7 @@ Tablero:
     Costo: 1
     Profundidad: 1
     No_Accesibles: []
-    Posición: [(2, 5)]
+    Posiciï¿½n: [(2, 5)]
     Tablero:
     [1 1 0 0 0 0 1 1]
     [1 0 0 0 0 0 0 1]
@@ -3632,7 +3632,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(0, 6)]
-        Posición: [(3, 0)]
+        Posiciï¿½n: [(3, 0)]
         Tablero:
         [1 1 0 0 0 0 4 1]
         [1 0 0 0 0 0 0 1]
@@ -3647,7 +3647,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(0, 6)]
-            Posición: [(0, 6)]
+            Posiciï¿½n: [(0, 6)]
             Tablero:
             [1 1 0 0 0 0 4 1]
             [1 3 0 0 0 0 0 1]
@@ -3662,7 +3662,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(0, 6)]
-            Posición: [(0, 6)]
+            Posiciï¿½n: [(0, 6)]
             Tablero:
             [1 1 0 0 0 0 4 1]
             [1 0 0 0 0 0 0 1]
@@ -3677,7 +3677,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(0, 6)]
-            Posición: [(0, 6)]
+            Posiciï¿½n: [(0, 6)]
             Tablero:
             [1 1 0 0 0 0 4 1]
             [1 0 0 0 0 0 0 1]
@@ -3692,7 +3692,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(0, 6)]
-            Posición: [(0, 6)]
+            Posiciï¿½n: [(0, 6)]
             Tablero:
             [1 1 0 0 0 0 4 1]
             [1 0 0 0 0 0 0 1]
@@ -3707,7 +3707,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(1, 7)]
-        Posición: [(3, 0)]
+        Posiciï¿½n: [(3, 0)]
         Tablero:
         [1 1 0 0 0 0 1 1]
         [1 0 0 0 0 0 0 4]
@@ -3722,7 +3722,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(1, 7)]
-            Posición: [(1, 7)]
+            Posiciï¿½n: [(1, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 3 0 0 0 0 0 4]
@@ -3737,7 +3737,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(1, 7)]
-            Posición: [(1, 7)]
+            Posiciï¿½n: [(1, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 4]
@@ -3752,7 +3752,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(1, 7)]
-            Posición: [(1, 7)]
+            Posiciï¿½n: [(1, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 4]
@@ -3767,7 +3767,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(1, 7)]
-            Posición: [(1, 7)]
+            Posiciï¿½n: [(1, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 4]
@@ -3782,7 +3782,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: []
-        Posición: [(3, 0)]
+        Posiciï¿½n: [(3, 0)]
         Tablero:
         [1 1 0 0 0 0 1 1]
         [1 0 0 0 0 0 0 1]
@@ -3797,7 +3797,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(3, 7)]
+            Posiciï¿½n: [(3, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 3 0 0 0 0 0 1]
@@ -3812,7 +3812,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(3, 7)]
+            Posiciï¿½n: [(3, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -3827,7 +3827,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(3, 7)]
+            Posiciï¿½n: [(3, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -3842,7 +3842,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(3, 7)]
+            Posiciï¿½n: [(3, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -3857,7 +3857,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: []
-        Posición: [(3, 0)]
+        Posiciï¿½n: [(3, 0)]
         Tablero:
         [1 1 0 0 0 0 1 1]
         [1 0 0 0 0 0 0 1]
@@ -3872,7 +3872,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(4, 6)]
+            Posiciï¿½n: [(4, 6)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 3 0 0 0 0 0 1]
@@ -3887,7 +3887,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(4, 6)]
+            Posiciï¿½n: [(4, 6)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -3902,7 +3902,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(4, 6)]
+            Posiciï¿½n: [(4, 6)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -3917,7 +3917,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(4, 6)]
+            Posiciï¿½n: [(4, 6)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -3932,7 +3932,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(3, 3)]
-        Posición: [(3, 0)]
+        Posiciï¿½n: [(3, 0)]
         Tablero:
         [1 1 0 0 0 0 1 1]
         [1 0 0 0 0 0 0 1]
@@ -3947,7 +3947,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 3)]
-            Posición: [(3, 3)]
+            Posiciï¿½n: [(3, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 3 0 0 0 0 0 1]
@@ -3962,7 +3962,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 3)]
-            Posición: [(3, 3)]
+            Posiciï¿½n: [(3, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -3977,7 +3977,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 3)]
-            Posición: [(3, 3)]
+            Posiciï¿½n: [(3, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -3992,7 +3992,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 3)]
-            Posición: [(3, 3)]
+            Posiciï¿½n: [(3, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -4007,7 +4007,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(4, 4)]
-        Posición: [(3, 0)]
+        Posiciï¿½n: [(3, 0)]
         Tablero:
         [1 1 0 0 0 0 1 1]
         [1 0 0 0 0 0 0 1]
@@ -4022,7 +4022,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 4)]
-            Posición: [(4, 4)]
+            Posiciï¿½n: [(4, 4)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 3 0 0 0 0 0 1]
@@ -4037,7 +4037,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 4)]
-            Posición: [(4, 4)]
+            Posiciï¿½n: [(4, 4)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -4052,7 +4052,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 4)]
-            Posición: [(4, 4)]
+            Posiciï¿½n: [(4, 4)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -4067,7 +4067,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 4)]
-            Posición: [(4, 4)]
+            Posiciï¿½n: [(4, 4)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -4082,7 +4082,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: []
-        Posición: [(3, 0)]
+        Posiciï¿½n: [(3, 0)]
         Tablero:
         [1 1 0 0 0 0 1 1]
         [1 0 0 4 0 0 0 1]
@@ -4097,7 +4097,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(1, 3)]
+            Posiciï¿½n: [(1, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 3 0 4 0 0 0 1]
@@ -4112,7 +4112,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(1, 3)]
+            Posiciï¿½n: [(1, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 4 0 0 0 1]
@@ -4127,7 +4127,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(1, 3)]
+            Posiciï¿½n: [(1, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 4 0 0 0 1]
@@ -4142,7 +4142,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(1, 3)]
+            Posiciï¿½n: [(1, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 4 0 0 0 1]
@@ -4157,7 +4157,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: []
-        Posición: [(3, 0)]
+        Posiciï¿½n: [(3, 0)]
         Tablero:
         [1 1 0 0 4 0 1 1]
         [1 0 0 0 0 0 0 1]
@@ -4172,7 +4172,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(0, 4)]
+            Posiciï¿½n: [(0, 4)]
             Tablero:
             [1 1 0 0 4 0 1 1]
             [1 3 0 0 0 0 0 1]
@@ -4187,7 +4187,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(0, 4)]
+            Posiciï¿½n: [(0, 4)]
             Tablero:
             [1 1 0 0 4 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -4202,7 +4202,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(0, 4)]
+            Posiciï¿½n: [(0, 4)]
             Tablero:
             [1 1 0 0 4 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -4217,7 +4217,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(0, 4)]
+            Posiciï¿½n: [(0, 4)]
             Tablero:
             [1 1 0 0 4 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -4232,14 +4232,14 @@ Tablero:
     Costo: 1
     Profundidad: 1
     No_Accesibles: []
-    Posición: [(2, 5)]
+    Posiciï¿½n: [(2, 5)]
     Tablero:
     [1 1 0 0 0 0 1 1]
     [1 0 0 0 0 0 0 1]
     [0 0 0 0 0 4 0 0]
     [0 0 0 2 2 0 0 0]
-    [0 3 0 2 2 0 0 0]
-    [0 0 0 2 0 0 0 0]
+    [0 0 0 2 2 0 0 0]
+    [0 0 0 2 0 3 0 0]
     [1 0 0 0 0 0 0 1]
     [1 1 0 0 0 0 1 1]
 ----------------------------------------
@@ -4247,7 +4247,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(0, 6)]
-        Posición: [(4, 1)]
+        Posiciï¿½n: [(4, 1)]
         Tablero:
         [1 1 0 0 0 0 4 1]
         [1 0 0 0 0 0 0 1]
@@ -4262,7 +4262,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(0, 6)]
-            Posición: [(0, 6)]
+            Posiciï¿½n: [(0, 6)]
             Tablero:
             [1 1 0 0 0 0 4 1]
             [1 0 0 0 0 0 0 1]
@@ -4277,7 +4277,7 @@ Tablero:
             Costo: 6
             Profundidad: 3
             No_Accesibles: [(0, 6), (3, 3)]
-            Posición: [(0, 6)]
+            Posiciï¿½n: [(0, 6)]
             Tablero:
             [1 1 0 0 0 0 4 1]
             [1 0 0 0 0 0 0 1]
@@ -4292,7 +4292,7 @@ Tablero:
             Costo: 6
             Profundidad: 3
             No_Accesibles: [(0, 6), (5, 3)]
-            Posición: [(0, 6)]
+            Posiciï¿½n: [(0, 6)]
             Tablero:
             [1 1 0 0 0 0 4 1]
             [1 0 0 0 0 0 0 1]
@@ -4307,7 +4307,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(0, 6)]
-            Posición: [(0, 6)]
+            Posiciï¿½n: [(0, 6)]
             Tablero:
             [1 1 0 0 0 0 4 1]
             [1 0 0 0 0 0 0 1]
@@ -4322,7 +4322,7 @@ Tablero:
             Costo: 4
             Profundidad: 3
             No_Accesibles: [(0, 6), (6, 0)]
-            Posición: [(0, 6)]
+            Posiciï¿½n: [(0, 6)]
             Tablero:
             [1 1 0 0 0 0 4 1]
             [1 0 0 0 0 0 0 1]
@@ -4337,7 +4337,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(0, 6)]
-            Posición: [(0, 6)]
+            Posiciï¿½n: [(0, 6)]
             Tablero:
             [1 1 0 0 0 0 4 1]
             [1 0 0 0 0 0 0 1]
@@ -4352,7 +4352,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(1, 7)]
-        Posición: [(4, 1)]
+        Posiciï¿½n: [(4, 1)]
         Tablero:
         [1 1 0 0 0 0 1 1]
         [1 0 0 0 0 0 0 4]
@@ -4367,7 +4367,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(1, 7)]
-            Posición: [(1, 7)]
+            Posiciï¿½n: [(1, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 4]
@@ -4382,7 +4382,7 @@ Tablero:
             Costo: 6
             Profundidad: 3
             No_Accesibles: [(1, 7), (3, 3)]
-            Posición: [(1, 7)]
+            Posiciï¿½n: [(1, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 4]
@@ -4397,7 +4397,7 @@ Tablero:
             Costo: 6
             Profundidad: 3
             No_Accesibles: [(1, 7), (5, 3)]
-            Posición: [(1, 7)]
+            Posiciï¿½n: [(1, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 4]
@@ -4412,7 +4412,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(1, 7)]
-            Posición: [(1, 7)]
+            Posiciï¿½n: [(1, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 4]
@@ -4427,7 +4427,7 @@ Tablero:
             Costo: 4
             Profundidad: 3
             No_Accesibles: [(1, 7), (6, 0)]
-            Posición: [(1, 7)]
+            Posiciï¿½n: [(1, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 4]
@@ -4442,7 +4442,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(1, 7)]
-            Posición: [(1, 7)]
+            Posiciï¿½n: [(1, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 4]
@@ -4457,7 +4457,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: []
-        Posición: [(4, 1)]
+        Posiciï¿½n: [(4, 1)]
         Tablero:
         [1 1 0 0 0 0 1 1]
         [1 0 0 0 0 0 0 1]
@@ -4472,7 +4472,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(3, 7)]
+            Posiciï¿½n: [(3, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -4487,7 +4487,7 @@ Tablero:
             Costo: 6
             Profundidad: 3
             No_Accesibles: [(3, 3)]
-            Posición: [(3, 7)]
+            Posiciï¿½n: [(3, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -4502,7 +4502,7 @@ Tablero:
             Costo: 6
             Profundidad: 3
             No_Accesibles: [(5, 3)]
-            Posición: [(3, 7)]
+            Posiciï¿½n: [(3, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -4517,7 +4517,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(3, 7)]
+            Posiciï¿½n: [(3, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -4532,7 +4532,7 @@ Tablero:
             Costo: 4
             Profundidad: 3
             No_Accesibles: [(6, 0)]
-            Posición: [(3, 7)]
+            Posiciï¿½n: [(3, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -4547,7 +4547,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(3, 7)]
+            Posiciï¿½n: [(3, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -4562,7 +4562,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: []
-        Posición: [(4, 1)]
+        Posiciï¿½n: [(4, 1)]
         Tablero:
         [1 1 0 0 0 0 1 1]
         [1 0 0 0 0 0 0 1]
@@ -4577,7 +4577,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(4, 6)]
+            Posiciï¿½n: [(4, 6)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -4592,7 +4592,7 @@ Tablero:
             Costo: 6
             Profundidad: 3
             No_Accesibles: [(3, 3)]
-            Posición: [(4, 6)]
+            Posiciï¿½n: [(4, 6)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -4607,7 +4607,7 @@ Tablero:
             Costo: 6
             Profundidad: 3
             No_Accesibles: [(5, 3)]
-            Posición: [(4, 6)]
+            Posiciï¿½n: [(4, 6)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -4622,7 +4622,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(4, 6)]
+            Posiciï¿½n: [(4, 6)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -4637,7 +4637,7 @@ Tablero:
             Costo: 4
             Profundidad: 3
             No_Accesibles: [(6, 0)]
-            Posición: [(4, 6)]
+            Posiciï¿½n: [(4, 6)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -4652,7 +4652,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(4, 6)]
+            Posiciï¿½n: [(4, 6)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -4667,7 +4667,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(3, 3)]
-        Posición: [(4, 1)]
+        Posiciï¿½n: [(4, 1)]
         Tablero:
         [1 1 0 0 0 0 1 1]
         [1 0 0 0 0 0 0 1]
@@ -4682,7 +4682,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 3)]
-            Posición: [(3, 3)]
+            Posiciï¿½n: [(3, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -4697,7 +4697,7 @@ Tablero:
             Costo: 6
             Profundidad: 3
             No_Accesibles: [(3, 3), (5, 3)]
-            Posición: [(3, 3)]
+            Posiciï¿½n: [(3, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -4712,7 +4712,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 3)]
-            Posición: [(3, 3)]
+            Posiciï¿½n: [(3, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -4727,7 +4727,7 @@ Tablero:
             Costo: 4
             Profundidad: 3
             No_Accesibles: [(3, 3), (6, 0)]
-            Posición: [(3, 3)]
+            Posiciï¿½n: [(3, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -4742,7 +4742,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(3, 3)]
-            Posición: [(3, 3)]
+            Posiciï¿½n: [(3, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -4757,7 +4757,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(4, 4)]
-        Posición: [(4, 1)]
+        Posiciï¿½n: [(4, 1)]
         Tablero:
         [1 1 0 0 0 0 1 1]
         [1 0 0 0 0 0 0 1]
@@ -4772,7 +4772,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 4)]
-            Posición: [(4, 4)]
+            Posiciï¿½n: [(4, 4)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -4787,7 +4787,7 @@ Tablero:
             Costo: 6
             Profundidad: 3
             No_Accesibles: [(4, 4), (3, 3)]
-            Posición: [(4, 4)]
+            Posiciï¿½n: [(4, 4)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -4802,7 +4802,7 @@ Tablero:
             Costo: 6
             Profundidad: 3
             No_Accesibles: [(4, 4), (5, 3)]
-            Posición: [(4, 4)]
+            Posiciï¿½n: [(4, 4)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -4817,7 +4817,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 4)]
-            Posición: [(4, 4)]
+            Posiciï¿½n: [(4, 4)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -4832,7 +4832,7 @@ Tablero:
             Costo: 4
             Profundidad: 3
             No_Accesibles: [(4, 4), (6, 0)]
-            Posición: [(4, 4)]
+            Posiciï¿½n: [(4, 4)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -4847,7 +4847,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(4, 4)]
-            Posición: [(4, 4)]
+            Posiciï¿½n: [(4, 4)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -4862,7 +4862,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: []
-        Posición: [(4, 1)]
+        Posiciï¿½n: [(4, 1)]
         Tablero:
         [1 1 0 0 0 0 1 1]
         [1 0 0 4 0 0 0 1]
@@ -4877,7 +4877,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(1, 3)]
+            Posiciï¿½n: [(1, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 4 0 0 0 1]
@@ -4892,7 +4892,7 @@ Tablero:
             Costo: 6
             Profundidad: 3
             No_Accesibles: [(3, 3)]
-            Posición: [(1, 3)]
+            Posiciï¿½n: [(1, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 4 0 0 0 1]
@@ -4907,7 +4907,7 @@ Tablero:
             Costo: 6
             Profundidad: 3
             No_Accesibles: [(5, 3)]
-            Posición: [(1, 3)]
+            Posiciï¿½n: [(1, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 4 0 0 0 1]
@@ -4922,7 +4922,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(1, 3)]
+            Posiciï¿½n: [(1, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 4 0 0 0 1]
@@ -4937,7 +4937,7 @@ Tablero:
             Costo: 4
             Profundidad: 3
             No_Accesibles: [(6, 0)]
-            Posición: [(1, 3)]
+            Posiciï¿½n: [(1, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 4 0 0 0 1]
@@ -4952,7 +4952,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(1, 3)]
+            Posiciï¿½n: [(1, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [1 0 0 4 0 0 0 1]
@@ -4967,7 +4967,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: []
-        Posición: [(4, 1)]
+        Posiciï¿½n: [(4, 1)]
         Tablero:
         [1 1 0 0 4 0 1 1]
         [1 0 0 0 0 0 0 1]
@@ -4982,7 +4982,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(0, 4)]
+            Posiciï¿½n: [(0, 4)]
             Tablero:
             [1 1 0 0 4 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -4997,7 +4997,7 @@ Tablero:
             Costo: 6
             Profundidad: 3
             No_Accesibles: [(3, 3)]
-            Posición: [(0, 4)]
+            Posiciï¿½n: [(0, 4)]
             Tablero:
             [1 1 0 0 4 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -5012,7 +5012,7 @@ Tablero:
             Costo: 6
             Profundidad: 3
             No_Accesibles: [(5, 3)]
-            Posición: [(0, 4)]
+            Posiciï¿½n: [(0, 4)]
             Tablero:
             [1 1 0 0 4 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -5027,7 +5027,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(0, 4)]
+            Posiciï¿½n: [(0, 4)]
             Tablero:
             [1 1 0 0 4 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -5042,7 +5042,7 @@ Tablero:
             Costo: 4
             Profundidad: 3
             No_Accesibles: [(6, 0)]
-            Posición: [(0, 4)]
+            Posiciï¿½n: [(0, 4)]
             Tablero:
             [1 1 0 0 4 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -5057,7 +5057,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: []
-            Posición: [(0, 4)]
+            Posiciï¿½n: [(0, 4)]
             Tablero:
             [1 1 0 0 4 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -5069,13 +5069,13 @@ Tablero:
             [1 1 0 0 0 0 1 1]
 ----------------------------------------
     Jugador: 4
-    Costo: 2
+    Costo: 1
     Profundidad: 1
-    No_Accesibles: [(1, 0)]
-    Posición: [(2, 5)]
+    No_Accesibles: []
+    Posiciï¿½n: [(2, 5)]
     Tablero:
     [1 1 0 0 0 0 1 1]
-    [3 0 0 0 0 0 0 1]
+    [1 0 0 0 0 0 0 1]
     [0 0 0 0 0 4 0 0]
     [0 0 0 2 2 0 0 0]
     [0 0 0 2 2 0 0 0]
@@ -5087,7 +5087,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(1, 0), (0, 6)]
-        Posición: [(1, 0)]
+        Posiciï¿½n: [(1, 0)]
         Tablero:
         [1 1 0 0 0 0 4 1]
         [3 0 0 0 0 0 0 1]
@@ -5102,7 +5102,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(1, 0), (0, 6)]
-            Posición: [(0, 6)]
+            Posiciï¿½n: [(0, 6)]
             Tablero:
             [1 1 3 0 0 0 4 1]
             [0 0 0 0 0 0 0 1]
@@ -5117,7 +5117,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(1, 0), (0, 6)]
-            Posición: [(0, 6)]
+            Posiciï¿½n: [(0, 6)]
             Tablero:
             [1 1 0 0 0 0 4 1]
             [0 0 0 0 0 0 0 1]
@@ -5132,7 +5132,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(1, 0), (0, 6)]
-            Posición: [(0, 6)]
+            Posiciï¿½n: [(0, 6)]
             Tablero:
             [1 1 0 0 0 0 4 1]
             [0 0 0 0 0 0 0 1]
@@ -5147,7 +5147,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(1, 0), (1, 7)]
-        Posición: [(1, 0)]
+        Posiciï¿½n: [(1, 0)]
         Tablero:
         [1 1 0 0 0 0 1 1]
         [3 0 0 0 0 0 0 4]
@@ -5162,7 +5162,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(1, 0), (1, 7)]
-            Posición: [(1, 7)]
+            Posiciï¿½n: [(1, 7)]
             Tablero:
             [1 1 3 0 0 0 1 1]
             [0 0 0 0 0 0 0 4]
@@ -5177,7 +5177,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(1, 0), (1, 7)]
-            Posición: [(1, 7)]
+            Posiciï¿½n: [(1, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [0 0 0 0 0 0 0 4]
@@ -5192,7 +5192,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(1, 0), (1, 7)]
-            Posición: [(1, 7)]
+            Posiciï¿½n: [(1, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [0 0 0 0 0 0 0 4]
@@ -5207,7 +5207,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(1, 0)]
-        Posición: [(1, 0)]
+        Posiciï¿½n: [(1, 0)]
         Tablero:
         [1 1 0 0 0 0 1 1]
         [3 0 0 0 0 0 0 1]
@@ -5222,7 +5222,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(1, 0)]
-            Posición: [(3, 7)]
+            Posiciï¿½n: [(3, 7)]
             Tablero:
             [1 1 3 0 0 0 1 1]
             [0 0 0 0 0 0 0 1]
@@ -5237,7 +5237,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(1, 0)]
-            Posición: [(3, 7)]
+            Posiciï¿½n: [(3, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [0 0 0 0 0 0 0 1]
@@ -5252,7 +5252,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(1, 0)]
-            Posición: [(3, 7)]
+            Posiciï¿½n: [(3, 7)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [0 0 0 0 0 0 0 1]
@@ -5267,7 +5267,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(1, 0)]
-        Posición: [(1, 0)]
+        Posiciï¿½n: [(1, 0)]
         Tablero:
         [1 1 0 0 0 0 1 1]
         [3 0 0 0 0 0 0 1]
@@ -5282,7 +5282,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(1, 0)]
-            Posición: [(4, 6)]
+            Posiciï¿½n: [(4, 6)]
             Tablero:
             [1 1 3 0 0 0 1 1]
             [0 0 0 0 0 0 0 1]
@@ -5297,7 +5297,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(1, 0)]
-            Posición: [(4, 6)]
+            Posiciï¿½n: [(4, 6)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [0 0 0 0 0 0 0 1]
@@ -5312,7 +5312,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(1, 0)]
-            Posición: [(4, 6)]
+            Posiciï¿½n: [(4, 6)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [0 0 0 0 0 0 0 1]
@@ -5327,7 +5327,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(1, 0), (3, 3)]
-        Posición: [(1, 0)]
+        Posiciï¿½n: [(1, 0)]
         Tablero:
         [1 1 0 0 0 0 1 1]
         [3 0 0 0 0 0 0 1]
@@ -5342,7 +5342,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(1, 0), (3, 3)]
-            Posición: [(3, 3)]
+            Posiciï¿½n: [(3, 3)]
             Tablero:
             [1 1 3 0 0 0 1 1]
             [0 0 0 0 0 0 0 1]
@@ -5357,7 +5357,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(1, 0), (3, 3)]
-            Posición: [(3, 3)]
+            Posiciï¿½n: [(3, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [0 0 0 0 0 0 0 1]
@@ -5372,7 +5372,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(1, 0), (3, 3)]
-            Posición: [(3, 3)]
+            Posiciï¿½n: [(3, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [0 0 0 0 0 0 0 1]
@@ -5387,7 +5387,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(1, 0), (4, 4)]
-        Posición: [(1, 0)]
+        Posiciï¿½n: [(1, 0)]
         Tablero:
         [1 1 0 0 0 0 1 1]
         [3 0 0 0 0 0 0 1]
@@ -5402,7 +5402,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(1, 0), (4, 4)]
-            Posición: [(4, 4)]
+            Posiciï¿½n: [(4, 4)]
             Tablero:
             [1 1 3 0 0 0 1 1]
             [0 0 0 0 0 0 0 1]
@@ -5417,7 +5417,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(1, 0), (4, 4)]
-            Posición: [(4, 4)]
+            Posiciï¿½n: [(4, 4)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [0 0 0 0 0 0 0 1]
@@ -5432,7 +5432,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(1, 0), (4, 4)]
-            Posición: [(4, 4)]
+            Posiciï¿½n: [(4, 4)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [0 0 0 0 0 0 0 1]
@@ -5447,7 +5447,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(1, 0)]
-        Posición: [(1, 0)]
+        Posiciï¿½n: [(1, 0)]
         Tablero:
         [1 1 0 0 0 0 1 1]
         [3 0 0 4 0 0 0 1]
@@ -5462,7 +5462,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(1, 0)]
-            Posición: [(1, 3)]
+            Posiciï¿½n: [(1, 3)]
             Tablero:
             [1 1 3 0 0 0 1 1]
             [0 0 0 4 0 0 0 1]
@@ -5477,7 +5477,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(1, 0)]
-            Posición: [(1, 3)]
+            Posiciï¿½n: [(1, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [0 0 0 4 0 0 0 1]
@@ -5492,7 +5492,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(1, 0)]
-            Posición: [(1, 3)]
+            Posiciï¿½n: [(1, 3)]
             Tablero:
             [1 1 0 0 0 0 1 1]
             [0 0 0 4 0 0 0 1]
@@ -5507,7 +5507,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(1, 0)]
-        Posición: [(1, 0)]
+        Posiciï¿½n: [(1, 0)]
         Tablero:
         [1 1 0 0 4 0 1 1]
         [3 0 0 0 0 0 0 1]
@@ -5522,7 +5522,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(1, 0)]
-            Posición: [(0, 4)]
+            Posiciï¿½n: [(0, 4)]
             Tablero:
             [1 1 3 0 4 0 1 1]
             [0 0 0 0 0 0 0 1]
@@ -5537,7 +5537,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(1, 0)]
-            Posición: [(0, 4)]
+            Posiciï¿½n: [(0, 4)]
             Tablero:
             [1 1 0 0 4 0 1 1]
             [0 0 0 0 0 0 0 1]
@@ -5552,7 +5552,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(1, 0)]
-            Posición: [(0, 4)]
+            Posiciï¿½n: [(0, 4)]
             Tablero:
             [1 1 0 0 4 0 1 1]
             [0 0 0 0 0 0 0 1]
@@ -5566,14 +5566,44 @@ Tablero:
     Jugador: 4
     Costo: 2
     Profundidad: 1
-    No_Accesibles: [(0, 1)]
-    Posición: [(2, 5)]
+    No_Accesibles: [(7, 1)]
+    Posiciï¿½n: [(2, 5)]
     Tablero:
-    [1 3 0 0 0 0 1 1]
+    [1 1 0 0 0 0 1 1]
     [1 0 0 0 0 0 0 1]
     [0 0 0 0 0 4 0 0]
     [0 0 0 2 2 0 0 0]
     [0 0 0 2 2 0 0 0]
+    [0 0 0 2 0 0 0 0]
+    [1 0 0 0 0 0 0 1]
+    [1 3 0 0 0 0 1 1]
+----------------------------------------
+    Jugador: 4
+    Costo: 1
+    Profundidad: 1
+    No_Accesibles: []
+    Posiciï¿½n: [(2, 5)]
+    Tablero:
+    [1 1 0 0 0 0 1 1]
+    [1 0 0 0 0 0 0 1]
+    [0 0 0 0 0 4 0 0]
+    [0 0 0 2 2 0 0 0]
+    [0 0 0 2 2 0 0 0]
+    [0 3 0 2 0 0 0 0]
+    [1 0 0 0 0 0 0 1]
+    [1 1 0 0 0 0 1 1]
+----------------------------------------
+    Jugador: 4
+    Costo: 1
+    Profundidad: 1
+    No_Accesibles: []
+    Posiciï¿½n: [(2, 5)]
+    Tablero:
+    [1 1 0 0 0 0 1 1]
+    [1 0 0 0 0 0 0 1]
+    [0 0 0 0 0 4 0 0]
+    [0 0 0 2 2 0 0 0]
+    [0 0 3 2 2 0 0 0]
     [0 0 0 2 0 0 0 0]
     [1 0 0 0 0 0 0 1]
     [1 1 0 0 0 0 1 1]
@@ -5582,7 +5612,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(0, 1), (0, 6)]
-        Posición: [(0, 1)]
+        Posiciï¿½n: [(0, 1)]
         Tablero:
         [1 3 0 0 0 0 4 1]
         [1 0 0 0 0 0 0 1]
@@ -5597,7 +5627,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(0, 1), (0, 6)]
-            Posición: [(0, 6)]
+            Posiciï¿½n: [(0, 6)]
             Tablero:
             [1 0 0 0 0 0 4 1]
             [1 0 0 3 0 0 0 1]
@@ -5612,7 +5642,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(0, 1), (0, 6)]
-            Posición: [(0, 6)]
+            Posiciï¿½n: [(0, 6)]
             Tablero:
             [1 0 0 0 0 0 4 1]
             [1 0 0 0 0 0 0 1]
@@ -5627,7 +5657,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(0, 1), (0, 6)]
-            Posición: [(0, 6)]
+            Posiciï¿½n: [(0, 6)]
             Tablero:
             [1 0 0 0 0 0 4 1]
             [1 0 0 0 0 0 0 1]
@@ -5642,7 +5672,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(0, 1), (1, 7)]
-        Posición: [(0, 1)]
+        Posiciï¿½n: [(0, 1)]
         Tablero:
         [1 3 0 0 0 0 1 1]
         [1 0 0 0 0 0 0 4]
@@ -5657,7 +5687,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(0, 1), (1, 7)]
-            Posición: [(1, 7)]
+            Posiciï¿½n: [(1, 7)]
             Tablero:
             [1 0 0 0 0 0 1 1]
             [1 0 0 3 0 0 0 4]
@@ -5672,7 +5702,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(0, 1), (1, 7)]
-            Posición: [(1, 7)]
+            Posiciï¿½n: [(1, 7)]
             Tablero:
             [1 0 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 4]
@@ -5687,7 +5717,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(0, 1), (1, 7)]
-            Posición: [(1, 7)]
+            Posiciï¿½n: [(1, 7)]
             Tablero:
             [1 0 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 4]
@@ -5702,7 +5732,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(0, 1)]
-        Posición: [(0, 1)]
+        Posiciï¿½n: [(0, 1)]
         Tablero:
         [1 3 0 0 0 0 1 1]
         [1 0 0 0 0 0 0 1]
@@ -5717,7 +5747,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(0, 1)]
-            Posición: [(3, 7)]
+            Posiciï¿½n: [(3, 7)]
             Tablero:
             [1 0 0 0 0 0 1 1]
             [1 0 0 3 0 0 0 1]
@@ -5732,7 +5762,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(0, 1)]
-            Posición: [(3, 7)]
+            Posiciï¿½n: [(3, 7)]
             Tablero:
             [1 0 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -5747,7 +5777,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(0, 1)]
-            Posición: [(3, 7)]
+            Posiciï¿½n: [(3, 7)]
             Tablero:
             [1 0 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -5762,7 +5792,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(0, 1)]
-        Posición: [(0, 1)]
+        Posiciï¿½n: [(0, 1)]
         Tablero:
         [1 3 0 0 0 0 1 1]
         [1 0 0 0 0 0 0 1]
@@ -5777,7 +5807,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(0, 1)]
-            Posición: [(4, 6)]
+            Posiciï¿½n: [(4, 6)]
             Tablero:
             [1 0 0 0 0 0 1 1]
             [1 0 0 3 0 0 0 1]
@@ -5792,7 +5822,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(0, 1)]
-            Posición: [(4, 6)]
+            Posiciï¿½n: [(4, 6)]
             Tablero:
             [1 0 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -5807,7 +5837,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(0, 1)]
-            Posición: [(4, 6)]
+            Posiciï¿½n: [(4, 6)]
             Tablero:
             [1 0 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -5822,7 +5852,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(0, 1), (3, 3)]
-        Posición: [(0, 1)]
+        Posiciï¿½n: [(0, 1)]
         Tablero:
         [1 3 0 0 0 0 1 1]
         [1 0 0 0 0 0 0 1]
@@ -5837,7 +5867,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(0, 1), (3, 3)]
-            Posición: [(3, 3)]
+            Posiciï¿½n: [(3, 3)]
             Tablero:
             [1 0 0 0 0 0 1 1]
             [1 0 0 3 0 0 0 1]
@@ -5852,7 +5882,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(0, 1), (3, 3)]
-            Posición: [(3, 3)]
+            Posiciï¿½n: [(3, 3)]
             Tablero:
             [1 0 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -5867,7 +5897,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(0, 1), (3, 3)]
-            Posición: [(3, 3)]
+            Posiciï¿½n: [(3, 3)]
             Tablero:
             [1 0 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -5882,7 +5912,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(0, 1), (4, 4)]
-        Posición: [(0, 1)]
+        Posiciï¿½n: [(0, 1)]
         Tablero:
         [1 3 0 0 0 0 1 1]
         [1 0 0 0 0 0 0 1]
@@ -5897,7 +5927,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(0, 1), (4, 4)]
-            Posición: [(4, 4)]
+            Posiciï¿½n: [(4, 4)]
             Tablero:
             [1 0 0 0 0 0 1 1]
             [1 0 0 3 0 0 0 1]
@@ -5912,7 +5942,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(0, 1), (4, 4)]
-            Posición: [(4, 4)]
+            Posiciï¿½n: [(4, 4)]
             Tablero:
             [1 0 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -5927,7 +5957,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(0, 1), (4, 4)]
-            Posición: [(4, 4)]
+            Posiciï¿½n: [(4, 4)]
             Tablero:
             [1 0 0 0 0 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -5942,7 +5972,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(0, 1)]
-        Posición: [(0, 1)]
+        Posiciï¿½n: [(0, 1)]
         Tablero:
         [1 3 0 0 0 0 1 1]
         [1 0 0 4 0 0 0 1]
@@ -5957,7 +5987,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(0, 1)]
-            Posición: [(1, 3)]
+            Posiciï¿½n: [(1, 3)]
             Tablero:
             [1 0 0 0 0 0 1 1]
             [1 0 0 4 0 0 0 1]
@@ -5972,7 +6002,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(0, 1)]
-            Posición: [(1, 3)]
+            Posiciï¿½n: [(1, 3)]
             Tablero:
             [1 0 0 0 0 0 1 1]
             [1 0 0 4 0 0 0 1]
@@ -5987,7 +6017,7 @@ Tablero:
         Costo: 2
         Profundidad: 2
         No_Accesibles: [(0, 1)]
-        Posición: [(0, 1)]
+        Posiciï¿½n: [(0, 1)]
         Tablero:
         [1 3 0 0 4 0 1 1]
         [1 0 0 0 0 0 0 1]
@@ -6002,7 +6032,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(0, 1)]
-            Posición: [(0, 4)]
+            Posiciï¿½n: [(0, 4)]
             Tablero:
             [1 0 0 0 4 0 1 1]
             [1 0 0 3 0 0 0 1]
@@ -6017,7 +6047,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(0, 1)]
-            Posición: [(0, 4)]
+            Posiciï¿½n: [(0, 4)]
             Tablero:
             [1 0 0 0 4 0 1 1]
             [1 0 0 0 0 0 0 1]
@@ -6032,7 +6062,7 @@ Tablero:
             Costo: 3
             Profundidad: 3
             No_Accesibles: [(0, 1)]
-            Posición: [(0, 4)]
+            Posiciï¿½n: [(0, 4)]
             Tablero:
             [1 0 0 0 4 0 1 1]
             [1 0 0 0 0 0 0 1]

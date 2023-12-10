@@ -7,10 +7,10 @@ import sys
 #creacion del tablero principal
 matriz = np.array([[1,1,0,0,0,0,1,1],
                   [1,0,0,0,0,0,0,1],
-                  [0,0,3,0,0,4,0,0],
+                  [0,0,0,0,0,0,0,0],
                   [0,0,0,2,2,0,0,0],
                   [0,0,0,2,2,0,0,0],
-                  [0,0,0,2,0,0,0,0],
+                  [0,0,0,0,0,0,0,0],
                   [1,0,0,0,0,0,0,1],
                   [1,1,0,0,0,0,1,1]])
 
@@ -24,13 +24,40 @@ def Encontrar_Posicion(id,tablero):
   
   return lista_posiciones
 
-posicion_M = Encontrar_Posicion(3,matriz)
-posicion_J = Encontrar_Posicion(4,matriz)
+#  def lista de posiciones en 0 en el tablero
+def Encontrar_Posicion_0(tablero):
+  lista_posiciones = []
+  for i, fila in enumerate(tablero):
+    for j, columna in enumerate(fila):
+      if columna == 0:
+        lista_posiciones.append((i,j))
+  
+  return lista_posiciones
+
+def actualizar_matriz(matriz, posicion_M, posicion_J):
+    matriz[posicion_M[0]][posicion_M[1]] = 3
+    matriz[posicion_J[0]][posicion_J[1]] = 4
+
+    return matriz
+
+
+posiciones_vacias = Encontrar_Posicion_0(matriz)
+posicion_M = random.choice(posiciones_vacias)
+print(posicion_M)
+posicion_J = random.choice(posiciones_vacias)
+print(posicion_J)
+
 posicion_Monedas = Encontrar_Posicion(1,matriz)
 posicion_Especiales = Encontrar_Posicion(2,matriz)
 
+# Asegurarse de que las posiciones sean diferentes
+while posicion_M == posicion_J:
+    posicion_J = random.choice(posiciones_vacias)
+
 #con esto se controla el listado de posiciones disponibles para los jugadores
 posiciones_No_Accesibles = []
+
+matriz = actualizar_matriz(matriz, posicion_M, posicion_J)
 
 #se crea el nodo padre que seria cuando el juego comienza con:
     #Turno = Maquina = 3
@@ -38,7 +65,7 @@ posiciones_No_Accesibles = []
     #valor = 0 = heuristica
     #posicion = posicionMaquina
     #contrincante = posicionjugador
-nodo_inicial = Nodo(3, matriz,0,0, posicion_M,posicion_J,posiciones_No_Accesibles)
+nodo_inicial = Nodo(3, matriz, 0, 0, [posicion_M], [posicion_J], posiciones_No_Accesibles)
 
 #posiblesmovimientos verifica que movimientos puede realizar el jugador
 #retorna una lista de los mismos
