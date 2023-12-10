@@ -184,7 +184,6 @@ def nroMovimientos(posicionInicial, posicionObjetivo):
 
     # Desempaquetar posiciones iniciales y objetivos
     xInicial, yInicial = posicionInicial
-    print(posicionObjetivo)
     xObjetivo, yObjetivo = posicionObjetivo
 
     # Verificar si las posiciones iniciales y objetivos son validas
@@ -220,19 +219,31 @@ def heuristica(nodo, monedas, monedasEspeciales):
 
     # Calcular la distancia minima desde la posicion del jugador 1 hasta cada moneda
     for moneda in monedas:
-        valorUtilidad += 1 / nroMovimientos(nodo.posicion_J1, moneda)
+        if moneda == 0:
+            None
+        else:
+            valorUtilidad += 1 / nroMovimientos(nodo.posicion_J1, moneda)
 
     # Calcular la distancia minima desde la posicion del jugador 1 hasta cada moneda especial
     for monedaEspecial in monedasEspeciales:
-        valorUtilidad += 3 / nroMovimientos(nodo.posicion_J1, monedaEspecial)
+        if monedaEspecial == 0:
+            None
+        else:
+            valorUtilidad += 3 / nroMovimientos(nodo.posicion_J1, monedaEspecial)
 
     # Calcular la distancia minima desde la posicion del jugador 2 hasta cada moneda
     for moneda in monedas:
-        valorUtilidad -= 1 / nroMovimientos(nodo.posicion_J2, moneda)
+        if moneda == 0:
+            None
+        else:
+            valorUtilidad -= 1 / nroMovimientos(nodo.posicion_J2, moneda)
 
     # Calcular la distancia minima desde la posicion del jugador 2 hasta cada moneda especial
     for monedaEspecial in monedasEspeciales:
-        valorUtilidad -= 3 / nroMovimientos(nodo.posicion_J2, monedaEspecial)
+        if monedaEspecial == 0:
+            None
+        else:
+            valorUtilidad -= 3 / nroMovimientos(nodo.posicion_J2, monedaEspecial)
 
     return valorUtilidad
 
