@@ -17,9 +17,9 @@ class Nodo:
         self.hijos = hijos if hijos is not None else []
         
         if tipoNodo == "Max":
-            self.valor = float("-inf")
+            self.valor = -10000
         elif tipoNodo == "Min":
-            self.valor == float("inf")
+            self.valor == 10000
 
 
 
