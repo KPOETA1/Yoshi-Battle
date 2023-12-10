@@ -100,7 +100,7 @@ class GameState:
         self.turn = 1
         self.clicked = False
         self.playing = False
-        self.is_especial = False
+        self.is_special = False
         self.depth = 0
         self.dropdown = DropDown(
          [(85, 85, 85), (149, 149, 149)],
@@ -160,12 +160,14 @@ class GameState:
     def check_moves(self, move, coins, special_coins):
         for index, point in enumerate(coins):
             if point == move:
-                self.is_especial = False
+                self.is_special = False
+                print('chequea no especial', self.is_special)
                 return index
 
         for index, point in enumerate(special_coins):
             if point == move:
                 self.is_special = True
+                print('chequea especial', self.is_special)
                 return index
 
         return None
@@ -178,30 +180,34 @@ class GameState:
 
         if x - 1 >= 0 and x - 1 <= 7:
             if y - 2 >= 0 and y - 2 <= 7:
-                print('x-1, y-2')
                 if positionIA != (x - 1, y - 2):
-                    print('diferente a IA')
-                    for pos in position_blocked:
-                        if pos != (x - 1, y - 2):
-                            available = True
-                            print(available)
+                    if not position_blocked:
+                        available = True
+                    else:
+                        for pos in position_blocked:
+                            if pos != (x - 1, y - 2):
+                                available = True
+                                print(available)
 
-                        else:
-                            available = False
-                            print(available)
-                            break
+                            else:
+                                available = False
+                                print(available)
+                                break
 
                     if available:
                         moves.append((x - 1, y - 2))
 
             if y + 2 >= 0 and y + 2 <= 7:
                 if positionIA != (x - 1, y + 2):
-                    for pos in position_blocked:
-                        if pos != (x - 1, y + 2):
-                            available = True
-                        else:
-                            available = False
-                            break
+                    if not position_blocked:
+                        available = True
+                    else:
+                        for pos in position_blocked:
+                            if pos != (x - 1, y + 2):
+                                available = True
+                            else:
+                                available = False
+                                break
 
                     if available:
                         moves.append((x - 1, y + 2))
@@ -209,24 +215,30 @@ class GameState:
         if x + 1 >= 0 and x + 1 <= 7:
             if y - 2 >= 0 and y - 2 <= 7:
                 if positionIA != (x + 1, y - 2):
-                    for pos in position_blocked:
-                        if pos != (x + 1, y - 2):
-                            available = True
-                        else:
-                            available = False
-                            break
+                    if not position_blocked:
+                        available = True
+                    else:
+                        for pos in position_blocked:
+                            if pos != (x + 1, y - 2):
+                                available = True
+                            else:
+                                available = False
+                                break
 
                     if available:
                         moves.append((x + 1, y - 2))
 
             if y + 2 >= 0 and y + 2 <= 7:
                 if positionIA != (x + 1, y + 2):
-                    for pos in position_blocked:
-                        if pos != (x + 1, y + 2):
-                            available = True
-                        else:
-                            available = False
-                            break
+                    if not position_blocked:
+                        available = True
+                    else:
+                        for pos in position_blocked:
+                            if pos != (x + 1, y + 2):
+                                available = True
+                            else:
+                                available = False
+                                break
 
                     if available:
                         moves.append((x + 1, y + 2))
@@ -234,23 +246,29 @@ class GameState:
         if x - 2 >= 0 and x - 2 <= 7:
             if y - 1 >= 0 and y - 1 <= 7:
                 if positionIA != (x - 2, y - 1):
-                    for pos in position_blocked:
-                        if pos != (x - 2, y - 1):
-                            available = True
-                        else:
-                            available = False
-                            break
+                    if not position_blocked:
+                        available = True
+                    else:
+                        for pos in position_blocked:
+                            if pos != (x - 2, y - 1):
+                                available = True
+                            else:
+                                available = False
+                                break
 
                     if available:
                         moves.append((x - 2, y - 1))
 
             if y + 1 >= 0 and y + 1 <= 7:
                 if positionIA != (x - 2, y + 1):
-                    for pos in position_blocked:
-                        if pos != (x - 2, y + 1):
-                            available = True
-                        else:
-                            available = False
+                    if not position_blocked:
+                        available = True
+                    else:
+                        for pos in position_blocked:
+                            if pos != (x - 2, y + 1):
+                                available = True
+                            else:
+                                available = False
 
                     if available:
                         moves.append((x - 2, y + 1))
@@ -258,29 +276,35 @@ class GameState:
         if x + 2 >= 0 and x + 2 <= 7:
             if y - 1 >= 0 and y - 1 <= 7:
                 if positionIA != (x + 2, y - 1):
-                    for pos in position_blocked:
-                        if pos != (x + 2, y - 1):
-                            available = True
-                        else:
-                            available = False
-                            break
+                    if not position_blocked:
+                        available = True
+                    else:
+                        for pos in position_blocked:
+                            if pos != (x + 2, y - 1):
+                                available = True
+                            else:
+                                available = False
+                                break
 
                     if available:
                         moves.append((x + 2, y - 1))
 
             if y + 1 >= 0 and y + 1 <= 7:
                 if positionIA != (x + 2, y + 1):
-                    for pos in position_blocked:
-                        if pos != (x + 2, y + 1):
-                            available = True
-                        else:
-                            available = False
-                            break
+                    if not position_blocked:
+                        available = True
+                    else:
+                        for pos in position_blocked:
+                            if pos != (x + 2, y + 1):
+                                available = True
+                            else:
+                                available = False
+                                break
 
                     if available:
                         moves.append((x + 2, y + 1))
 
-        print(moves)
+        print('lista de posibles movimientos ', moves)
 
         return moves
 
@@ -339,7 +363,7 @@ class GameState:
                 if self.PLAYER1_POS[0] * CELL_WIDTH + 340 <= x <= self.PLAYER1_POS[0] * CELL_WIDTH + 340 + CELL_WIDTH and \
                         self.PLAYER1_POS[1] * CELL_HEIGHT + 60 <= y <= self.PLAYER1_POS[1] * CELL_HEIGHT + 60 + CELL_HEIGHT:
                     self.clicked = self.clicked ^ True
-                    print(self.clicked)
+                    print('el clic: ', self.clicked)
 
                 # If the players clicks a green cell
                 if self.clicked and self.turn == 1:
@@ -349,23 +373,30 @@ class GameState:
                         if move != 0:
                             POS_I = move[0] * CELL_WIDTH + 340
                             POS_J = move[1] * CELL_HEIGHT + 60
-                            print(POS_J, POS_I)
+                            print('posiciones en el tablero ', POS_I, POS_J)
+                            print('movimiento actual ', move)
 
                             if POS_I <= x <= POS_I + CELL_WIDTH and POS_J <= y <= POS_J + CELL_HEIGHT:
+                                print('No se que es esta monda')
                                 # Checks if the move gives points
                                 index = self.check_moves(move, self.COIN_POS, self.SPECIAL_COINS_POS)
 
                                 if index != None:
-                                    if self.is_especial == False:
+                                    if not self.is_special:
                                         self.PLAYER1_SCORE += 1
                                         self.blocked_cells.append(self.COIN_POS[index])
                                         self.COIN_POS[index] = 0
-                                    elif self.is_especial == True:
+                                        print('No es especial', self.is_special)
+                                        print(self.blocked_cells)
+                                    elif self.is_special:
+                                        print('es especial', self.is_special)
                                         self.PLAYER1_SCORE += 3
                                         self.blocked_cells.append(self.SPECIAL_COINS_POS[index])
                                         self.SPECIAL_COINS_POS[index] = 0
 
                                 self.PLAYER1_POS = move
+                                print(move)
+                                print(POS_I, POS_J)
                                 self.clicked = False
 
                                 self.turn = 2
@@ -382,6 +413,14 @@ class GameState:
                 else:
                     pyg.draw.rect(screen, (65, 60, 55), rect)  # Dibuja el cuadro negro
 
+                for pos in self.COIN_POS:
+                    if (i, j) == pos:
+                        screen.blit(coin, (POS_I + 340, POS_J + 60))
+
+                for pos in self.SPECIAL_COINS_POS:
+                    if (i, j) == pos:
+                        screen.blit(special_coin, (POS_I + 340, POS_J + 60))
+
                 for pos in self.blocked_cells:
                     if (i, j) == pos:
                         screen.blit(blocked_cell, (POS_I + 340, POS_J + 60))
@@ -390,14 +429,6 @@ class GameState:
                     screen.blit(yoship, (POS_I + 345, POS_J + 65))
                 elif (i, j) == self.PLAYER2_POS:
                     screen.blit(yoshiIA, (POS_I + 345, POS_J + 65))
-
-                for pos in self.COIN_POS:
-                    if (i, j) == pos:
-                        screen.blit(coin, (POS_I + 340, POS_J + 60))
-
-                for pos in self.SPECIAL_COINS_POS:
-                    if (i, j) == pos:
-                        screen.blit(special_coin, (POS_I + 340, POS_J + 60))
 
                 pyg.draw.rect(screen, (0, 0, 0), rect, 1)  # Dibuja el borde negro
 
