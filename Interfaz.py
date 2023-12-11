@@ -1,10 +1,10 @@
 import pygame as pyg, sys, os
+import spritesheet
 
 import chichenol
 from button import Button
 from dropdown import DropDown
 from utils import *
-from chichenol import minimax
 
 # Initializers
 pyg.init()
@@ -41,6 +41,20 @@ yoship_path = os.path.join(main_path, "Sprites", "yoship1.png")
 yoshiIA_path = os.path.join(main_path, "Sprites", "yoship2.png")
 icon_path = os.path.join(main_path, "Assets", "Yoshi_egg.png")
 font_path = os.path.join(main_path, "Fonts", "wayoshi.ttf")
+green_path = os.path.join(main_path, "Sprites", "Green Yoshi")
+red_path = os.path.join(main_path, "Sprites", "Red Yoshi")
+yellow_path = os.path.join(main_path, "Sprites", "Yellow Yoshi")
+blue_path = os.path.join(main_path, "Sprites", "Blue Yoshi")
+cyan_path = os.path.join(main_path, "Sprites", "Cyan Yoshi")
+purple_path = os.path.join(main_path, "Sprites", "Purple Yoshi")
+lavender_path = os.path.join(main_path, "Sprites", "Lavender Yoshi")
+orange_path = os.path.join(main_path, "Sprites", "Orange Yoshi")
+pink_path = os.path.join(main_path, "Sprites", "Pink Yoshi")
+white_path = os.path.join(main_path, "Sprites", "White Yoshi")
+black_path = os.path.join(main_path, "Sprites", "Black Yoshi")
+
+# Sprite sheets paths
+g_idle_path =  os.path.join(green_path, '')
 
 # Music and sound effects paths
 main_theme = os.path.join(main_path, "Music", "main theme.mp3")
@@ -380,6 +394,34 @@ class GameState:
         self.yoshiIA_rect = yoshiIA.get_rect()
 
         self.PLAYER1_POS, self.PLAYER2_POS, self.COIN_POS, self.SPECIAL_COINS_POS = init_game()
+
+        # Animation variables:
+        self.animation_cooldown = 500
+        self.frame = 0
+        self.last_update = pyg.time.get_ticks()
+
+        # Paths
+        self.player_idle_path = os.path.join(red_path, 'idle.png')
+        self.ia_idle_path = os.path.join(green_path, 'idle.png')
+
+        # Sprite Sheets
+        self.player_sprite_load = pyg.image.load(self.player_idle_path)
+        self.player_sprite = spritesheet.SpriteSheet(self.player_sprite_load)
+        self.ia_sprite_load = pyg.image.load(self.ia_idle_path)
+        self.ia_sprite = spritesheet.SpriteSheet(self.ia_sprite_load)
+
+
+        # Animation lists
+        self.player_idle_list = []
+        self.ia_idle_list = []
+
+        self.animation_list_create(self.player_idle_list, 5, self.player_sprite)
+        self.animation_list_create(self.ia_idle_list, 5, self.ia_sprite)
+
+    def animation_list_create(self, list, steps, image):
+        for i in range(steps):
+            list.append(image.get_image(i, 75, 75, 1, (0, 0, 0)))
+
 
     def result(self):
         mouse_pos = pyg.mouse.get_pos()
@@ -777,9 +819,9 @@ class GameState:
                         screen.blit(blocked_cell, (POS_I + 340, POS_J + 60))
 
                 if (i, j) == self.PLAYER1_POS:
-                    screen.blit(yoship, (POS_I + 345, POS_J + 65))
+                    screen.blit(self.player_idle_list[self.frame], (POS_I + 345, POS_J + 65))
                 elif (i, j) == self.PLAYER2_POS:
-                    screen.blit(yoshiIA, (POS_I + 345, POS_J + 65))
+                    screen.blit(yoship, (POS_I + 345, POS_J + 65))
 
                 pyg.draw.rect(screen, (0, 0, 0), rect, 1)  # Draw the black lines
 
@@ -788,14 +830,14 @@ class GameState:
         rect1 = pyg.Rect(20, 60, 300, 200)
         pyg.draw.rect(screen, (65, 60, 55), rect1, 0, 25, 25)
         # Image
-        screen.blit(yoship, (40, 80))
+        screen.blit(yoshiIA, (40, 80))
         draw_text(200, 115, "Player 1", "White", screen)  # Texto
 
         # Player 2 card
         rect2 = pyg.Rect(960, 60, 300, 200)
         pyg.draw.rect(screen, (65, 60, 55), rect2, 0, 25, 25)
         # Image
-        screen.blit(yoshiIA, (980, 80))
+        screen.blit(yoship, (980, 80))
         draw_text(1140, 115, "Player 2", "White", screen)  # Texto
 
         # Texts
