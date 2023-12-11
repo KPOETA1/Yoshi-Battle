@@ -97,6 +97,248 @@ clock = pyg.time.Clock()
 play_button = Button(egg_button, (170, 150), screen)
 credits_button = Button(egg_button, (170, 400), screen)
 
+#credits
+text_list = [
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    "Trabajo Hecho por:",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    "Daniel Rosero (Tuki Dan)",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    "Geider Andres Montano (El yoshi negro)",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    "Deison Aleixer Cardona (Salsa-man)",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    "Mateo Duque (El verdadero Yoshi goddo)",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    "Guion de juego por:",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    "El profe Oscar",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    "Heuristica:",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    "Daniel Rosero -La mente maestra-",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    "Geider Andres -El que le mete clean-",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    "Deison Aleixer -El que le dio cabeza un dia entero-",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    "Mateo Duque -El que nomas aseguro la compatibilidad con la UI-",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    "Diseno de interfaz:"
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    "Daniel Rosero -El que canta la musiquita-",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    "Geider Andres -El que le queria meter mano-",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    "Deison Aleixer -Con bendicion-",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    "Mateo Duque -El hombre interfaz-",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    "Con la colaboracion especial de:",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    "Chsotoy -El que produce solo-"
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    "GRACIAS POR JUGAR!",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+]
+
+credits_font = pyg.font.Font(font_path, 30)
+# create credits texts and their rects
+text_objects = [credits_font.render(line, True, (0, 0, 0)) for line in text_list]
+text_rects = [text_obj.get_rect(center=(WIDTH // 2, (i + 200) * (HEIGHT // (len(text_list) + 1)))) for i, text_obj
+              in enumerate(text_objects)]
+
 
 def play_music(music_path, play_count, volume):  # Music player
     pyg.mixer.music.load(music_path)
@@ -267,13 +509,11 @@ class GameState:
         for index, point in enumerate(coins):
             if point == move:
                 self.is_special = False
-                print('chequea no especial', self.is_special)
                 return index
 
         for index, point in enumerate(special_coins):
             if point == move:
                 self.is_special = True
-                print('chequea especial', self.is_special)
                 return index
 
         return None
@@ -293,11 +533,9 @@ class GameState:
                         for pos in position_blocked:
                             if pos != (x - 1, y - 2):
                                 available = True
-                                print(available)
 
                             else:
                                 available = False
-                                print(available)
                                 break
 
                     if available:
@@ -410,8 +648,6 @@ class GameState:
                     if available:
                         moves.append((x + 2, y + 1))
 
-        print('lista de posibles movimientos ', moves)
-
         return moves
 
     def play_game(self):
@@ -469,7 +705,6 @@ class GameState:
                 if self.PLAYER1_POS[0] * CELL_WIDTH + 340 <= x <= self.PLAYER1_POS[0] * CELL_WIDTH + 340 + CELL_WIDTH \
                         and self.PLAYER1_POS[1] * CELL_HEIGHT + 60 <= y <= self.PLAYER1_POS[1] * CELL_HEIGHT + 60 + CELL_HEIGHT:
                     self.clicked = self.clicked ^ True
-                    print('el clic: ', self.clicked)
 
                 # If the players clicks a green cell
                 if self.clicked and self.turn == 1:
@@ -479,11 +714,8 @@ class GameState:
                         if move != 0:
                             POS_I = move[0] * CELL_WIDTH + 340
                             POS_J = move[1] * CELL_HEIGHT + 60
-                            print('posiciones en el tablero ', POS_I, POS_J)
-                            print('movimiento actual ', move)
 
                             if POS_I <= x <= POS_I + CELL_WIDTH and POS_J <= y <= POS_J + CELL_HEIGHT:
-                                print('No se que es esta monda')
                                 # Checks if the move gives points
                                 index = self.check_moves(move, self.COIN_POS, self.SPECIAL_COINS_POS)
 
@@ -492,17 +724,12 @@ class GameState:
                                         self.PLAYER1_SCORE += 1
                                         self.blocked_cells.append(self.COIN_POS[index])
                                         self.COIN_POS[index] = 0
-                                        print('No es especial', self.is_special)
-                                        print(self.blocked_cells)
                                     elif self.is_special:
-                                        print('es especial', self.is_special)
                                         self.PLAYER1_SCORE += 3
                                         self.blocked_cells.append(self.SPECIAL_COINS_POS[index])
                                         self.SPECIAL_COINS_POS[index] = 0
 
                                 self.PLAYER1_POS = move
-                                print(move)
-                                print(POS_I, POS_J)
                                 self.clicked = False
 
                                 self.turn = 4
@@ -533,9 +760,9 @@ class GameState:
                 POS_J = j * CELL_HEIGHT
                 rect = pyg.Rect(POS_I + 340, POS_J + 60, CELL_WIDTH, CELL_HEIGHT)
                 if (i + j) % 2 == 0:
-                    pyg.draw.rect(screen, (240, 210, 185), rect)  # Dibuja el cuadro blanco
+                    pyg.draw.rect(screen, (240, 210, 185), rect)  # Draws the white square
                 else:
-                    pyg.draw.rect(screen, (65, 60, 55), rect)  # Dibuja el cuadro negro
+                    pyg.draw.rect(screen, (65, 60, 55), rect)  # Draws the black square
 
                 for pos in self.COIN_POS:
                     if (i, j) == pos:
@@ -554,29 +781,29 @@ class GameState:
                 elif (i, j) == self.PLAYER2_POS:
                     screen.blit(yoshiIA, (POS_I + 345, POS_J + 65))
 
-                pyg.draw.rect(screen, (0, 0, 0), rect, 1)  # Dibuja el borde negro
+                pyg.draw.rect(screen, (0, 0, 0), rect, 1)  # Draw the black lines
 
 
-        # Tarjeta del jugador 1
+        # Player 1 card
         rect1 = pyg.Rect(20, 60, 300, 200)
         pyg.draw.rect(screen, (65, 60, 55), rect1, 0, 25, 25)
-        # Imagen
+        # Image
         screen.blit(yoship, (40, 80))
         draw_text(200, 115, "Player 1", "White", screen)  # Texto
 
-        # Tarjeta del jugador 2
+        # Player 2 card
         rect2 = pyg.Rect(960, 60, 300, 200)
         pyg.draw.rect(screen, (65, 60, 55), rect2, 0, 25, 25)
-        # Imagen
+        # Image
         screen.blit(yoshiIA, (980, 80))
         draw_text(1140, 115, "Player 2", "White", screen)  # Texto
 
-        # Textos
+        # Texts
         draw_text(115, 200, "Points:", "White", screen)
         draw_text(80, 320, "Level:", "White", screen)
         draw_text(1065, 200, "Points:", "White", screen)
 
-        # Puntajes
+        # Scores
         draw_text(215, 200, str(self.PLAYER1_SCORE), "White", screen)
         draw_text(1165, 200, str(self.PLAYER2_SCORE), "White", screen)
 
@@ -615,16 +842,7 @@ class GameState:
     def credits(self):
         pyg.event.pump()
         font = pyg.font.Font(font_path, 50)
-
-        lines = [
-            "primera linea",
-            "Segunda lineaaa",
-            "Tercera lineaaa",
-            "Cuarta lineaaa",
-            "Quinta lineaaaaa"
-        ]
-
-
+        speed = 1
 
         for event in pyg.event.get():
             if event.type == pyg.QUIT:
@@ -644,19 +862,30 @@ class GameState:
             self.scale_speed = -self.scale_speed
         self.scale_factor += self.scale_speed
 
-        screen.blit(credits_background, credits_bg_rect)
+        for i in range(len(text_list)):
+            # Move text up
+            text_rects[i].y -= (speed + 1)
+
+            if text_rects[i].bottom < 360:
+                # Text Vanishing
+                alpha = text_objects[i].get_alpha()
+                if alpha > 0:
+                    text_objects[i].set_alpha(max(0, alpha - 3))
+
+            # Verify if text line is completely out of the screen
+            if text_rects[i].top <= 0:
+                # Position reset
+                text_rects[i].centerx = WIDTH // 2
+                text_rects[i].centery = HEIGHT - 50
+                # Transparency reset
+                text_objects[i].set_alpha(255)
+
+            screen.blit(credits_background, credits_bg_rect)
+
+        for i in range(len(text_list)):
+            screen.blit(text_objects[i], text_rects[i])
+
         screen.blit(scaled_logo, scaled_logo_rect)
-        text_objects = [
-            (font.render(line, True, (0, 255, 0)), (WIDTH // 2 - font.size(line)[0] // 2, HEIGHT + idx * 40))
-            for idx, line in enumerate(lines)]
-
-        for idx, (text, pos) in enumerate(text_objects):
-            pos = (pos[0], pos[1] - 2)
-
-            if pos[1] + text.get_height() < 0:
-                text_objects[idx] = (text, WIDTH // 2 - text.get_width() // 2, HEIGHT + (len(lines) - 1) * 40)
-            else:
-                screen.blit(text, pos)
 
         pyg.display.flip()
 
