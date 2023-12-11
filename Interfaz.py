@@ -35,6 +35,7 @@ special_coin_path = os.path.join(main_path, "Assets", "flower.png")
 blocked_cell_path = os.path.join(main_path, "Assets", "piranha.png")
 P1_victory_path = os.path.join(main_path, 'Assets', "P1 victory.png")
 P2_victory_path = os.path.join(main_path, 'Assets', "P2 victory.png")
+results_path = os.path.join(main_path, "Assets", "Results.jpg")
 tie_path = os.path.join(main_path, 'Assets', "Tie.png")
 yoship_path = os.path.join(main_path, "Sprites", "yoship1.png")
 yoshiIA_path = os.path.join(main_path, "Sprites", "yoship2.png")
@@ -46,12 +47,15 @@ main_theme = os.path.join(main_path, "Music", "main theme.mp3")
 gameplay_theme = os.path.join(main_path, "Music", "gameplay.mp3")
 credits_theme = os.path.join(main_path, "Music", "Credits.mp3")
 egg_pop_path = os.path.join(main_path, "Music", "Egg pop.mp3")
+P1_theme_path = os.path.join(main_path, "Music", "P1 Victory theme.mp3")
+P1_loose_path = os.path.join(main_path, "Music", "P1 looses.mp3")
 
 # Music and Sound initializers
 pyg.mixer.music.load(main_theme)
 pyg.mixer.music.play(-1)
 pyg.mixer.music.set_volume(0.5)
 egg_pop = pyg.mixer.Sound(egg_pop_path)
+P1_loose = pyg.mixer.Sound(P1_loose_path)
 
 # Background
 background = pyg.image.load(background_path)
@@ -59,6 +63,9 @@ background_rect = background.get_rect()
 
 credits_background = pyg.image.load(credits_bg_path)
 credits_bg_rect = credits_background.get_rect()
+
+results_background = pyg.image.load(results_path)
+results_bg_rect = results_background.get_rect()
 
 # Image Load
 logo = pyg.image.load(logo_path)
@@ -114,6 +121,7 @@ class GameState:
         self.playing = False
         self.is_special = False
         self.depth = 0
+        self.victory = ''
         self.dropdown = DropDown(
          [(85, 85, 85), (149, 149, 149)],
          [(85, 85, 85), (149, 149, 149)],
@@ -130,6 +138,84 @@ class GameState:
         self.yoshiIA_rect = yoshiIA.get_rect()
 
         self.PLAYER1_POS, self.PLAYER2_POS, self.COIN_POS, self.SPECIAL_COINS_POS = init_game()
+
+    def result(self):
+        mouse_pos = pyg.mouse.get_pos()
+        for event in pyg.event.get():
+            if event.type == pyg.QUIT:
+                pyg.quit()
+                sys.exit()
+            elif event.type == pyg.MOUSEMOTION:
+                self.menu_button.is_hovered(mouse_pos, pyg.image.load(menu_button_path))
+
+            if event.type == pyg.MOUSEBUTTONDOWN:
+                if self.menu_button.collider(mouse_pos):
+                    pyg.mixer.music.fadeout(2000)
+                    self.state = 'menu'
+                    play_music(main_theme, -1, 0.5)
+
+        screen.blit(results_background, results_bg_rect)
+        self.menu_button.draw()
+
+        # Player 1 Card
+        rect1 = pyg.Rect(20, 60, 300, 200)
+        pyg.draw.rect(screen, (65, 60, 55), rect1, 0, 25, 25)
+
+        # Image
+        screen.blit(yoship, (40, 80))
+        draw_text(200, 115, "Player 1", "White", screen)  # Text
+
+        # Player 2 Card
+        rect2 = pyg.Rect(960, 60, 300, 200)
+        pyg.draw.rect(screen, (65, 60, 55), rect2, 0, 25, 25)
+
+        # Image
+        screen.blit(yoshiIA, (980, 80))
+        draw_text(1140, 115, "Player 2", "White", screen)  # Text
+
+        # Texts
+        draw_text(115, 200, "Points:", "White", screen)
+        draw_text(1065, 200, "Points:", "White", screen)
+
+        # Scores
+        draw_text(215, 200, str(self.PLAYER1_SCORE), "White", screen)
+        draw_text(1165, 200, str(self.PLAYER2_SCORE), "White", screen)
+
+        scaled_p1_text = pyg.transform.scale(P1_victory, (
+            int(P1_victory_rect.width * self.scale_factor), int(P1_victory_rect.height * self.scale_factor)))
+        scaled_p1_rect = scaled_p1_text.get_rect(topleft=(400, 50))
+        if self.victory == 'P1':
+            if self.scale_factor >= 1 or self.scale_factor <= 0.8:
+                self.scale_speed = -self.scale_speed
+            self.scale_factor += self.scale_speed
+
+            screen.blit(scaled_p1_text, scaled_p1_rect)
+
+        if self.victory == 'P2':
+            scaled_p2_text = pyg.transform.scale(P2_victory, (
+                int(P2_victory_rect.width * self.scale_factor), int(P2_victory_rect.height * self.scale_factor)))
+            scaled_p2_rect = scaled_p2_text.get_rect(topleft=(400, 50))
+
+            if self.scale_factor >= 1 or self.scale_factor <= 0.8:
+                self.scale_speed = -self.scale_speed
+            self.scale_factor += self.scale_speed
+
+            screen.blit(scaled_p2_text, scaled_p2_rect)
+
+        if self.victory == 'tie':
+            scaled_tie_text = pyg.transform.scale(tie, (
+                int(tie_rect.width * self.scale_factor), int(tie_rect.height * self.scale_factor)))
+            scaled_tie_rect = scaled_tie_text.get_rect(topleft=(500, 50))
+
+            if self.scale_factor >= 1 or self.scale_factor <= 0.8:
+                self.scale_speed = -self.scale_speed
+            self.scale_factor += self.scale_speed
+
+            screen.blit(scaled_tie_text, scaled_tie_rect)
+
+        pyg.display.flip()
+
+
 
     def menu(self):
         mouse_pos = pyg.mouse.get_pos()
@@ -419,7 +505,7 @@ class GameState:
                                 print(POS_I, POS_J)
                                 self.clicked = False
 
-                                self.turn = 2
+                                self.turn = 4
 
                                 break
 
@@ -427,11 +513,8 @@ class GameState:
             self.PLAYER2_POS = chichenol.minimax(self.PLAYER2_POS, self.PLAYER1_POS, self.PLAYER2_SCORE,
                                                  self.PLAYER1_SCORE, self.COIN_POS, self.SPECIAL_COINS_POS,
                                                  self.blocked_cells, self.depth)
-            # print(PLAYER1_POS)
-            # print(PLAYER2_POS)
-            # print(BOARD)
+
             index = self.check_moves(self.PLAYER2_POS, self.COIN_POS, self.SPECIAL_COINS_POS)
-            # print(self.PLAYER2_POS)
             if index != None:
                 if not self.is_special:
                     self.PLAYER2_SCORE += 1
@@ -442,7 +525,7 @@ class GameState:
                     self.blocked_cells.append(self.SPECIAL_COINS_POS[index])
                     self.SPECIAL_COINS_POS[index] = 0
 
-            self.turn = 1
+            self.turn = 3
 
         for i in range(BOARD_SIZE):
             for j in range(BOARD_SIZE):
@@ -503,42 +586,31 @@ class GameState:
 
         self.dropdown.draw(screen)
 
-        if True: #self.COIN_POS == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] and self.SPECIAL_COINS_POS == [0, 0, 0, 0]:
-                #and self.turn != 1 and self.turn != 2:
+        pyg.display.flip()
+
+        if self.COIN_POS == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] and self.SPECIAL_COINS_POS == [0, 0, 0, 0]\
+                and self.turn != 1 and self.turn != 2:
             self.turn = 5
             if self.PLAYER1_SCORE > self.PLAYER2_SCORE:
+                pyg.mixer.music.fadeout(1000)
+                play_music(P1_theme_path, 1, 0.5)
+                self.victory = 'P1'
+                self.state = 'results'
 
-                scaled_p1_text = pyg.transform.scale(P1_victory, (
-                    int(P1_victory_rect.width * self.scale_factor), int(P1_victory_rect.height * self.scale_factor)))
-                scaled_p1_rect = scaled_p1_text.get_rect(topleft=(400, 50))
-
-                if self.scale_factor >= 1 or self.scale_factor <= 0.8:
-                    self.scale_speed = -self.scale_speed
-                self.scale_factor += self.scale_speed
-
-                screen.blit(scaled_p1_text, scaled_p1_rect)
             elif self.PLAYER1_SCORE < self.PLAYER2_SCORE:
-                scaled_p2_text = pyg.transform.scale(P2_victory, (
-                    int(P2_victory_rect.width * self.scale_factor), int(P2_victory_rect.height * self.scale_factor)))
-                scaled_p2_rect = scaled_p2_text.get_rect(topleft=(400, 50))
-
-                if self.scale_factor >= 1 or self.scale_factor <= 0.8:
-                    self.scale_speed = -self.scale_speed
-                self.scale_factor += self.scale_speed
-
-                screen.blit(scaled_p2_text, scaled_p2_rect)
+                P1_loose.play()
+                self.victory = 'P2'
+                self.state = 'results'
             else:
-                scaled_tie_text = pyg.transform.scale(tie, (
-                    int(tie_rect.width * self.scale_factor), int(tie_rect.height * self.scale_factor)))
-                scaled_tie_rect = scaled_tie_text.get_rect(topleft=(500, 50))
-
-                if self.scale_factor >= 1 or self.scale_factor <= 0.8:
-                    self.scale_speed = -self.scale_speed
-                self.scale_factor += self.scale_speed
-
-                screen.blit(scaled_tie_text, scaled_tie_rect)
+                self.victory = 'tie'
+                self.state = 'results'
 
         pyg.display.flip()
+
+        if self.turn == 3:
+            self.turn = 1
+        elif self.turn == 4:
+            self.turn = 2
 
     def credits(self):
         pyg.event.pump()
@@ -595,6 +667,8 @@ class GameState:
             self.play_game()
         if self.state == 'credits':
             self.credits()
+        if self.state == 'results':
+            self.result()
 
 
 game_state = GameState()
