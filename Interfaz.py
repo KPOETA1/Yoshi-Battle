@@ -33,6 +33,9 @@ menu_button_path = os.path.join(main_path, "Assets", "Yoshi_Egg_menu.png")
 coin_path = os.path.join(main_path, "Assets", "coin.png")
 special_coin_path = os.path.join(main_path, "Assets", "flower.png")
 blocked_cell_path = os.path.join(main_path, "Assets", "piranha.png")
+P1_victory_path = os.path.join(main_path, 'Assets', "P1 victory.png")
+P2_victory_path = os.path.join(main_path, 'Assets', "P2 victory.png")
+tie_path = os.path.join(main_path, 'Assets', "Tie.png")
 yoship_path = os.path.join(main_path, "Sprites", "yoship1.png")
 yoshiIA_path = os.path.join(main_path, "Sprites", "yoship2.png")
 icon_path = os.path.join(main_path, "Assets", "Yoshi_egg.png")
@@ -72,6 +75,13 @@ blocked_cell = pyg.image.load(blocked_cell_path)
 
 coin = pyg.image.load(coin_path)
 special_coin = pyg.image.load(special_coin_path)
+
+P1_victory = pyg.image.load(P1_victory_path)
+P1_victory_rect = P1_victory.get_rect()
+P2_victory = pyg.image.load(P2_victory_path)
+P2_victory_rect = P2_victory.get_rect()
+tie = pyg.image.load(tie_path)
+tie_rect = tie.get_rect()
 
 # FPS counter
 clock = pyg.time.Clock()
@@ -138,7 +148,7 @@ class GameState:
                     self.PLAYER2_SCORE = 0
                     self.blocked_cells = []
                     self.clicked = False
-                    self.turn = 1
+                    self.turn = 2
                     self.playing = False
                     self.depth = 0
                     pyg.mixer.music.fadeout(2000)
@@ -351,7 +361,7 @@ class GameState:
                     self.PLAYER2_SCORE = 0
                     self.blocked_cells = []
                     self.clicked = False
-                    self.turn = 1
+                    self.turn = 2
                     self.playing = False
                     self.depth = 0
                 if self.play_button.collider(mouse_pos):
@@ -370,8 +380,8 @@ class GameState:
                         self.depth = 6
                         self.playing = True
 
-                if self.PLAYER1_POS[0] * CELL_WIDTH + 340 <= x <= self.PLAYER1_POS[0] * CELL_WIDTH + 340 + CELL_WIDTH and \
-                        self.PLAYER1_POS[1] * CELL_HEIGHT + 60 <= y <= self.PLAYER1_POS[1] * CELL_HEIGHT + 60 + CELL_HEIGHT:
+                if self.PLAYER1_POS[0] * CELL_WIDTH + 340 <= x <= self.PLAYER1_POS[0] * CELL_WIDTH + 340 + CELL_WIDTH \
+                        and self.PLAYER1_POS[1] * CELL_HEIGHT + 60 <= y <= self.PLAYER1_POS[1] * CELL_HEIGHT + 60 + CELL_HEIGHT:
                     self.clicked = self.clicked ^ True
                     print('el clic: ', self.clicked)
 
@@ -493,15 +503,40 @@ class GameState:
 
         self.dropdown.draw(screen)
 
-        if self.COIN_POS == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] and self.SPECIAL_COINS_POS == [0, 0, 0, 0]\
-                and self.turn != 1 and self.turn != 2:
+        if True: #self.COIN_POS == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] and self.SPECIAL_COINS_POS == [0, 0, 0, 0]:
+                #and self.turn != 1 and self.turn != 2:
             self.turn = 5
             if self.PLAYER1_SCORE > self.PLAYER2_SCORE:
-                BOARD_TEXT = "Player 1 wins!"
+
+                scaled_p1_text = pyg.transform.scale(P1_victory, (
+                    int(P1_victory_rect.width * self.scale_factor), int(P1_victory_rect.height * self.scale_factor)))
+                scaled_p1_rect = scaled_p1_text.get_rect(topleft=(400, 50))
+
+                if self.scale_factor >= 1 or self.scale_factor <= 0.8:
+                    self.scale_speed = -self.scale_speed
+                self.scale_factor += self.scale_speed
+
+                screen.blit(scaled_p1_text, scaled_p1_rect)
             elif self.PLAYER1_SCORE < self.PLAYER2_SCORE:
-                BOARD_TEXT = "Player 2 wins!"
+                scaled_p2_text = pyg.transform.scale(P2_victory, (
+                    int(P2_victory_rect.width * self.scale_factor), int(P2_victory_rect.height * self.scale_factor)))
+                scaled_p2_rect = scaled_p2_text.get_rect(topleft=(400, 50))
+
+                if self.scale_factor >= 1 or self.scale_factor <= 0.8:
+                    self.scale_speed = -self.scale_speed
+                self.scale_factor += self.scale_speed
+
+                screen.blit(scaled_p2_text, scaled_p2_rect)
             else:
-                BOARD_TEXT = "It's a tie!"
+                scaled_tie_text = pyg.transform.scale(tie, (
+                    int(tie_rect.width * self.scale_factor), int(tie_rect.height * self.scale_factor)))
+                scaled_tie_rect = scaled_tie_text.get_rect(topleft=(500, 50))
+
+                if self.scale_factor >= 1 or self.scale_factor <= 0.8:
+                    self.scale_speed = -self.scale_speed
+                self.scale_factor += self.scale_speed
+
+                screen.blit(scaled_tie_text, scaled_tie_rect)
 
         pyg.display.flip()
 
