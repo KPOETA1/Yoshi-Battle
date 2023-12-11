@@ -1,5 +1,6 @@
 from classes import Nodo
 from copy import deepcopy
+import pygame as pyg
 
 
 def crearArbol(nodo, profundidad):
@@ -10,6 +11,7 @@ def crearArbol(nodo, profundidad):
         listaMovimientos = posiblesMovimientos(nodo.posicion_J1, nodo.posicion_J2, nodo.posicionesBloqueadas)
 
         for movimiento in listaMovimientos:
+            pyg.event.pump()
             monedasCopia = deepcopy(nodo.monedas)
             monedasEspecialesCopia = deepcopy(nodo.monedasEspeciales)
             posicionesBloqueadasCopia = deepcopy(nodo.posicionesBloqueadas)
@@ -48,6 +50,7 @@ def crearArbol(nodo, profundidad):
         listaMovimientos = posiblesMovimientos(nodo.posicion_J2, nodo.posicion_J1, nodo.posicionesBloqueadas)
 
         for movimiento in listaMovimientos:
+            pyg.event.pump()
             monedasCopia = deepcopy(nodo.monedas)
             monedasEspecialesCopia = deepcopy(nodo.monedasEspeciales)
             posicionesBloqueadasCopia = deepcopy(nodo.posicionesBloqueadas)
@@ -101,7 +104,7 @@ def posiblesMovimientos(posicionActual, posicionRival, posicionesBloqueadas):
     movimientos = []
 
     for posible in ochoPosibles:
-
+        pyg.event.pump()
         posibleX = posicionActual[0] + posible[0]
         posibleY = posicionActual[1] + posible[1]
 
@@ -119,6 +122,7 @@ def nodoALista(nodo):
     lista = []
 
     for hijo in nodo.hijos:
+        pyg.event.pump()
         lista.append(hijo)
         lista += nodoALista(hijo)
 
@@ -130,14 +134,17 @@ def actualizarArbol(arbol):
     profundidadArbol = 0
 
     for hijo in hijos:
+        pyg.event.pump()
         if hijo.profundidad > profundidadArbol:
             profundidadArbol = hijo.profundidad
 
     for hijo in hijos:
+        pyg.event.pump()
         hijo.valor = hijo.puntos_J1 - hijo.puntos_J2 + heuristica(hijo, hijo.monedas, hijo.monedasEspeciales)
 
     while profundidadArbol > 0:
         for hijo in hijos:
+            pyg.event.pump()
             if hijo.profundidad == profundidadArbol:
                 if hijo.padre.tipoNodo == "Max":
                     hijo.padre.valor = max(hijo.padre.valor, hijo.valor)
@@ -166,6 +173,7 @@ def minimax(posicion_J1, posicion_J2, puntos_J1, puntos_J2, monedas, monedasEspe
     actualizarArbol(nodo)
 
     for hijo in nodo.hijos:
+        pyg.event.pump()
         if hijo.valor == nodo.valor and hijo.profundidad == 1:
             return hijo.posicion_J1
 
@@ -203,6 +211,7 @@ def nroMovimientos(posicionInicial, posicionObjetivo):
         xActual, yActual = cola.pop(0)
 
         for dx, dy in movimientosCaballo:
+            pyg.event.pump()
             xNuevo, yNuevo = xActual + dx, yActual + dy
 
             if movValido(xNuevo, yNuevo) and distancia[(xNuevo, yNuevo)] == float('inf'):
@@ -219,6 +228,7 @@ def heuristica(nodo, monedas, monedasEspeciales):
 
     # Calcular la distancia minima desde la posicion del jugador 1 hasta cada moneda
     for moneda in monedas:
+        pyg.event.pump()
         if moneda == 0:
             None
         else:
@@ -226,6 +236,7 @@ def heuristica(nodo, monedas, monedasEspeciales):
 
     # Calcular la distancia minima desde la posicion del jugador 1 hasta cada moneda especial
     for monedaEspecial in monedasEspeciales:
+        pyg.event.pump()
         if monedaEspecial == 0:
             None
         else:
@@ -233,6 +244,7 @@ def heuristica(nodo, monedas, monedasEspeciales):
 
     # Calcular la distancia minima desde la posicion del jugador 2 hasta cada moneda
     for moneda in monedas:
+        pyg.event.pump()
         if moneda == 0:
             None
         else:
@@ -240,6 +252,7 @@ def heuristica(nodo, monedas, monedasEspeciales):
 
     # Calcular la distancia minima desde la posicion del jugador 2 hasta cada moneda especial
     for monedaEspecial in monedasEspeciales:
+        pyg.event.pump()
         if monedaEspecial == 0:
             None
         else:
