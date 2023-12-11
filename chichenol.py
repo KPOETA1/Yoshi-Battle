@@ -88,6 +88,14 @@ def crearArbol(nodo, profundidad):
 
 # priorizar que siempre se agarren puntos
 def escalarPuntos(puntos, profundidad):
+    # if profundidad == 0:
+    #     return 0
+    # if profundidad == 1 or profundidad == 2:
+    #     return puntos
+    # if profundidad == 3 or profundidad == 4:
+    #     return puntos * 0.7
+    # if profundidad == 5 or profundidad == 6:
+    #     return puntos * 0.4
     return puntos
 
 
@@ -170,6 +178,20 @@ def minimax(posicion_J1, posicion_J2, puntos_J1, puntos_J2, monedas, monedasEspe
 
     crearArbol(nodo, profundidad)
 
+    print("Root: ", nodo.posicion_J1, nodo.posicion_J2, nodo.tipoNodo, "-depth", nodo.profundidad, '-node_score', nodo.puntos_J1+nodo.puntos_J2)
+    children = nodoALista(nodo)
+    for child in children:
+        print(
+            child.tipoNodo, 
+            "-depth", child.profundidad,
+            "-j1:", 
+            child.posicion_J1, 
+            child.puntos_J1,
+            "-j2:", 
+            child.posicion_J2, 
+            child.puntos_J2,
+            )
+
     actualizarArbol(nodo)
 
     for hijo in nodo.hijos:
@@ -183,43 +205,47 @@ def movValido(x, y):
     return 0 <= x < 8 and 0 <= y < 8
 
 
-def nroMovimientos(posicionInicial, posicionObjetivo):
-    '''
-    Calcula la cantidad minima de movimientos que un caballo necesita para llegar de posInicial a posObjetivo en un tablero de 8x8
-    '''
-    # Definir posiciones relativas de los movimientos del caballo
-    movimientosCaballo = [(-2, -1), (-2, 1), (-1, -2), (-1, 2), (1, -2), (1, 2), (2, -1), (2, 1)]
+def manhattan(inicial, destino):
+    #Funcion auxiliar para calcular la distancia manhattan entre dos posiciones
+    return abs(inicial[0] - destino[0]) + abs(inicial[1] - destino[1])
 
-    # Desempaquetar posiciones iniciales y objetivos
-    xInicial, yInicial = posicionInicial
-    xObjetivo, yObjetivo = posicionObjetivo
+def nroMovimientos(posInicial, posDestino):
+    #Diccionario que relaciona la distancia manhattan entre 2 puntos y la cantidad de movimientos que se necesitan para llegar de un punto a otro
+    #Clave: distancia manhattan
+    #Valor: cantidad de movimientos
+    distancias = {
+        0: 1,
+        1: 3,
+        2: 2,
+        3: 3,
+        4: 4,
+        5: 3,
+        6: 4,
+        7: 5,
+        8: 4,
+        9: 5,
+        10: 4,
+        11: 5,
+        12: 4,
+        13: 5,
+        14: 6
+    }
 
-    # Verificar si las posiciones iniciales y objetivos son validas
-    if not movValido(xInicial, yInicial) or not movValido(xObjetivo, yObjetivo):
-        print("Posiciones fuera del Tablero.")
-
-    # Inicializar un diccionario para almacenar la distancia minima desde la posicion inicial hasta cada posicion en el tablero
-    distancia = {(i, j): float('inf') for i in range(8) for j in range(8)}
-
-    # La distancia desde la posicion inicial hasta si misma es 0
-    distancia[posicionInicial] = 0
-
-    # Implementar BFS (Breadth-First Search) para calcular la distancia minima
-    cola = [posicionInicial]
-
-    while cola:
-        xActual, yActual = cola.pop(0)
-
-        for dx, dy in movimientosCaballo:
-            pyg.event.pump()
-            xNuevo, yNuevo = xActual + dx, yActual + dy
-
-            if movValido(xNuevo, yNuevo) and distancia[(xNuevo, yNuevo)] == float('inf'):
-                distancia[(xNuevo, yNuevo)] = distancia[(xActual, yActual)] + 1
-                cola.append((xNuevo, yNuevo))
-
-    # Devolver la distancia minima hasta la posicion objetivo
-    return distancia[posicionObjetivo]
+    #nroMovimientos para el jugador
+    manhattanActual = manhattan(posInicial, posDestino)
+    if manhattan == 3:
+        movimientosPosibles = posiblesMovimientos(posInicial, (20,20), [])
+        if posDestino in movimientosPosibles:
+            return 1
+        else:
+            return distancias[manhattanActual]
+    elif posInicial == (0,0) or posInicial == (0,7) or posInicial == (7,0) or posInicial == (7,7):
+        if manhattanActual == 2:
+            return distancias[4]
+        else:
+            return distancias[manhattanActual]
+    else:
+        return distancias[manhattanActual]
 
 
 def heuristica(nodo, monedas, monedasEspeciales):
