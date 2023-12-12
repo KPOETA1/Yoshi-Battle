@@ -54,7 +54,6 @@ white_path = os.path.join(main_path, "Sprites", "White Yoshi")
 black_path = os.path.join(main_path, "Sprites", "Black Yoshi")
 
 # Sprite sheets paths
-g_idle_path =  os.path.join(green_path, '')
 
 # Music and sound effects paths
 main_theme = os.path.join(main_path, "Music", "main theme.mp3")
@@ -63,6 +62,8 @@ credits_theme = os.path.join(main_path, "Music", "Credits.mp3")
 egg_pop_path = os.path.join(main_path, "Music", "Egg pop.mp3")
 P1_theme_path = os.path.join(main_path, "Music", "P1 Victory theme.mp3")
 P1_loose_path = os.path.join(main_path, "Music", "P1 looses.mp3")
+yoshi_jump_path = os.path.join(main_path, "Music", "yoshi jump.mp3")
+yoshi_sound_path = os.path.join(main_path, "Music", "yoshi sound.mp3")
 
 # Music and Sound initializers
 pyg.mixer.music.load(main_theme)
@@ -70,6 +71,8 @@ pyg.mixer.music.play(-1)
 pyg.mixer.music.set_volume(0.5)
 egg_pop = pyg.mixer.Sound(egg_pop_path)
 P1_loose = pyg.mixer.Sound(P1_loose_path)
+yoshi_jump = pyg.mixer.Sound(yoshi_jump_path)
+yoshi_sound = pyg.mixer.Sound(yoshi_sound_path)
 
 # Background
 background = pyg.image.load(background_path)
@@ -392,31 +395,60 @@ class GameState:
         self.menu_button = Button(egg_button, (1050, 400), screen)
         self.yoship_rect = yoship.get_rect()
         self.yoshiIA_rect = yoshiIA.get_rect()
+        self.yoshi_color = 'green'
+        self.ia_movement = (0, 0)
+        self.player_movement = (0, 0)
 
         self.PLAYER1_POS, self.PLAYER2_POS, self.COIN_POS, self.SPECIAL_COINS_POS = init_game()
 
         # Animation variables:
-        self.animation_cooldown = 500
-        self.frame = 0
-        self.last_update = pyg.time.get_ticks()
+        self.animation_cooldown = 120
+        self.player_frame = 0
+        self.ia_frame = 0
+        self.player_last_update = pyg.time.get_ticks()
+        self.ia_last_update = pyg.time.get_ticks()
 
         # Paths
-        self.player_idle_path = os.path.join(red_path, 'idle.png')
-        self.ia_idle_path = os.path.join(green_path, 'idle.png')
+        self.player_idle_path = os.path.join(red_path, 'idle.png')  # Player idle image
+        self.ia_idle_path = os.path.join(green_path, 'idle.png')  # AI idle image
+        self.player_move_path = os.path.join(red_path, 'move.png')
+        self.ia_move_path = os.path.join(green_path, 'move.png')
+        self.player_win_path = os.path.join(red_path, 'win.png')  # Player win image
+        self.player_win = pyg.image.load(self.player_win_path)
+        self.player_loose_path = os.path.join(red_path, 'loose.png')  # Player loose image
+        self.player_loose = pyg.image.load(self.player_loose_path)
+        self.ia_win_path = os.path.join(green_path, 'win.png')  # AI win image
+        self.ia_win = pyg.image.load(self.ia_win_path)
+        self.ia_loose_path = os.path.join(green_path, 'loose.png')  # AI loosing image
+        self.ia_loose = pyg.image.load(self.ia_loose_path)
+        self.player_card_path = os.path.join(red_path, 'card.png')  # Player card image
+        self.player_card = pyg.image.load(self.player_card_path)
+        self.ia_card_path = os.path.join(green_path, 'card.png')  # AI card image
+        self.ia_card = pyg.image.load(self.ia_card_path)
 
         # Sprite Sheets
         self.player_sprite_load = pyg.image.load(self.player_idle_path)
         self.player_sprite = spritesheet.SpriteSheet(self.player_sprite_load)
         self.ia_sprite_load = pyg.image.load(self.ia_idle_path)
         self.ia_sprite = spritesheet.SpriteSheet(self.ia_sprite_load)
+        self.player_move_sprite_load = pyg.image.load(self.player_move_path)
+        self.player_move_sprite = spritesheet.SpriteSheet(self.player_move_sprite_load)
+        self.ia_move_sprite_load = pyg.image.load(self.ia_move_path)
+        self.ia_move_sprite = spritesheet.SpriteSheet(self.ia_move_sprite_load)
+        self.player_move_load = pyg.image.load(self.player_move_path)
+        self.ia_move_load = pyg.image.load(self.ia_move_path)
 
 
         # Animation lists
         self.player_idle_list = []
         self.ia_idle_list = []
+        self.player_move_list = []
+        self.ia_move_list = []
 
         self.animation_list_create(self.player_idle_list, 5, self.player_sprite)
         self.animation_list_create(self.ia_idle_list, 5, self.ia_sprite)
+        self.animation_list_create(self.player_move_list, 17, self.player_move_sprite)
+        self.animation_list_create(self.ia_move_list, 17, self.ia_move_sprite)
 
     def animation_list_create(self, list, steps, image):
         for i in range(steps):
@@ -445,8 +477,6 @@ class GameState:
         rect1 = pyg.Rect(20, 60, 300, 200)
         pyg.draw.rect(screen, (65, 60, 55), rect1, 0, 25, 25)
 
-        # Image
-        screen.blit(yoship, (40, 80))
         draw_text(200, 115, "Player 1", "White", screen)  # Text
 
         # Player 2 Card
@@ -454,7 +484,6 @@ class GameState:
         pyg.draw.rect(screen, (65, 60, 55), rect2, 0, 25, 25)
 
         # Image
-        screen.blit(yoshiIA, (980, 80))
         draw_text(1140, 115, "Player 2", "White", screen)  # Text
 
         # Texts
@@ -469,6 +498,8 @@ class GameState:
             int(P1_victory_rect.width * self.scale_factor), int(P1_victory_rect.height * self.scale_factor)))
         scaled_p1_rect = scaled_p1_text.get_rect(topleft=(400, 50))
         if self.victory == 'P1':
+            screen.blit(self.player_win, (40, 80))
+            screen.blit(self.ia_loose, (980, 80))
             if self.scale_factor >= 1 or self.scale_factor <= 0.8:
                 self.scale_speed = -self.scale_speed
             self.scale_factor += self.scale_speed
@@ -476,6 +507,8 @@ class GameState:
             screen.blit(scaled_p1_text, scaled_p1_rect)
 
         if self.victory == 'P2':
+            screen.blit(self.ia_win, (980, 80))
+            screen.blit(self.player_loose, (40, 80))
             scaled_p2_text = pyg.transform.scale(P2_victory, (
                 int(P2_victory_rect.width * self.scale_factor), int(P2_victory_rect.height * self.scale_factor)))
             scaled_p2_rect = scaled_p2_text.get_rect(topleft=(400, 50))
@@ -487,6 +520,8 @@ class GameState:
             screen.blit(scaled_p2_text, scaled_p2_rect)
 
         if self.victory == 'tie':
+            screen.blit(self.player_card, (40, 80))
+            screen.blit(self.ia_card, (980, 80))
             scaled_tie_text = pyg.transform.scale(tie, (
                 int(tie_rect.width * self.scale_factor), int(tie_rect.height * self.scale_factor)))
             scaled_tie_rect = scaled_tie_text.get_rect(topleft=(500, 50))
@@ -521,6 +556,16 @@ class GameState:
                     self.turn = 2
                     self.playing = False
                     self.depth = 0
+                    self.victory = ''
+
+                    # Graphics restart
+                    self.ia_movement = (0, 0)
+                    self.player_movement = (0, 0)
+                    self.player_frame = 0
+                    self.ia_frame = 0
+                    self.player_last_update = pyg.time.get_ticks()
+                    self.ia_last_update = pyg.time.get_ticks()
+
                     pyg.mixer.music.fadeout(2000)
                     self.state = 'play game'
                     play_music(gameplay_theme, -1, 0.5)
@@ -728,6 +773,15 @@ class GameState:
                     self.turn = 2
                     self.playing = False
                     self.depth = 0
+
+                    # Graphics restart
+                    self.ia_movement = (0, 0)
+                    self.player_movement = (0, 0)
+                    self.player_frame = 0
+                    self.ia_frame = 0
+                    # self.player_last_update = pyg.time.get_ticks()
+                    # self.ia_last_update = pyg.time.get_ticks()
+
                 if self.play_button.collider(mouse_pos):
                     if self.dropdown.main == "Beginner" :
                         print("Beginner")
@@ -772,14 +826,19 @@ class GameState:
                                         self.SPECIAL_COINS_POS[index] = 0
 
                                 self.PLAYER1_POS = move
+                                self.player_movement = move
                                 self.clicked = False
 
                                 self.turn = 4
+                                self.player_frame = 0
 
                                 break
 
         if self.turn == 2 and self.playing:
             self.PLAYER2_POS = chichenol.minimax(self.PLAYER2_POS, self.PLAYER1_POS, self.PLAYER2_SCORE,
+                                                 self.PLAYER1_SCORE, self.COIN_POS, self.SPECIAL_COINS_POS,
+                                                 self.blocked_cells, self.depth)
+            self.ia_movement = chichenol.minimax(self.PLAYER2_POS, self.PLAYER1_POS, self.PLAYER2_SCORE,
                                                  self.PLAYER1_SCORE, self.COIN_POS, self.SPECIAL_COINS_POS,
                                                  self.blocked_cells, self.depth)
 
@@ -795,7 +854,13 @@ class GameState:
                     self.SPECIAL_COINS_POS[index] = 0
 
             self.turn = 3
+            self.ia_frame = 0
 
+        # Animation variable
+        player_current_time = pyg.time.get_ticks()
+        ia_current_time = pyg.time.get_ticks()
+
+        # Board and assets draw
         for i in range(BOARD_SIZE):
             for j in range(BOARD_SIZE):
                 POS_I = i * CELL_WIDTH
@@ -818,10 +883,84 @@ class GameState:
                     if (i, j) == pos:
                         screen.blit(blocked_cell, (POS_I + 340, POS_J + 60))
 
-                if (i, j) == self.PLAYER1_POS:
-                    screen.blit(self.player_idle_list[self.frame], (POS_I + 345, POS_J + 65))
-                elif (i, j) == self.PLAYER2_POS:
-                    screen.blit(yoship, (POS_I + 345, POS_J + 65))
+                # Player graphic movement
+                if self.turn == 4:
+                    self.animation_cooldown = 120
+                    if (i, j) == self.PLAYER1_POS:
+                        if player_current_time - self.player_last_update >= self.animation_cooldown:
+                            self.player_frame += 1
+                            self.player_last_update = player_current_time
+
+                            if self.player_frame == 3:
+                                yoshi_jump.play()
+
+                            if self.player_frame >= len(self.player_move_list):
+                                self.player_frame = 0
+                                self.animation_cooldown = 120
+                                self.turn = 2
+                        screen.blit(self.player_move_list[self.player_frame], (POS_I + 340, POS_J + 60))
+
+                    if (i, j) == self.PLAYER2_POS:
+                        if ia_current_time - self.ia_last_update >= self.animation_cooldown:
+                            self.ia_frame += 1
+                            self.ia_last_update = ia_current_time
+
+                            if self.ia_frame >= len(self.ia_idle_list):
+                                self.ia_frame = 0
+
+                        screen.blit(self.ia_idle_list[self.ia_frame], (POS_I + 340, POS_J + 60))
+
+                # AI graphic movement
+                if self.turn == 3:
+                    self.animation_cooldown = 120
+                    if (i, j) == self.PLAYER2_POS:
+                        if ia_current_time - self.ia_last_update >= self.animation_cooldown:
+                            self.ia_frame += 1
+                            self.ia_last_update = ia_current_time
+
+                            if self.ia_frame == 3:
+                                yoshi_jump.play()
+
+                            if self.ia_frame >= len(self.ia_move_list):
+                                self.ia_frame = 0
+                                self.animation_cooldown = 120
+                                self.turn = 1
+
+                        screen.blit(self.ia_move_list[self.ia_frame], (POS_I + 340, POS_J + 60))
+
+
+                    if (i, j) == self.PLAYER1_POS:
+                        if player_current_time - self.player_last_update >= self.animation_cooldown:
+                            self.player_frame += 1
+                            self.player_last_update = player_current_time
+
+                            if self.player_frame >= len(self.player_idle_list):
+                                self.player_frame = 0
+
+                        screen.blit(self.player_idle_list[self.player_frame], (POS_I + 340, POS_J + 60))
+
+                # Update animation
+                if self.turn == 2 or self.turn == 1:
+                    if (i, j) == self.PLAYER1_POS:
+                        if player_current_time - self.player_last_update >= self.animation_cooldown:
+                            self.player_frame += 1
+                            self.player_last_update = player_current_time
+
+                            if self.player_frame >= len(self.player_idle_list):
+                                self.player_frame = 0
+
+                        screen.blit(self.player_idle_list[self.player_frame], (POS_I + 340, POS_J + 60))
+
+                if self.turn == 2 or self.turn == 1:
+                    if (i, j) == self.PLAYER2_POS:
+                        if ia_current_time - self.ia_last_update >= self.animation_cooldown:
+                            self.ia_frame += 1
+                            self.ia_last_update = ia_current_time
+
+                            if self.ia_frame >= len(self.ia_idle_list):
+                                self.ia_frame = 0
+
+                        screen.blit(self.ia_idle_list[self.ia_frame], (POS_I + 340, POS_J + 60))
 
                 pyg.draw.rect(screen, (0, 0, 0), rect, 1)  # Draw the black lines
 
@@ -830,14 +969,14 @@ class GameState:
         rect1 = pyg.Rect(20, 60, 300, 200)
         pyg.draw.rect(screen, (65, 60, 55), rect1, 0, 25, 25)
         # Image
-        screen.blit(yoshiIA, (40, 80))
+        screen.blit(self.player_card, (40, 80))
         draw_text(200, 115, "Player 1", "White", screen)  # Texto
 
         # Player 2 card
         rect2 = pyg.Rect(960, 60, 300, 200)
         pyg.draw.rect(screen, (65, 60, 55), rect2, 0, 25, 25)
         # Image
-        screen.blit(yoship, (980, 80))
+        screen.blit(self.ia_card, (980, 80))
         draw_text(1140, 115, "Player 2", "White", screen)  # Texto
 
         # Texts
@@ -875,11 +1014,6 @@ class GameState:
                 self.state = 'results'
 
         pyg.display.flip()
-
-        if self.turn == 3:
-            self.turn = 1
-        elif self.turn == 4:
-            self.turn = 2
 
     def credits(self):
         pyg.event.pump()

@@ -198,28 +198,38 @@ def nroMovimientos(posicionInicial, posicionObjetivo):
     if not movValido(xInicial, yInicial) or not movValido(xObjetivo, yObjetivo):
         print("Posiciones fuera del Tablero.")
 
-    # Inicializar un diccionario para almacenar la distancia minima desde la posicion inicial hasta cada posicion en el tablero
-    distancia = {(i, j): float('inf') for i in range(8) for j in range(8)}
+    # # Inicializar un diccionario para almacenar la distancia minima desde la posicion inicial hasta cada posicion en el tablero
+    # distancia = {(i, j): float('inf')for i in range(8) for j in range(8)}
+    #
+    # # La distancia desde la posicion inicial hasta si misma es 0
+    # distancia[posicionInicial] = 0
+    #
+    # # Implementar BFS (Breadth-First Search) para calcular la distancia minima
+    # cola = [posicionInicial]
+    # padres = {posicionInicial: None}
+    #
+    # while cola:
+    #     xActual, yActual = cola.pop(0)
+    #
+    #     for dx, dy in movimientosCaballo:
+    #         pyg.event.pump()
+    #         xNuevo, yNuevo = xActual + dx, yActual + dy
+    #
+    #         if movValido(xNuevo, yNuevo) and distancia[(xNuevo, yNuevo)] == float('inf'):
+    #             distancia[(xNuevo, yNuevo)] = distancia[(xActual, yActual)] + 1
+    #             cola.append((xNuevo, yNuevo))
+    #             padres[(xNuevo, yNuevo)] = (xActual, yActual)
+    #
+    # # Devolver la distancia minima hasta la posicion objetivo
+    # return distancia[posicionObjetivo]
 
-    # La distancia desde la posicion inicial hasta si misma es 0
-    distancia[posicionInicial] = 0
+    dx = abs(xInicial - xObjetivo)
+    dy = abs(yInicial - yObjetivo)
 
-    # Implementar BFS (Breadth-First Search) para calcular la distancia minima
-    cola = [posicionInicial]
+    # Aplicar la fórmula de la distancia Manhattan en L
+    distancia_L = max(dx, dy) + min(dx, dy)
 
-    while cola:
-        xActual, yActual = cola.pop(0)
-
-        for dx, dy in movimientosCaballo:
-            pyg.event.pump()
-            xNuevo, yNuevo = xActual + dx, yActual + dy
-
-            if movValido(xNuevo, yNuevo) and distancia[(xNuevo, yNuevo)] == float('inf'):
-                distancia[(xNuevo, yNuevo)] = distancia[(xActual, yActual)] + 1
-                cola.append((xNuevo, yNuevo))
-
-    # Devolver la distancia minima hasta la posicion objetivo
-    return distancia[posicionObjetivo]
+    return distancia_L
 
 
 def heuristica(nodo, monedas, monedasEspeciales):
