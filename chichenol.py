@@ -1,6 +1,7 @@
 from classes import Nodo
 from copy import deepcopy
 import pygame as pyg
+import random
 
 
 def crearArbol(nodo, profundidad):
@@ -11,7 +12,7 @@ def crearArbol(nodo, profundidad):
         listaMovimientos = posiblesMovimientos(nodo.posicion_J1, nodo.posicion_J2, nodo.posicionesBloqueadas)
 
         for movimiento in listaMovimientos:
-            pyg.event.pump()
+            #pyg.event.pump()
             monedasCopia = deepcopy(nodo.monedas)
             monedasEspecialesCopia = deepcopy(nodo.monedasEspeciales)
             posicionesBloqueadasCopia = deepcopy(nodo.posicionesBloqueadas)
@@ -27,7 +28,7 @@ def crearArbol(nodo, profundidad):
                     monedasEspecialesCopia.remove(movimiento)
                 posicionesBloqueadasCopia.append(movimiento)
 
-                puntos_J1 = nodo.puntos_J1 + escalarPuntos(puntos, nodo.profundidad)
+                puntos_J1 = nodo.puntos_J1 + escalarPuntos(puntos, nodo.profundidad + 1)
             else:
                 puntos_J1 = nodo.puntos_J1
 
@@ -50,7 +51,7 @@ def crearArbol(nodo, profundidad):
         listaMovimientos = posiblesMovimientos(nodo.posicion_J2, nodo.posicion_J1, nodo.posicionesBloqueadas)
 
         for movimiento in listaMovimientos:
-            pyg.event.pump()
+            #pyg.event.pump()
             monedasCopia = deepcopy(nodo.monedas)
             monedasEspecialesCopia = deepcopy(nodo.monedasEspeciales)
             posicionesBloqueadasCopia = deepcopy(nodo.posicionesBloqueadas)
@@ -66,7 +67,7 @@ def crearArbol(nodo, profundidad):
                     monedasEspecialesCopia.remove(movimiento)
                 posicionesBloqueadasCopia.append(movimiento)
 
-                puntos_J2 = nodo.puntos_J2 + escalarPuntos(puntos, nodo.profundidad)
+                puntos_J2 = nodo.puntos_J2 + escalarPuntos(puntos, nodo.profundidad + 1)
             else:
                 puntos_J2 = nodo.puntos_J2
 
@@ -88,15 +89,15 @@ def crearArbol(nodo, profundidad):
 
 # priorizar que siempre se agarren puntos
 def escalarPuntos(puntos, profundidad):
-    # if profundidad == 0:
-    #     return 0
-    # if profundidad == 1 or profundidad == 2:
-    #     return puntos
-    # if profundidad == 3 or profundidad == 4:
-    #     return puntos * 0.7
-    # if profundidad == 5 or profundidad == 6:
-    #     return puntos * 0.4
-    return puntos
+    if profundidad == 0:
+        return 0
+    if profundidad == 1 or profundidad == 2:
+        return puntos
+    if profundidad == 3 or profundidad == 4:
+        return puntos * 0.8
+    if profundidad == 5 or profundidad == 6:
+        return puntos * 0.5
+    # return puntos
 
 
 def verificarMovimiento(movimiento, monedas, monedasEspeciales):
@@ -112,7 +113,7 @@ def posiblesMovimientos(posicionActual, posicionRival, posicionesBloqueadas):
     movimientos = []
 
     for posible in ochoPosibles:
-        pyg.event.pump()
+        #pyg.event.pump()
         posibleX = posicionActual[0] + posible[0]
         posibleY = posicionActual[1] + posible[1]
 
@@ -130,7 +131,7 @@ def nodoALista(nodo):
     lista = []
 
     for hijo in nodo.hijos:
-        pyg.event.pump()
+        #pyg.event.pump()
         lista.append(hijo)
         lista += nodoALista(hijo)
 
@@ -142,17 +143,24 @@ def actualizarArbol(arbol):
     profundidadArbol = 0
 
     for hijo in hijos:
-        pyg.event.pump()
+        #pyg.event.pump()
         if hijo.profundidad > profundidadArbol:
             profundidadArbol = hijo.profundidad
 
-    for hijo in hijos:
-        pyg.event.pump()
-        hijo.valor = hijo.puntos_J1 - hijo.puntos_J2 + heuristica(hijo, hijo.monedas, hijo.monedasEspeciales)
+    if profundidadArbol == 2:
+        for hijo in hijos:
+            #pyg.event.pump()
+            if hijo.profundidad == profundidadArbol:
+                hijo.valor = hijo.puntos_J1 - hijo.puntos_J2
+    else:
+        for hijo in hijos:
+            #pyg.event.pump()
+            if hijo.profundidad == profundidadArbol:
+                hijo.valor = hijo.puntos_J1 - hijo.puntos_J2 + heuristica(hijo, hijo.monedas, hijo.monedasEspeciales)
 
     while profundidadArbol > 0:
         for hijo in hijos:
-            pyg.event.pump()
+            #pyg.event.pump()
             if hijo.profundidad == profundidadArbol:
                 if hijo.padre.tipoNodo == "Max":
                     hijo.padre.valor = max(hijo.padre.valor, hijo.valor)
@@ -178,22 +186,27 @@ def minimax(posicion_J1, posicion_J2, puntos_J1, puntos_J2, monedas, monedasEspe
 
     crearArbol(nodo, profundidad)
 
-    print("Root: ", nodo.posicion_J1, nodo.posicion_J2, nodo.tipoNodo, "-depth", nodo.profundidad, '-node_score', nodo.puntos_J1+nodo.puntos_J2)
-    children = nodoALista(nodo)
-    for child in children:
-        print(
-            child.tipoNodo, 
-            "-depth", child.profundidad,
-            "-j1:", 
-            child.posicion_J1, 
-            child.puntos_J1,
-            "-j2:", 
-            child.posicion_J2, 
-            child.puntos_J2,
-            )
-
     actualizarArbol(nodo)
 
+    
+    print("Root: ", nodo.posicion_J1, nodo.posicion_J2, nodo.tipoNodo, "-depth", nodo.profundidad, '-node_score', nodo.valor)
+    children = nodoALista(nodo)
+    # for child in children:
+        #if child.profundidad == 1 or child.profundidad == 2:
+            # print(
+            #     child.tipoNodo, 
+            #     "-depth", child.profundidad,
+            #     "-j1:", 
+            #     child.posicion_J1, 
+            #     child.puntos_J1,
+            #     "-j2:", 
+            #     child.posicion_J2, 
+            #     child.puntos_J2,
+            #     "-score", child.valor
+            #     )
+
+    # mezclar al azar la lista de hijos
+    random.shuffle(nodo.hijos)
     for hijo in nodo.hijos:
         pyg.event.pump()
         if hijo.valor == nodo.valor and hijo.profundidad == 1:
@@ -254,7 +267,7 @@ def heuristica(nodo, monedas, monedasEspeciales):
 
     # Calcular la distancia minima desde la posicion del jugador 1 hasta cada moneda
     for moneda in monedas:
-        pyg.event.pump()
+        #pyg.event.pump()
         if moneda == 0:
             None
         else:
@@ -262,7 +275,7 @@ def heuristica(nodo, monedas, monedasEspeciales):
 
     # Calcular la distancia minima desde la posicion del jugador 1 hasta cada moneda especial
     for monedaEspecial in monedasEspeciales:
-        pyg.event.pump()
+        #pyg.event.pump()
         if monedaEspecial == 0:
             None
         else:
@@ -270,7 +283,7 @@ def heuristica(nodo, monedas, monedasEspeciales):
 
     # Calcular la distancia minima desde la posicion del jugador 2 hasta cada moneda
     for moneda in monedas:
-        pyg.event.pump()
+        #pyg.event.pump()
         if moneda == 0:
             None
         else:
@@ -278,7 +291,7 @@ def heuristica(nodo, monedas, monedasEspeciales):
 
     # Calcular la distancia minima desde la posicion del jugador 2 hasta cada moneda especial
     for monedaEspecial in monedasEspeciales:
-        pyg.event.pump()
+        #pyg.event.pump()
         if monedaEspecial == 0:
             None
         else:
@@ -304,9 +317,27 @@ if __name__ == "__main__":
         padre=None
     )
 
-    print(heuristica(nodo, nodo.monedas, nodo.monedasEspeciales))
+    crearArbol(nodo, 2)
+    for hijo in nodo.hijos:
+        print(hijo.posicion_J1, 
+              hijo.posicion_J2, 
+              hijo.tipoNodo, 
+              hijo.profundidad, 
+              hijo.puntos_J1, 
+              hijo.puntos_J2,
+              hijo.valor)
+        for nieto in hijo.hijos:
+            print(nieto.posicion_J1,
+                    nieto.posicion_J2,
+                    nieto.tipoNodo,
+                    nieto.profundidad,
+                    nieto.puntos_J1,
+                    nieto.puntos_J2,
+                    nieto.valor)
 
-    posicion = minimax(nodo.posicion_J1, nodo.posicion_J2, nodo.puntos_J1, nodo.puntos_J2, nodo.monedas,
-                       nodo.monedasEspeciales, nodo.posicionesBloqueadas, 2)
+    #print(heuristica(nodo, nodo.monedas, nodo.monedasEspeciales))
+
+    #posicion = minimax(nodo.posicion_J1, nodo.posicion_J2, nodo.puntos_J1, nodo.puntos_J2, nodo.monedas,
+    #                   nodo.monedasEspeciales, nodo.posicionesBloqueadas, 2)
 
     # print(posicion)
