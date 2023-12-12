@@ -1,7 +1,7 @@
 # classes.py
 
 class Nodo:
-    valor = None
+    valor = 0
 
     def __init__(self, posicion_J1, posicion_J2, puntos_J1, puntos_J2, monedas, monedasEspeciales, posicionesBloqueadas,
                  tipoNodo, profundidad=0, padre=None, hijos=None):
@@ -16,11 +16,10 @@ class Nodo:
         self.profundidad = profundidad
         self.padre = padre
         self.hijos = hijos if hijos is not None else []
-
-        if tipoNodo == "Max":
+        if self.tipoNodo == "Max":
             self.valor = -10000
-        elif tipoNodo == "Min":
-            self.valor == 10000
+        elif self.tipoNodo == "Min":
+            self.valor = 10000
 
 
 

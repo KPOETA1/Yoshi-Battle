@@ -1,6 +1,7 @@
 from classes import Nodo
 from copy import deepcopy
 import pygame as pyg
+import random
 
 
 def crearArbol(nodo, profundidad):
@@ -11,7 +12,7 @@ def crearArbol(nodo, profundidad):
         listaMovimientos = posiblesMovimientos(nodo.posicion_J1, nodo.posicion_J2, nodo.posicionesBloqueadas)
 
         for movimiento in listaMovimientos:
-            pyg.event.pump()
+            #pyg.event.pump()
             monedasCopia = deepcopy(nodo.monedas)
             monedasEspecialesCopia = deepcopy(nodo.monedasEspeciales)
             posicionesBloqueadasCopia = deepcopy(nodo.posicionesBloqueadas)
@@ -27,7 +28,7 @@ def crearArbol(nodo, profundidad):
                     monedasEspecialesCopia.remove(movimiento)
                 posicionesBloqueadasCopia.append(movimiento)
 
-                puntos_J1 = nodo.puntos_J1 + escalarPuntos(puntos, nodo.profundidad)
+                puntos_J1 = nodo.puntos_J1 + escalarPuntos(puntos, nodo.profundidad + 1)
             else:
                 puntos_J1 = nodo.puntos_J1
 
@@ -50,7 +51,7 @@ def crearArbol(nodo, profundidad):
         listaMovimientos = posiblesMovimientos(nodo.posicion_J2, nodo.posicion_J1, nodo.posicionesBloqueadas)
 
         for movimiento in listaMovimientos:
-            pyg.event.pump()
+            #pyg.event.pump()
             monedasCopia = deepcopy(nodo.monedas)
             monedasEspecialesCopia = deepcopy(nodo.monedasEspeciales)
             posicionesBloqueadasCopia = deepcopy(nodo.posicionesBloqueadas)
@@ -66,7 +67,7 @@ def crearArbol(nodo, profundidad):
                     monedasEspecialesCopia.remove(movimiento)
                 posicionesBloqueadasCopia.append(movimiento)
 
-                puntos_J2 = nodo.puntos_J2 + escalarPuntos(puntos, nodo.profundidad)
+                puntos_J2 = nodo.puntos_J2 + escalarPuntos(puntos, nodo.profundidad + 1)
             else:
                 puntos_J2 = nodo.puntos_J2
 
@@ -88,7 +89,15 @@ def crearArbol(nodo, profundidad):
 
 # priorizar que siempre se agarren puntos
 def escalarPuntos(puntos, profundidad):
-    return puntos
+    if profundidad == 0:
+        return 0
+    if profundidad == 1 or profundidad == 2:
+        return puntos
+    if profundidad == 3 or profundidad == 4:
+        return puntos * 0.8
+    if profundidad == 5 or profundidad == 6:
+        return puntos * 0.5
+    # return puntos
 
 
 def verificarMovimiento(movimiento, monedas, monedasEspeciales):
@@ -104,7 +113,7 @@ def posiblesMovimientos(posicionActual, posicionRival, posicionesBloqueadas):
     movimientos = []
 
     for posible in ochoPosibles:
-        pyg.event.pump()
+        #pyg.event.pump()
         posibleX = posicionActual[0] + posible[0]
         posibleY = posicionActual[1] + posible[1]
 
@@ -122,7 +131,7 @@ def nodoALista(nodo):
     lista = []
 
     for hijo in nodo.hijos:
-        pyg.event.pump()
+        #pyg.event.pump()
         lista.append(hijo)
         lista += nodoALista(hijo)
 
@@ -134,17 +143,24 @@ def actualizarArbol(arbol):
     profundidadArbol = 0
 
     for hijo in hijos:
-        pyg.event.pump()
+        #pyg.event.pump()
         if hijo.profundidad > profundidadArbol:
             profundidadArbol = hijo.profundidad
 
-    for hijo in hijos:
-        pyg.event.pump()
-        hijo.valor = hijo.puntos_J1 - hijo.puntos_J2 + heuristica(hijo, hijo.monedas, hijo.monedasEspeciales)
+    if profundidadArbol == 2:
+        for hijo in hijos:
+            #pyg.event.pump()
+            if hijo.profundidad == profundidadArbol:
+                hijo.valor = hijo.puntos_J1 - hijo.puntos_J2
+    else:
+        for hijo in hijos:
+            #pyg.event.pump()
+            if hijo.profundidad == profundidadArbol:
+                hijo.valor = hijo.puntos_J1 - hijo.puntos_J2 + heuristica(hijo, hijo.monedas, hijo.monedasEspeciales)
 
     while profundidadArbol > 0:
         for hijo in hijos:
-            pyg.event.pump()
+            #pyg.event.pump()
             if hijo.profundidad == profundidadArbol:
                 if hijo.padre.tipoNodo == "Max":
                     hijo.padre.valor = max(hijo.padre.valor, hijo.valor)
@@ -172,6 +188,25 @@ def minimax(posicion_J1, posicion_J2, puntos_J1, puntos_J2, monedas, monedasEspe
 
     actualizarArbol(nodo)
 
+    
+    print("Root: ", nodo.posicion_J1, nodo.posicion_J2, nodo.tipoNodo, "-depth", nodo.profundidad, '-node_score', nodo.valor)
+    children = nodoALista(nodo)
+    # for child in children:
+        #if child.profundidad == 1 or child.profundidad == 2:
+            # print(
+            #     child.tipoNodo, 
+            #     "-depth", child.profundidad,
+            #     "-j1:", 
+            #     child.posicion_J1, 
+            #     child.puntos_J1,
+            #     "-j2:", 
+            #     child.posicion_J2, 
+            #     child.puntos_J2,
+            #     "-score", child.valor
+            #     )
+
+    # mezclar al azar la lista de hijos
+    random.shuffle(nodo.hijos)
     for hijo in nodo.hijos:
         pyg.event.pump()
         if hijo.valor == nodo.valor and hijo.profundidad == 1:
@@ -183,53 +218,47 @@ def movValido(x, y):
     return 0 <= x < 8 and 0 <= y < 8
 
 
-def nroMovimientos(posicionInicial, posicionObjetivo):
-    '''
-    Calcula la cantidad minima de movimientos que un caballo necesita para llegar de posInicial a posObjetivo en un tablero de 8x8
-    '''
-    # Definir posiciones relativas de los movimientos del caballo
-    movimientosCaballo = [(-2, -1), (-2, 1), (-1, -2), (-1, 2), (1, -2), (1, 2), (2, -1), (2, 1)]
+def manhattan(inicial, destino):
+    #Funcion auxiliar para calcular la distancia manhattan entre dos posiciones
+    return abs(inicial[0] - destino[0]) + abs(inicial[1] - destino[1])
 
-    # Desempaquetar posiciones iniciales y objetivos
-    xInicial, yInicial = posicionInicial
-    xObjetivo, yObjetivo = posicionObjetivo
+def nroMovimientos(posInicial, posDestino):
+    #Diccionario que relaciona la distancia manhattan entre 2 puntos y la cantidad de movimientos que se necesitan para llegar de un punto a otro
+    #Clave: distancia manhattan
+    #Valor: cantidad de movimientos
+    distancias = {
+        0: 1,
+        1: 3,
+        2: 2,
+        3: 3,
+        4: 4,
+        5: 3,
+        6: 4,
+        7: 5,
+        8: 4,
+        9: 5,
+        10: 4,
+        11: 5,
+        12: 4,
+        13: 5,
+        14: 6
+    }
 
-    # Verificar si las posiciones iniciales y objetivos son validas
-    if not movValido(xInicial, yInicial) or not movValido(xObjetivo, yObjetivo):
-        print("Posiciones fuera del Tablero.")
-
-    # # Inicializar un diccionario para almacenar la distancia minima desde la posicion inicial hasta cada posicion en el tablero
-    # distancia = {(i, j): float('inf')for i in range(8) for j in range(8)}
-    #
-    # # La distancia desde la posicion inicial hasta si misma es 0
-    # distancia[posicionInicial] = 0
-    #
-    # # Implementar BFS (Breadth-First Search) para calcular la distancia minima
-    # cola = [posicionInicial]
-    # padres = {posicionInicial: None}
-    #
-    # while cola:
-    #     xActual, yActual = cola.pop(0)
-    #
-    #     for dx, dy in movimientosCaballo:
-    #         pyg.event.pump()
-    #         xNuevo, yNuevo = xActual + dx, yActual + dy
-    #
-    #         if movValido(xNuevo, yNuevo) and distancia[(xNuevo, yNuevo)] == float('inf'):
-    #             distancia[(xNuevo, yNuevo)] = distancia[(xActual, yActual)] + 1
-    #             cola.append((xNuevo, yNuevo))
-    #             padres[(xNuevo, yNuevo)] = (xActual, yActual)
-    #
-    # # Devolver la distancia minima hasta la posicion objetivo
-    # return distancia[posicionObjetivo]
-
-    dx = abs(xInicial - xObjetivo)
-    dy = abs(yInicial - yObjetivo)
-
-    # Aplicar la fórmula de la distancia Manhattan en L
-    distancia_L = max(dx, dy) + min(dx, dy)
-
-    return distancia_L
+    #nroMovimientos para el jugador
+    manhattanActual = manhattan(posInicial, posDestino)
+    if manhattan == 3:
+        movimientosPosibles = posiblesMovimientos(posInicial, (20,20), [])
+        if posDestino in movimientosPosibles:
+            return 1
+        else:
+            return distancias[manhattanActual]
+    elif posInicial == (0,0) or posInicial == (0,7) or posInicial == (7,0) or posInicial == (7,7):
+        if manhattanActual == 2:
+            return distancias[4]
+        else:
+            return distancias[manhattanActual]
+    else:
+        return distancias[manhattanActual]
 
 
 def heuristica(nodo, monedas, monedasEspeciales):
@@ -238,7 +267,7 @@ def heuristica(nodo, monedas, monedasEspeciales):
 
     # Calcular la distancia minima desde la posicion del jugador 1 hasta cada moneda
     for moneda in monedas:
-        pyg.event.pump()
+        #pyg.event.pump()
         if moneda == 0:
             None
         else:
@@ -246,7 +275,7 @@ def heuristica(nodo, monedas, monedasEspeciales):
 
     # Calcular la distancia minima desde la posicion del jugador 1 hasta cada moneda especial
     for monedaEspecial in monedasEspeciales:
-        pyg.event.pump()
+        #pyg.event.pump()
         if monedaEspecial == 0:
             None
         else:
@@ -254,7 +283,7 @@ def heuristica(nodo, monedas, monedasEspeciales):
 
     # Calcular la distancia minima desde la posicion del jugador 2 hasta cada moneda
     for moneda in monedas:
-        pyg.event.pump()
+        #pyg.event.pump()
         if moneda == 0:
             None
         else:
@@ -262,7 +291,7 @@ def heuristica(nodo, monedas, monedasEspeciales):
 
     # Calcular la distancia minima desde la posicion del jugador 2 hasta cada moneda especial
     for monedaEspecial in monedasEspeciales:
-        pyg.event.pump()
+        #pyg.event.pump()
         if monedaEspecial == 0:
             None
         else:
@@ -288,9 +317,27 @@ if __name__ == "__main__":
         padre=None
     )
 
-    print(heuristica(nodo, nodo.monedas, nodo.monedasEspeciales))
+    crearArbol(nodo, 2)
+    for hijo in nodo.hijos:
+        print(hijo.posicion_J1, 
+              hijo.posicion_J2, 
+              hijo.tipoNodo, 
+              hijo.profundidad, 
+              hijo.puntos_J1, 
+              hijo.puntos_J2,
+              hijo.valor)
+        for nieto in hijo.hijos:
+            print(nieto.posicion_J1,
+                    nieto.posicion_J2,
+                    nieto.tipoNodo,
+                    nieto.profundidad,
+                    nieto.puntos_J1,
+                    nieto.puntos_J2,
+                    nieto.valor)
 
-    posicion = minimax(nodo.posicion_J1, nodo.posicion_J2, nodo.puntos_J1, nodo.puntos_J2, nodo.monedas,
-                       nodo.monedasEspeciales, nodo.posicionesBloqueadas, 2)
+    #print(heuristica(nodo, nodo.monedas, nodo.monedasEspeciales))
+
+    #posicion = minimax(nodo.posicion_J1, nodo.posicion_J2, nodo.puntos_J1, nodo.puntos_J2, nodo.monedas,
+    #                   nodo.monedasEspeciales, nodo.posicionesBloqueadas, 2)
 
     # print(posicion)
